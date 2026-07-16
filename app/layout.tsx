@@ -21,9 +21,9 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  // Für lokales SEO kann später " · {{STADT}}" an den Titel angehängt werden.
+  // Standort für lokales SEO an den Titel angehängt (siteConfig.city).
   title: {
-    default: `${siteConfig.name} – IT- & KI-Systemhaus für Unternehmen & Privatkunden`,
+    default: `${siteConfig.name} – IT- & KI-Systemhaus für Unternehmen & Privatkunden · ${siteConfig.city}`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,

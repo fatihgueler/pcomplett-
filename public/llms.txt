@@ -1,6 +1,6 @@
 # PComplett – IT- & KI-Systemhaus
 
-> PComplett ist ein IT- und KI-Systemhaus aus {{STADT}} für Unternehmen und Privatkunden. Wir verbinden klassische IT-Betreuung mit praxiserprobter KI-Automatisierung – von der Infrastruktur bis zum schnellen PC-Service.
+> PComplett ist ein IT- und KI-Systemhaus aus Hannover für Unternehmen und Privatkunden. Wir verbinden klassische IT-Betreuung mit praxiserprobter KI-Automatisierung – von der Infrastruktur bis zum schnellen PC-Service.
 
 ## Zielgruppen
 - Unternehmen (B2B): Mittelstand, Handel, Handwerks- und Kleinbetriebe.
@@ -24,8 +24,8 @@
 - Beratung & Einrichtung
 
 ## Kontakt
-- Telefon: {{TELEFON}}
-- E-Mail: {{EMAIL}}
+- Telefon: 0511 760 773 0
+- E-Mail: service@pcomplett.de
 - Website: https://www.pcomplett.de
 
 ## Wichtige Seiten
