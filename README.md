@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PComplett – Website (Relaunch)
 
-## Getting Started
+Moderne, vollständig responsive Website für das IT-Systemhaus **PComplett**.
+Positioniert PComplett als kompetenten IT-Partner für kleine und mittlere
+Unternehmen und generiert Leads über mehrere Call-to-Actions und ein
+Kontaktformular.
 
-First, run the development server:
+## Tech-Stack
+
+- **Next.js 15** (App Router) + **TypeScript**
+- **Tailwind CSS v4** (Design-Tokens via CSS-Variablen)
+- **shadcn/ui**-Stil UI-Primitives (im Projekt, keine Runtime-Dependency)
+- **lucide-react** (Icons), **zod** (Validierung)
+- Effekte: **CSS-Transitions + IntersectionObserver** (kein Framer Motion) –
+  respektiert `prefers-reduced-motion`
+
+## Lokal starten
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Weitere Skripte:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build      # Produktions-Build
+npm run start      # Produktions-Server (nach build)
+npm run lint       # ESLint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+> Node.js ≥ 20.19 empfohlen.
 
-## Learn More
+## Projektstruktur
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+  layout.tsx            Root-Layout: Fonts, globale Metadaten, JSON-LD, Header/Footer
+  page.tsx              Startseite (komponiert alle Sektionen)
+  globals.css           Design-Tokens (Farben, Spacing, Typo) + Effekt-Utilities
+  sitemap.ts / robots.ts  SEO
+  icon.tsx / opengraph-image.tsx  Favicon & OG-Bild (dynamisch generiert)
+  api/kontakt/route.ts  Kontaktformular-Backend (Stub, siehe CONTENT.md)
+  impressum|datenschutz|agb/page.tsx  Rechtsseiten
+components/
+  layout/               Header, Footer, Logo, LegalPage
+  sections/             Hero, Leistungen, Vertrauen, Partner, CtaBand, Kontakt
+  ui/                   Button, Card, Input, Textarea, Label, SectionHeading
+  seo/JsonLd.tsx        Schema.org LocalBusiness/ProfessionalService
+  Reveal.tsx            Scroll-Reveal (IntersectionObserver)
+  KontaktFormular.tsx   Formular mit Client-Validierung (zod)
+lib/
+  content.ts            ← ALLE Texte zentral (hier Inhalte ändern)
+  site.ts               Kontakt-/Metadaten-Konfiguration
+  contact-schema.ts     Zod-Schema (Client + Server)
+  utils.ts              cn()-Helper
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Inhalte ändern
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Texte**: `lib/content.ts`
+- **Kontakt-/Firmendaten & Metadaten**: `lib/site.ts`
+- **Farben/Spacing/Typografie**: `app/globals.css` (Design-Tokens)
+- **Offene Platzhalter** (`{{...}}`): siehe **[CONTENT.md](./CONTENT.md)**
 
-## Deploy on Vercel
+## Neue Sektion hinzufügen
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Komponente unter `components/sections/` anlegen (Muster: bestehende Sektionen).
+2. Texte in `lib/content.ts` ergänzen und importieren.
+3. In `app/page.tsx` an gewünschter Stelle einfügen.
+4. Für Scroll-Effekt Inhalte in `<Reveal>` wrappen.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+Vercel-ready. Schritt-für-Schritt-Anleitung in **[DEPLOYMENT.md](./DEPLOYMENT.md)**.

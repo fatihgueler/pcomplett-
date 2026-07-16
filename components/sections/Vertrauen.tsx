@@ -28,7 +28,7 @@ export function Vertrauen() {
                 <dt className="order-2 text-sm font-medium uppercase tracking-wide text-white/60">
                   {stat.label}
                 </dt>
-                <dd className="order-1 font-display text-4xl font-bold text-white sm:text-5xl">
+                <dd className="order-1 font-display text-4xl font-bold text-white [overflow-wrap:anywhere] sm:text-5xl">
                   {stat.value}
                   <span className="text-brand">{stat.suffix}</span>
                 </dd>
