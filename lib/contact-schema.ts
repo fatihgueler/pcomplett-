@@ -12,6 +12,9 @@ export const contactSchema = z.object({
     .min(2, "Bitte geben Sie Ihren Namen an.")
     .max(120, "Der Name ist zu lang."),
   email: z.email("Bitte geben Sie eine gültige E-Mail-Adresse an."),
+  // Telefon ist optional.
+  phone: z.string().trim().max(40, "Die Telefonnummer ist zu lang.").optional(),
+  subject: z.string().trim().min(1, "Bitte wählen Sie ein Anliegen."),
   message: z
     .string()
     .trim()
@@ -26,4 +29,4 @@ export const contactSchema = z.object({
 
 export type ContactInput = z.infer<typeof contactSchema>;
 
-export type FieldErrors = Partial<Record<keyof ContactInput, string>>;
+export type ContactFieldErrors = Partial<Record<keyof ContactInput, string>>;

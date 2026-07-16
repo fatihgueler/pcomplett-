@@ -4,6 +4,7 @@ import "./globals.css";
 import { siteConfig } from "@/lib/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Chatbot } from "@/components/Chatbot";
 import { LocalBusinessJsonLd } from "@/components/seo/JsonLd";
 
 const inter = Inter({
@@ -28,13 +29,15 @@ export const metadata: Metadata = {
   applicationName: siteConfig.name,
   keywords: [
     "IT-Systemhaus",
-    "IT-Dienstleister",
-    "IT-Lösungen",
+    "IT-Service für Unternehmen",
+    "KI-Beratung Mittelstand",
+    "KI-Automatisierung",
+    "IT-Sicherheit",
+    "JTL",
     "Softwareentwicklung",
-    "IT-Service",
-    "Mediendesign",
-    "Mittelstand",
-    "KMU",
+    `PC-Reparatur ${siteConfig.city}`,
+    "IT-Hilfe",
+    "PC-Service",
     siteConfig.city,
   ],
   authors: [{ name: siteConfig.name }],
@@ -81,6 +84,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Chatbot />
       </body>
     </html>
   );

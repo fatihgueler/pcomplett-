@@ -1,18 +1,16 @@
 import { NextResponse } from "next/server";
 import { contactSchema } from "@/lib/contact-schema";
+import { getTicketAdapter } from "@/lib/tickets";
 
 /**
- * Kontaktformular-Backend – VORBEREITETER STUB.
+ * Kontaktformular-Backend.
  *
- * Aktuell: validiert die Eingaben serverseitig und antwortet mit Erfolg,
- * versendet aber noch KEINE E-Mail. Der Versand über einen externen Dienst
- * (z.B. Resend oder SMTP) wurde bewusst nicht eingebaut – das erfordert eine
- * Freigabe und Zugangsdaten.
+ * Validiert die Eingaben serverseitig und übergibt die Anfrage über das
+ * Adapter-Muster (siehe lib/tickets.ts) an ein Ticketsystem. Aktuell ist ein
+ * Mock-Adapter aktiv – ein echter Adapter (Zammad/Freshdesk/osTicket) lässt
+ * sich später ergänzen, ohne diese Route zu ändern.
  *
- * Zum Aktivieren des Versands:
- *  1. Dienst wählen (Resend empfohlen) und Dependency ergänzen.
- *  2. Umgebungsvariablen setzen: RESEND_API_KEY, CONTACT_EMAIL (siehe .env.example).
- *  3. Im markierten Block unten den Versand implementieren.
+ * Optional zusätzlich: E-Mail-Benachrichtigung (siehe .env.example).
  */
 export async function POST(request: Request) {
   let payload: unknown;
@@ -42,21 +40,21 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: true }, { status: 200 });
   }
 
-  // ---------------------------------------------------------------------------
-  // TODO(Freigabe erforderlich): E-Mail-Versand hier implementieren.
-  // Beispiel mit Resend (Dependency + RESEND_API_KEY zuerst ergänzen):
-  //
-  //   const resend = new Resend(process.env.RESEND_API_KEY);
-  //   await resend.emails.send({
-  //     from: "website@pcomplett.de",
-  //     to: process.env.CONTACT_EMAIL!,
-  //     replyTo: parsed.data.email,
-  //     subject: `Neue Anfrage von ${parsed.data.name}`,
-  //     text: parsed.data.message,
-  //   });
-  //
-  // Bis dahin: Anfrage wird angenommen, aber nicht weitergeleitet.
-  // ---------------------------------------------------------------------------
+  try {
+    const adapter = getTicketAdapter();
+    const ticket = await adapter.createTicket({
+      name: parsed.data.name,
+      email: parsed.data.email,
+      phone: parsed.data.phone,
+      subject: parsed.data.subject,
+      message: parsed.data.message,
+    });
 
-  return NextResponse.json({ success: true }, { status: 200 });
+    return NextResponse.json({ success: true, ticketId: ticket.id }, { status: 200 });
+  } catch {
+    return NextResponse.json(
+      { success: false, error: "Die Anfrage konnte nicht angelegt werden." },
+      { status: 500 },
+    );
+  }
 }
