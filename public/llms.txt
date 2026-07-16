@@ -1,0 +1,35 @@
+# PComplett – IT- & KI-Systemhaus
+
+> PComplett ist ein IT- und KI-Systemhaus aus {{STADT}} für Unternehmen und Privatkunden. Wir verbinden klassische IT-Betreuung mit praxiserprobter KI-Automatisierung – von der Infrastruktur bis zum schnellen PC-Service.
+
+## Zielgruppen
+- Unternehmen (B2B): Mittelstand, Handel, Handwerks- und Kleinbetriebe.
+- Privatkunden (B2C): Hilfe rund um PC, Technik und digitale Alltagsfragen.
+
+## Leistungen für Unternehmen
+- KI-Lösungen: Automatisierung von Auftragsbearbeitung, E-Mail-Verarbeitung und Sprach-zu-Text-Workflows. Praxiserprobt, da selbst im Einsatz.
+- IT-Lösungen: Planung, Modernisierung und Betreuung von Servern, Netzwerken und Cloud.
+- IT-Sicherheit: Firewalls, Backups und Schutz vor Angriffen.
+- Software & JTL-Module: Individuelle Software und maßgeschneiderte JTL-Erweiterungen.
+- Development: Web-Anwendungen und Schnittstellen, passend zu den Abläufen des Kunden.
+
+## KI in der Praxis
+- Automatisierte Auftragsbearbeitung: KI liest Auftragsdaten aus und legt sie strukturiert an.
+- KI-gestützte E-Mail-Bearbeitung: Kategorisierung, Priorisierung und Antwortvorschläge.
+- Sprach-zu-Text (Whisper): automatische, durchsuchbare Dokumentation.
+
+## Service für Privatkunden
+- PC-Service & Aufrüstung
+- Reparatur & Datenrettung
+- Beratung & Einrichtung
+
+## Kontakt
+- Telefon: {{TELEFON}}
+- E-Mail: {{EMAIL}}
+- Website: https://www.pcomplett.de
+
+## Wichtige Seiten
+- Startseite: https://www.pcomplett.de/
+- Impressum: https://www.pcomplett.de/impressum
+- Datenschutz: https://www.pcomplett.de/datenschutz
+- AGB: https://www.pcomplett.de/agb
