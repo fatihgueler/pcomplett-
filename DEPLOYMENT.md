@@ -20,26 +20,27 @@ git push -u origin main
 3. Framework-Preset wird automatisch als **Next.js** erkannt.
 4. **Deploy** klicken – fertig. SSL/HTTPS ist automatisch aktiv.
 
-## 3. Umgebungsvariablen (für den E-Mail-Versand)
+## 3. Umgebungsvariablen
 
-Das Kontaktformular ist aktuell ein **Stub** (nimmt Anfragen an, versendet aber
-noch keine E-Mail). Zum Aktivieren:
+In Vercel unter **Settings → Environment Variables** setzen (Vorlage:
+`.env.example`). **Keine echten Keys committen.**
 
-1. Dienst wählen – **Resend** empfohlen ([resend.com](https://resend.com),
-   kostenlos bis 3.000 Mails/Monat) und als Dependency ergänzen:
-   `npm install resend`
-2. In `app/api/kontakt/route.ts` den markierten `TODO`-Block implementieren.
-3. In Vercel unter **Settings → Environment Variables** setzen:
+| Variable | Zweck |
+|----------|-------|
+| `ANTHROPIC_API_KEY` | Aktiviert den KI-Chatbot (Claude API). Ohne Key zeigt das Widget einen Hinweis statt eines Fehlers. |
+| `CHATBOT_MODEL` | Optional; Chat-Modell überschreiben (Standard `claude-sonnet-4-6`). |
+| `TICKET_PROVIDER`, … | Ticketsystem für Kontaktanfragen (aktuell Mock-Adapter). |
+| `NEWSLETTER_PROVIDER`, … | Newsletter-Dienst für Double-Opt-in (aktuell Stub). |
+| `RESEND_API_KEY`, `CONTACT_EMAIL` | Optionaler E-Mail-Versand des Kontaktformulars. |
 
-   | Variable | Wert |
-   |----------|------|
-   | `RESEND_API_KEY` | API-Key aus dem Resend-Dashboard |
-   | `CONTACT_EMAIL` | Zieladresse für Anfragen, z. B. `info@pcomplett.de` |
+**Funktionale Stubs aktivieren:**
 
-4. Absender-Domain in Resend verifizieren (DKIM/SPF-Records beim
-   Domain-Provider setzen), damit E-Mails zugestellt werden.
-
-Vorlage siehe `.env.example`. **Keine echten Keys committen.**
+- **Kontakt → Ticketsystem:** In `lib/tickets.ts` einen echten `TicketAdapter`
+  (Zammad/Freshdesk/osTicket) ergänzen und in `getTicketAdapter()` per
+  `TICKET_PROVIDER` auswählen. Die API-Route bleibt unverändert.
+- **Newsletter:** In `app/api/newsletter/route.ts` den `TODO`-Block umsetzen
+  (Kontakt speichern + Bestätigungs-Mail via Resend/Brevo).
+- **Chatbot:** Nur `ANTHROPIC_API_KEY` setzen – die Route ist bereits fertig.
 
 ## 4. Eigene Domain verbinden
 

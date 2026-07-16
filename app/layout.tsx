@@ -21,8 +21,9 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  // Für lokales SEO kann später " · {{STADT}}" an den Titel angehängt werden.
   title: {
-    default: `${siteConfig.name} – IT-Systemhaus für den Mittelstand`,
+    default: `${siteConfig.name} – IT- & KI-Systemhaus für Unternehmen & Privatkunden`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -48,12 +49,12 @@ export const metadata: Metadata = {
     locale: "de_DE",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} – IT-Systemhaus für den Mittelstand`,
+    title: `${siteConfig.name} – IT- & KI-Systemhaus für Unternehmen & Privatkunden`,
     description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} – IT-Systemhaus für den Mittelstand`,
+    title: `${siteConfig.name} – IT- & KI-Systemhaus für Unternehmen & Privatkunden`,
     description: siteConfig.description,
   },
   robots: {

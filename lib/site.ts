@@ -23,13 +23,6 @@ export const siteConfig = {
     addressCountry: "DE",
   },
 
-  // Vertrauens-Kennzahlen (Platzhalter – echte Werte einsetzen)
-  stats: {
-    yearsExperience: "{{JAHRE_ERFAHRUNG}}",
-    customers: "{{ANZAHL_KUNDEN}}",
-    projects: "{{ANZAHL_PROJEKTE}}",
-  },
-
   // Öffnungszeiten für JSON-LD (optional anpassen)
   openingHours: "Mo–Fr 08:00–17:00",
 } as const;
