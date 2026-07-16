@@ -68,8 +68,8 @@ export default function OpengraphImage() {
         </div>
 
         <div style={{ display: "flex", fontSize: 24, color: "#5b5d66" }}>
-          IT-Lösungen · Development · Mediendesign · Service · Software ·
-          Projektierung · Vermietung
+          KI-Lösungen · IT-Lösungen · IT-Sicherheit · Software &amp; JTL-Module ·
+          Development
         </div>
       </div>
     ),
