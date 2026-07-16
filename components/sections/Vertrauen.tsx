@@ -17,9 +17,26 @@ export function Vertrauen() {
           intro={trust.intro}
         />
 
-        {/* Kennzahlen auf kontrastreichem Panel */}
+        {/* Partner-Logos */}
+        <Reveal className="mt-12 flex flex-col gap-6">
+          <span className="text-sm font-semibold uppercase tracking-[0.14em] text-subtle-foreground">
+            {trust.partnerHeading}
+          </span>
+          <ul className="grid grid-cols-2 items-center gap-x-6 gap-y-8 sm:grid-cols-4">
+            {trust.partners.map((partner, index) => (
+              <li key={index} className="flex items-center justify-center sm:justify-start">
+                {/* Text-Platzhalter durch echte Logos (next/image) ersetzen */}
+                <span className="font-display text-xl font-semibold text-subtle-foreground grayscale transition-all duration-200 hover:text-brand hover:grayscale-0">
+                  {partner}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
+        {/* Kennzahlen */}
         <Reveal className="mt-12">
-          <dl className="grid gap-px overflow-hidden rounded-2xl border border-ink bg-border/60 sm:grid-cols-3">
+          <dl className="grid gap-px overflow-hidden rounded-2xl border border-ink bg-border/60 sm:grid-cols-2">
             {trust.stats.map((stat) => (
               <div
                 key={stat.label}
@@ -52,9 +69,7 @@ export function Vertrauen() {
               </blockquote>
               <footer className="mt-1 border-t border-border pt-4">
                 <p className="font-semibold text-ink">{testimonial.author}</p>
-                <p className="text-sm text-muted-foreground">
-                  {testimonial.role}
-                </p>
+                <p className="text-sm text-muted-foreground">{testimonial.role}</p>
               </footer>
             </Reveal>
           ))}

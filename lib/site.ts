@@ -5,13 +5,13 @@
 
 export const siteConfig = {
   name: "PComplett",
-  legalName: "{{FIRMEN_RECHTSNAME}}", // z.B. "PComplett GmbH"
+  legalName: "{{FIRMEN_RECHTSNAME}}", // z.B. "PComplett IT GmbH" (künftige Rechtsform)
   // Produktions-URL – für Metadata, Sitemap, OG-Tags, JSON-LD.
   url: "https://www.pcomplett.de",
   city: "{{STADT}}",
   description:
-    "PComplett ist Ihr IT-Systemhaus für kleine und mittlere Unternehmen: IT-Lösungen, Software, Development, Mediendesign, Service, Projektierung und Vermietung – aus einer Hand.",
-  slogan: "Ihr IT-Partner für den Mittelstand",
+    "PComplett ist Ihr IT- & KI-Systemhaus für Unternehmen und Privatkunden: KI-Lösungen, IT-Betreuung, IT-Sicherheit, Software & JTL-Module, Development sowie PC-Service – aus einer Hand.",
+  slogan: "IT & KI für Unternehmen und Privatkunden",
 
   contact: {
     phone: "{{TELEFON}}", // z.B. "+49 30 1234567"
