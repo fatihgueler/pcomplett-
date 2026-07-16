@@ -25,6 +25,7 @@ export default function ImpressumPage() {
       </PlaceholderNote>
 
       <LegalSection heading="Diensteanbieter">
+        {/* TODO(CONTENT): Firmierung der neuen IT GmbH + Adresse bestätigen. Adresse laut alter Website: Am Listholze 31A, 30177 Hannover. Wegen GmbH-Gründung ALLE Angaben vor Livegang neu bestätigen, nicht ungeprüft übernehmen. */}
         <p>
           {"{{FIRMEN_RECHTSNAME}}"}
           <br />
@@ -37,18 +38,22 @@ export default function ImpressumPage() {
       </LegalSection>
 
       <LegalSection heading="Vertreten durch">
+        {/* TODO(CONTENT): Geschäftsführer der IT GmbH eintragen. Alte Website nennt Inhaber Frank Bernhardt — wegen GmbH-Gründung neu bestätigen. */}
         <p>{"{{VERTRETUNGSBERECHTIGTE_PERSON}}"}</p>
       </LegalSection>
 
       <LegalSection heading="Kontakt">
         <p>
-          Telefon: {"{{TELEFON}}"}
+          Telefon: 0511 760 773 0
           <br />
-          E-Mail: {"{{EMAIL}}"}
+          Fax: 0511 760 773 49
+          <br />
+          E-Mail: service@pcomplett.de
         </p>
       </LegalSection>
 
       <LegalSection heading="Registereintrag">
+        {/* TODO(CONTENT): Handelsregister/HRB der neuen IT GmbH eintragen. */}
         <p>
           Registergericht: {"{{REGISTERGERICHT}}"}
           <br />
@@ -61,6 +66,7 @@ export default function ImpressumPage() {
       </LegalSection>
 
       <LegalSection heading="Umsatzsteuer-ID">
+        {/* TODO(CONTENT): USt-IdNr. der IT GmbH eintragen. Alte Website nennt DE169516345 — wegen GmbH-Gründung neu bestätigen. */}
         <p>
           Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:
           <br />
@@ -69,6 +75,7 @@ export default function ImpressumPage() {
       </LegalSection>
 
       <LegalSection heading="Redaktionell verantwortlich">
+        {/* TODO(CONTENT): Verantwortliche Person + Adresse bestätigen (siehe Hinweise oben). */}
         <p>
           {"{{VERANTWORTLICHE_PERSON}}"}
           <br />
