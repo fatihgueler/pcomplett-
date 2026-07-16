@@ -165,15 +165,26 @@ export const trust = {
   heading: "Verlässlich für Unternehmen und Privatkunden",
   intro:
     "Wir arbeiten mit bewährten Technologiepartnern und begleiten unsere Kunden langfristig – bodenständig und verbindlich.",
-  // Bekannte Partner + Platzhalter für weitere ({{WEITERE_PARTNER}}).
+  // Vier Partner-Slots (Design sieht keine weiteren vor). Panasonic und
+  // Deutsche Messe daher NICHT ergänzt.
   partnerHeading: "Unsere Technologie-Partner",
-  partners: ["Starface", "Jeester", "{{WEITERE_PARTNER_1}}", "{{WEITERE_PARTNER_2}}"],
+  partners: ["Starface", "Jeester", "HP", "Fujitsu"],
   stats: [
-    { value: "{{JAHRE_ERFAHRUNG}}", suffix: "+", label: "Jahre Erfahrung" },
+    // "30+ Jahre Erfahrung" – belegbar: Firma im Dezember 1994 in Hannover gegründet.
+    { value: "30", suffix: "+", label: "Jahre Erfahrung" },
+    // TODO(CONTENT): echte Zahl einsetzen (unbelegt).
     { value: "{{ANZAHL_KUNDEN}}", suffix: "+", label: "Betreute Kunden" },
   ],
+  // TODO(CONTENT): Referenz-Darstellung ergänzen. Die Testimonial-Sektion nutzt
+  // ein Zitat-Format (Quote-Icon + blockquote) mit nur 3 Slots. Die 5
+  // freigegebenen Referenzen (Name + Projekt, OHNE Zitat) lassen sich hier nicht
+  // ohne Strukturänderung abbilden. Einzusetzende Referenzen:
+  //   1. ThyssenKrupp Stahlbau — Warenwirtschaftssoftware
+  //   2. TUI — Word-Automatisierung für Dokumentenvorlagen
+  //   3. Deutsche Messe AG Hannover — Abrechnungs- und Störungserfassungssoftware
+  //   4. HIS Hochschul-Informations-System GmbH — TK-Anlage mit 300 Anschlüssen
+  //   5. J+S Druckfarben — Warenwirtschaft und virtuelle Server
   testimonials: [
-    // Mindestens eine Stimme sollte ein Handwerks-/Kleinbetrieb sein.
     { quote: "{{TESTIMONIAL_1}}", author: "{{KUNDE_1_NAME}}", role: "{{KUNDE_1_FIRMA}} (Handwerksbetrieb)" },
     { quote: "{{TESTIMONIAL_2}}", author: "{{KUNDE_2_NAME}}", role: "{{KUNDE_2_FIRMA}}" },
     { quote: "{{TESTIMONIAL_3}}", author: "{{KUNDE_3_NAME}}", role: "{{KUNDE_3_FIRMA}}" },

@@ -58,7 +58,7 @@ export function ServicePrivat() {
         </div>
 
         <Reveal className="order-first lg:order-last">
-          {/* {{FOTO_1}} – z.B. Werkstatt/Service-Situation, später via next/image */}
+          {/* TODO(CONTENT): Foto einsetzen ({{FOTO_1}}, z.B. Werkstatt/Service-Situation) via next/image */}
           <MediaPlaceholder label="{{FOTO_1}}" ratio="portrait" className="w-full" />
         </Reveal>
       </div>
