@@ -1,26 +1,180 @@
 @import "tailwindcss";
 
+/*
+  PComplett Design-System – Light-Theme (kein Dark Mode angefordert).
+  Alle Tokens hier zentral definieren, niemals Farben/Spacing in Komponenten hartcodieren.
+
+  Markenrot: {{BRAND_RED_HEX}} – aktuell Fallback #C1121F.
+  Zum Anpassen NUR die --brand-* Werte unten ändern.
+*/
+
 :root {
+  /* Marke */
+  --brand: #c1121f; /* {{BRAND_RED_HEX}} – Fallback */
+  --brand-hover: #9e0f1a;
+  --brand-active: #820c15;
+  --brand-subtle: #fef2f3;
+  --brand-ring: rgba(193, 18, 31, 0.35);
+
+  /* Neutrale Grautöne (3–4 Stufen + Extreme) */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #16171a;
+  --card: #ffffff;
+  --card-foreground: #16171a;
+  --muted: #f4f4f6; /* zarter Sektions-Hintergrund */
+  --muted-foreground: #5b5d66; /* Fließtext gedämpft */
+  --subtle-foreground: #83858f; /* Labels, Meta */
+  --border: #e6e6ea;
+  --border-strong: #d3d4da;
+  --ink: #0d0e11; /* fast-schwarz für starke Kontraste */
+
+  /* Fokus */
+  --ring: var(--brand);
+
+  /* Rhythmus */
+  --radius: 0.75rem;
+  --radius-sm: 0.5rem;
+  --radius-lg: 1.25rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle-foreground: var(--subtle-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-ink: var(--ink);
+
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-active: var(--brand-active);
+  --color-brand-subtle: var(--brand-subtle);
+  --color-brand-foreground: #ffffff;
+
+  --radius-DEFAULT: var(--radius);
+  --radius-sm: var(--radius-sm);
+  --radius-lg: var(--radius-lg);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  font-feature-settings: "cv11", "ss01";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  /* NIEMALS Blocksatz – bewusst linksbündig */
+  text-align: left;
+}
+
+/* Konsistenter Content-Container */
+.container-page {
+  width: 100%;
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 768px) {
+  .container-page {
+    padding-inline: 2rem;
+  }
+}
+
+/* Konsistenter vertikaler Sektions-Rhythmus */
+.section-y {
+  padding-block: clamp(3.5rem, 2.5rem + 5vw, 7rem);
+}
+
+/* Fokus-Sichtbarkeit (WCAG) */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Sanfter Einstiegs-Übergang beim Laden (Hero) */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-rise {
+  animation: rise-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-rise-1 {
+  animation-delay: 0.05s;
+}
+.hero-rise-2 {
+  animation-delay: 0.16s;
+}
+.hero-rise-3 {
+  animation-delay: 0.27s;
+}
+.hero-rise-4 {
+  animation-delay: 0.38s;
+}
+
+/* Reveal-on-Scroll (einmalig, threshold-basiert via IntersectionObserver) */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+/* Dezentes Punkt-Raster für Hintergrund-Atmosphäre */
+.bg-dot-grid {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(22, 23, 26, 0.06) 1px,
+    transparent 0
+  );
+  background-size: 26px 26px;
+}
+
+/* prefers-reduced-motion respektieren: alle Effekte abschalten */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
