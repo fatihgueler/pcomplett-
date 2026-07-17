@@ -8,7 +8,7 @@ import {
 export const metadata: Metadata = {
   title: "AGB",
   description:
-    "Allgemeine Geschäftsbedingungen der PComplett für Leistungen und Lieferungen.",
+    "Allgemeine Geschäftsbedingungen der PComplett für IT- und KI-Dienstleistungen.",
   robots: { index: false, follow: true },
   alternates: { canonical: "/agb" },
 };
@@ -17,44 +17,46 @@ export default function AgbPage() {
   return (
     <LegalPage
       title="Allgemeine Geschäftsbedingungen"
-      intro="Bedingungen für die Erbringung von Leistungen und Lieferungen der PComplett."
+      intro="Bedingungen für die Erbringung unserer IT- und KI-Dienstleistungen."
     >
       <PlaceholderNote>
-        AGB sind rechtlich anspruchsvoll und müssen auf das konkrete
-        Leistungsangebot zugeschnitten sein. Bitte durch eine anwaltlich
-        geprüfte Fassung ersetzen. Das folgende Gerüst dient nur als Struktur.
+        Hinweis: Bitte vor dem Livegang eine anwaltlich geprüfte Fassung
+        hinterlegen. Die folgenden Bedingungen sind eine allgemeine Grundlage.
       </PlaceholderNote>
 
       <LegalSection heading="§ 1 Geltungsbereich">
-        <p>{"{{AGB_GELTUNGSBEREICH}}"}</p>
+        <p>
+          Diese Bedingungen gelten für Verträge über IT- und KI-Dienstleistungen
+          zwischen PComplett (Inhaber Frank Bernhardt) und dem Auftraggeber.
+          Ergänzend und vorrangig gelten die im jeweiligen Angebot bzw. Auftrag
+          individuell vereinbarten Regelungen.
+        </p>
       </LegalSection>
 
-      <LegalSection heading="§ 2 Vertragsschluss">
-        <p>{"{{AGB_VERTRAGSSCHLUSS}}"}</p>
+      <LegalSection heading="§ 2 Leistungen und Mitwirkung">
+        <p>
+          Art und Umfang der Leistungen ergeben sich aus dem jeweiligen Angebot
+          bzw. der Auftragsbestätigung. Der Auftraggeber stellt die für die
+          Leistungserbringung erforderlichen Informationen, Zugänge und
+          Mitwirkungsleistungen rechtzeitig bereit.
+        </p>
       </LegalSection>
 
-      <LegalSection heading="§ 3 Leistungen und Mitwirkungspflichten">
-        <p>{"{{AGB_LEISTUNGEN}}"}</p>
+      <LegalSection heading="§ 3 Preise und Zahlungsbedingungen">
+        <p>
+          Es gelten die im Angebot genannten Preise zzgl. der gesetzlichen
+          Umsatzsteuer. Rechnungen sind, sofern nicht anders vereinbart, ohne
+          Abzug innerhalb von 14 Tagen nach Rechnungsdatum zahlbar.
+        </p>
       </LegalSection>
 
-      <LegalSection heading="§ 4 Preise und Zahlungsbedingungen">
-        <p>{"{{AGB_PREISE_ZAHLUNG}}"}</p>
-      </LegalSection>
-
-      <LegalSection heading="§ 5 Liefer- und Leistungszeiten">
-        <p>{"{{AGB_LIEFERZEITEN}}"}</p>
-      </LegalSection>
-
-      <LegalSection heading="§ 6 Gewährleistung und Haftung">
-        <p>{"{{AGB_GEWAEHRLEISTUNG_HAFTUNG}}"}</p>
-      </LegalSection>
-
-      <LegalSection heading="§ 7 Eigentumsvorbehalt">
-        <p>{"{{AGB_EIGENTUMSVORBEHALT}}"}</p>
-      </LegalSection>
-
-      <LegalSection heading="§ 8 Schlussbestimmungen">
-        <p>{"{{AGB_SCHLUSSBESTIMMUNGEN}}"}</p>
+      <LegalSection heading="§ 4 Schlussbestimmungen">
+        <p>
+          Es gilt das Recht der Bundesrepublik Deutschland. Soweit gesetzlich
+          zulässig, ist Gerichtsstand Hannover. Sollten einzelne Bestimmungen
+          unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen
+          unberührt.
+        </p>
       </LegalSection>
     </LegalPage>
   );

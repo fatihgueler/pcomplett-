@@ -19,40 +19,42 @@ export default function DatenschutzPage() {
       intro="Informationen zur Verarbeitung personenbezogener Daten gemäß Art. 13, 14 DSGVO."
     >
       <PlaceholderNote>
-        Wichtig: Diese Seite ist ein strukturiertes Gerüst. Eine
-        rechtssichere, vollständige Datenschutzerklärung muss individuell
-        erstellt werden – z. B. über den Generator von e-recht24.de oder durch
-        eine/einen Datenschutzbeauftragte(n). Alle {"{{"}Platzhalter{"}}"} sind
-        zu ersetzen.
+        Hinweis: Bitte diese Datenschutzerklärung vor dem Livegang rechtlich
+        prüfen lassen (z. B. e-recht24.de oder Ihre/Ihren
+        Datenschutzbeauftragte(n)).
       </PlaceholderNote>
 
       <LegalSection heading="1. Verantwortlicher">
-        {/* TODO(CONTENT): Firmierung der neuen IT GmbH + Adresse bestätigen. Adresse laut alter Website: Am Listholze 31A, 30177 Hannover. Wegen GmbH-Gründung vor Livegang neu bestätigen. */}
+        {/* Bei GmbH-Gründung Firmierung aktualisieren. */}
         <p>
           Verantwortlich für die Datenverarbeitung auf dieser Website ist:
           <br />
-          {"{{FIRMEN_RECHTSNAME}}"}
+          PComplett, Inhaber Frank Bernhardt
           <br />
-          {"{{STRASSE_NR}}, {{PLZ}} {{STADT}}"}
+          Am Listholze 31A, 30177 Hannover
           <br />
           E-Mail: service@pcomplett.de · Telefon: 0511 760 773 0
         </p>
       </LegalSection>
 
-      <LegalSection heading="2. Datenschutzbeauftragte(r)">
-        {/* TODO(CONTENT): Datenschutzbeauftragte(n) benennen oder Hinweis, dass keine(r) bestellt ist. */}
-        <p>{"{{DATENSCHUTZBEAUFTRAGTER_ODER_HINWEIS_ENTFAELLT}}"}</p>
+      <LegalSection heading="2. Datenschutzbeauftragter">
+        <p>
+          Als Datenschutzbeauftragter ist bestellt:
+          <br />
+          Marc Schümann, Telefon: 0511 760 773 12
+        </p>
       </LegalSection>
 
       <LegalSection heading="3. Hosting">
-        {/* TODO(CONTENT): Hosting-Anbieter eintragen (z.B. Vercel Inc.) und AV-Vertrag bestätigen. */}
+        {/* Hosting-Ziel des Relaunches ist Vercel; bei anderem Anbieter anpassen. */}
         <p>
-          Diese Website wird bei einem externen Dienstleister gehostet
-          ({"{{HOSTING_ANBIETER}}"}). Beim Aufruf werden technisch notwendige
-          Daten (u. a. IP-Adresse) verarbeitet. Rechtsgrundlage ist unser
-          berechtigtes Interesse an einer sicheren und effizienten
-          Bereitstellung (Art. 6 Abs. 1 lit. f DSGVO). Ein
-          Auftragsverarbeitungsvertrag mit dem Anbieter liegt vor.
+          Diese Website wird bei der Vercel Inc. (340 S Lemon Ave #4133, Walnut,
+          CA 91789, USA) gehostet. Beim Aufruf werden technisch notwendige Daten
+          (u. a. IP-Adresse) verarbeitet. Rechtsgrundlage ist unser berechtigtes
+          Interesse an einer sicheren und effizienten Bereitstellung (Art. 6
+          Abs. 1 lit. f DSGVO). Mit dem Anbieter besteht ein
+          Auftragsverarbeitungsvertrag; für die Übermittlung in die USA gelten
+          die EU-Standardvertragsklauseln.
         </p>
       </LegalSection>
 
@@ -77,7 +79,6 @@ export default function DatenschutzPage() {
       </LegalSection>
 
       <LegalSection heading="6. Newsletter">
-        {/* TODO(CONTENT): Newsletter-Dienstleister benennen (z.B. Resend/Brevo) und AV-Vertrag bestätigen. */}
         <p>
           Wenn Sie sich für unseren Newsletter anmelden, verarbeiten wir Ihre
           E-Mail-Adresse sowie das gewählte Segment (Unternehmen oder Privat),
@@ -91,7 +92,6 @@ export default function DatenschutzPage() {
       </LegalSection>
 
       <LegalSection heading="7. KI-Chatbot (Claude API)">
-        {/* TODO(CONTENT): Auftragsverarbeitung/Datenübermittlung mit Anthropic (Claude API) rechtlich bestätigen (AV-Vertrag, Garantien für Drittlandtransfer). */}
         <p>
           Auf unserer Website bieten wir einen KI-gestützten Chat-Assistenten
           an. Ihre Eingaben im Chat werden zur Beantwortung Ihrer Fragen an
@@ -113,11 +113,6 @@ export default function DatenschutzPage() {
           eingesetzt werden, ist an dieser Stelle ein Cookie-Banner mit
           Einwilligung erforderlich.
         </p>
-        {/* TODO(CONTENT): Cookie-/Tracking-Details ergänzen, sobald Analytics/Marketing eingebunden wird. */}
-        <PlaceholderNote>
-          Anpassen, sobald Tracking/Analytics eingebunden wird ({"{{"}
-          COOKIE_DETAILS{"}}"}).
-        </PlaceholderNote>
       </LegalSection>
 
       <LegalSection heading="9. Ihre Rechte">
@@ -130,13 +125,14 @@ export default function DatenschutzPage() {
       </LegalSection>
 
       <LegalSection heading="10. Zuständige Aufsichtsbehörde">
-        {/* TODO(CONTENT): Zuständige Aufsichtsbehörde eintragen (Sitz Hannover → Niedersachsen) und vor Livegang bestätigen. */}
-        <p>{"{{AUFSICHTSBEHOERDE_BUNDESLAND}}"}</p>
+        <p>
+          Die Landesbeauftragte für den Datenschutz Niedersachsen (LfD
+          Niedersachsen), Hannover.
+        </p>
       </LegalSection>
 
       <LegalSection heading="11. Aktualität">
-        {/* TODO(CONTENT): Stand-Datum vor Livegang einsetzen. */}
-        <p>Stand dieser Datenschutzerklärung: {"{{STAND_DATUM}}"}.</p>
+        <p>Stand dieser Datenschutzerklärung: Juli 2026.</p>
       </LegalSection>
     </LegalPage>
   );

@@ -18,28 +18,24 @@ export default function ImpressumPage() {
       title="Impressum"
       intro="Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz) und § 18 Abs. 2 MStV."
     >
-      <PlaceholderNote>
-        Pflichtseite: Bitte alle {"{{"}Platzhalter{"}}"} durch die echten
-        Unternehmensdaten ersetzen. Rechtssichere Vorlagen liefert z. B.
-        e-recht24.de.
-      </PlaceholderNote>
+      {/* Hinweis für später: Bei Gründung der IT GmbH Firmierung, Vertretung (Geschäftsführer), Handelsregister/HRB und USt-IdNr. aktualisieren. */}
 
       <LegalSection heading="Diensteanbieter">
-        {/* TODO(CONTENT): Firmierung der neuen IT GmbH + Adresse bestätigen. Adresse laut alter Website: Am Listholze 31A, 30177 Hannover. Wegen GmbH-Gründung ALLE Angaben vor Livegang neu bestätigen, nicht ungeprüft übernehmen. */}
         <p>
-          {"{{FIRMEN_RECHTSNAME}}"}
+          PComplett
           <br />
-          {"{{STRASSE_NR}}"}
+          Inhaber: Frank Bernhardt
           <br />
-          {"{{PLZ}} {{STADT}}"}
+          Am Listholze 31A
           <br />
-          {"{{LAND}}"}
+          30177 Hannover
+          <br />
+          Deutschland
         </p>
       </LegalSection>
 
       <LegalSection heading="Vertreten durch">
-        {/* TODO(CONTENT): Geschäftsführer der IT GmbH eintragen. Alte Website nennt Inhaber Frank Bernhardt — wegen GmbH-Gründung neu bestätigen. */}
-        <p>{"{{VERTRETUNGSBERECHTIGTE_PERSON}}"}</p>
+        <p>Frank Bernhardt (Inhaber)</p>
       </LegalSection>
 
       <LegalSection heading="Kontakt">
@@ -52,34 +48,19 @@ export default function ImpressumPage() {
         </p>
       </LegalSection>
 
-      <LegalSection heading="Registereintrag">
-        {/* TODO(CONTENT): Handelsregister/HRB der neuen IT GmbH eintragen. */}
-        <p>
-          Registergericht: {"{{REGISTERGERICHT}}"}
-          <br />
-          Registernummer: {"{{REGISTERNUMMER}}"}
-        </p>
-        <PlaceholderNote>
-          Nur bei eingetragenen Unternehmen (z. B. GmbH, UG) erforderlich – sonst
-          diesen Abschnitt entfernen.
-        </PlaceholderNote>
-      </LegalSection>
-
       <LegalSection heading="Umsatzsteuer-ID">
-        {/* TODO(CONTENT): USt-IdNr. der IT GmbH eintragen. Alte Website nennt DE169516345 — wegen GmbH-Gründung neu bestätigen. */}
         <p>
           Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:
           <br />
-          {"{{UMSATZSTEUER_ID}}"}
+          DE169516345
         </p>
       </LegalSection>
 
       <LegalSection heading="Redaktionell verantwortlich">
-        {/* TODO(CONTENT): Verantwortliche Person + Adresse bestätigen (siehe Hinweise oben). */}
         <p>
-          {"{{VERANTWORTLICHE_PERSON}}"}
+          Frank Bernhardt
           <br />
-          {"{{STRASSE_NR}}, {{PLZ}} {{STADT}}"}
+          Am Listholze 31A, 30177 Hannover
         </p>
       </LegalSection>
 
