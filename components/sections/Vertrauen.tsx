@@ -1,6 +1,7 @@
 import { Quote } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { StatGrid } from "@/components/ui/stat-grid";
 import { trust } from "@/lib/content";
 
 export function Vertrauen() {
@@ -36,22 +37,7 @@ export function Vertrauen() {
 
         {/* Kennzahlen */}
         <Reveal className="mt-12">
-          <dl className="grid gap-px overflow-hidden rounded-2xl border border-ink bg-border/60 sm:grid-cols-2">
-            {trust.stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="flex flex-col gap-2 bg-ink p-8 text-center sm:text-left"
-              >
-                <dt className="order-2 text-sm font-medium uppercase tracking-wide text-white/60">
-                  {stat.label}
-                </dt>
-                <dd className="order-1 font-display text-4xl font-bold text-white [overflow-wrap:anywhere] sm:text-5xl">
-                  {stat.value}
-                  <span className="text-brand">{stat.suffix}</span>
-                </dd>
-              </div>
-            ))}
-          </dl>
+          <StatGrid stats={trust.stats} />
         </Reveal>
 
         {/* Kundenstimmen */}

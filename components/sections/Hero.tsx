@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Check, ShieldCheck, Activity, Headset } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Parallax } from "@/components/Parallax";
 import { hero } from "@/lib/content";
 
 const statusItems = [
@@ -13,7 +14,7 @@ export function Hero() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative overflow-hidden border-b border-border"
+      className="bg-aurora relative overflow-hidden border-b border-border"
     >
       {/* Atmosphäre: Punkt-Raster + weicher Marken-Schimmer */}
       <div aria-hidden className="absolute inset-0 bg-dot-grid opacity-70" />
@@ -35,7 +36,7 @@ export function Hero() {
             className="hero-rise hero-rise-1 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-6xl"
           >
             {hero.headlineLead}{" "}
-            <span className="text-brand">{hero.headlineAccent}</span>
+            <span className="text-gradient-brand">{hero.headlineAccent}</span>
           </h1>
 
           <p className="hero-rise hero-rise-2 max-w-xl text-lg leading-relaxed text-muted-foreground">
@@ -67,12 +68,15 @@ export function Hero() {
         </div>
 
         {/* Dekorative Verlässlichkeits-Karte (rein visuell) */}
-        <div
-          aria-hidden
+        <Parallax
+          speed={0.12}
           className="hero-rise hero-rise-3 relative mx-auto w-full max-w-md lg:mx-0"
         >
-          <div className="absolute -left-6 -top-6 hidden h-24 w-24 rounded-2xl border border-border bg-background sm:block" />
-          <div className="relative rounded-2xl border border-border bg-card p-6 shadow-[0_24px_60px_-24px_rgba(13,14,17,0.28)]">
+          <div aria-hidden className="glass absolute -left-6 -top-6 hidden h-24 w-24 rounded-2xl sm:block" />
+          <div
+            aria-hidden
+            className="glass-strong relative rounded-2xl p-6"
+          >
             <div className="mb-5 flex items-center justify-between">
               <span className="font-display text-sm font-semibold text-ink">
                 IT-Statusübersicht
@@ -105,7 +109,7 @@ export function Hero() {
               konzentrieren können.
             </div>
           </div>
-        </div>
+        </Parallax>
       </div>
     </section>
   );

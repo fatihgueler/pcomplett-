@@ -2,15 +2,26 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { Button } from "@/components/ui/button";
 import { navLinks } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
+function useIsActive() {
+  const pathname = usePathname();
+  return (href: string) =>
+    href === "/"
+      ? pathname === "/"
+      : pathname === href || pathname.startsWith(`${href}/`);
+}
+
 export function Header() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const isActive = useIsActive();
+  const pathname = usePathname();
 
   React.useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 8);
@@ -18,6 +29,11 @@ export function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Menü bei Navigationswechsel schließen
+  React.useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   React.useEffect(() => {
     if (!isOpen) return;
@@ -35,10 +51,10 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full border-b transition-colors duration-300",
+        "sticky top-0 z-50 w-full transition-all duration-300",
         isScrolled
-          ? "border-border bg-background/85 backdrop-blur-md"
-          : "border-transparent bg-background/60 backdrop-blur-sm",
+          ? "glass border-b border-white/40"
+          : "border-b border-transparent bg-background/40 backdrop-blur-sm",
       )}
     >
       <div className="container-page flex h-16 items-center justify-between md:h-20">
@@ -47,19 +63,28 @@ export function Header() {
         {/* Desktop-Navigation */}
         <nav
           aria-label="Hauptnavigation"
-          className="hidden items-center gap-8 md:flex"
+          className="hidden items-center gap-7 md:flex"
         >
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-brand"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const active = isActive(link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={active ? "page" : undefined}
+                className={cn(
+                  "relative text-sm font-medium transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:rounded-full after:bg-brand after:transition-all after:duration-300",
+                  active
+                    ? "text-brand after:w-full"
+                    : "text-muted-foreground after:w-0 hover:text-brand hover:after:w-full",
+                )}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           <Button asChild size="sm">
-            <Link href="/#kontakt">Beratung anfragen</Link>
+            <Link href="/kontakt">Beratung anfragen</Link>
           </Button>
         </nav>
 
@@ -80,10 +105,7 @@ export function Header() {
       <div
         id="mobile-menu"
         hidden={!isOpen}
-        className={cn(
-          "border-t border-border bg-background md:hidden",
-          isOpen ? "block" : "hidden",
-        )}
+        className={cn("glass border-t border-white/40 md:hidden", isOpen ? "block" : "hidden")}
       >
         <nav
           aria-label="Mobile Navigation"
@@ -93,16 +115,17 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="rounded-md px-2 py-3 text-base font-medium text-foreground transition-colors hover:bg-muted hover:text-brand"
+              aria-current={isActive(link.href) ? "page" : undefined}
+              className={cn(
+                "rounded-md px-2 py-3 text-base font-medium transition-colors hover:bg-muted",
+                isActive(link.href) ? "text-brand" : "text-foreground hover:text-brand",
+              )}
             >
               {link.label}
             </Link>
           ))}
           <Button asChild size="lg" className="mt-3 w-full">
-            <Link href="/#kontakt" onClick={() => setIsOpen(false)}>
-              Beratung anfragen
-            </Link>
+            <Link href="/kontakt">Beratung anfragen</Link>
           </Button>
         </nav>
       </div>
