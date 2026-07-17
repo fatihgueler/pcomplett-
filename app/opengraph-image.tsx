@@ -25,26 +25,37 @@ export default function OpengraphImage() {
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
           <div
             style={{
-              width: 56,
-              height: 56,
+              width: 64,
+              height: 64,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               background: BRAND,
-              color: "#ffffff",
-              fontSize: 36,
-              fontWeight: 700,
-              borderRadius: 14,
+              borderRadius: 16,
             }}
           >
-            P
+            <svg width="42" height="42" viewBox="4 22 130 130" fill="none">
+              <path
+                d="M 48 138 L 48 34 L 100 34 Q 122 34 122 62 Q 122 90 100 90 L 66 90"
+                stroke="#ffffff"
+                strokeWidth="15"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M 48 116 L 22 116"
+                stroke="#ffffff"
+                strokeWidth="9"
+                strokeLinecap="round"
+              />
+            </svg>
           </div>
           <div style={{ display: "flex", fontSize: 34, fontWeight: 700, color: INK }}>
             <span>PComplett</span>
-            <span style={{ color: BRAND }}>.</span>
+            <span style={{ color: BRAND }}>-IT</span>
           </div>
         </div>
 
@@ -59,11 +70,11 @@ export default function OpengraphImage() {
               lineHeight: 1.12,
             }}
           >
-            <div>IT, die Ihr Unternehmen</div>
-            <div style={{ color: BRAND }}>wirklich voranbringt.</div>
+            <div>IT und KI, die Ihren Alltag</div>
+            <div style={{ color: BRAND }}>einfacher machen.</div>
           </div>
           <div style={{ display: "flex", fontSize: 30, color: "#5b5d66" }}>
-            {`IT-Systemhaus für den Mittelstand · ${siteConfig.slogan}`}
+            {`${siteConfig.slogan} · Hannover`}
           </div>
         </div>
 

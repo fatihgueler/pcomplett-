@@ -12,7 +12,7 @@ export function Footer() {
       <div className="container-page grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         {/* Marke + Tagline */}
         <div className="flex flex-col gap-4">
-          <Logo />
+          <Logo showTagline />
           <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
             {footer.tagline}
           </p>
