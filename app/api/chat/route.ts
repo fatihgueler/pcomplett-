@@ -11,8 +11,8 @@ import { buildSystemPrompt } from "@/lib/chat-prompt";
  * Fehlers anzeigt.
  */
 
-// Modell konfigurierbar; Standard laut Vorgabe. Bei Bedarf per ENV überschreiben.
-const MODEL = process.env.CHATBOT_MODEL ?? "claude-sonnet-4-6";
+// Aktuelles, gültiges Claude-Modell. Per ENV überschreibbar (z.B. claude-haiku-4-5-20251001 für günstiger/schneller).
+const MODEL = process.env.CHATBOT_MODEL ?? "claude-sonnet-5";
 const ANTHROPIC_URL = "https://api.anthropic.com/v1/messages";
 const MAX_HISTORY = 12;
 
