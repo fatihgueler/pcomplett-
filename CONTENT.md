@@ -1,77 +1,38 @@
-# Offene Inhalte & Platzhalter
+# Inhalte & offene Punkte
 
-Diese Website enthält bewusst **Platzhalter im Format `{{NAME}}`**, wo echte
-Daten fehlen. Bitte alle folgenden Stellen ersetzen, bevor die Seite live geht.
-Ein globales Suchen nach `{{` findet alle offenen Stellen.
+Die Website ist mit den echten Daten von pcomplett.de befüllt. Es sind **keine
+sichtbaren `{{…}}`-Platzhalter** mehr auf den Seiten. Offen sind nur noch echte
+Assets (Logo, Foto) und ein optionaler Schlüssel für den KI-Chat.
 
-## 1. Marke, Logo & Fotos
+## Bereits eingesetzt (echte Daten)
 
-| Platzhalter | Bedeutung | Datei(en) |
-|-------------|-----------|-----------|
-| `{{BRAND_RED_HEX}}` | Echtes Markenrot (aktuell Fallback `#C1121F`) | `app/globals.css` (`--brand`), `app/icon.tsx`, `app/opengraph-image.tsx` |
-| `{{LOGO}}` | Neues Logo statt Text-Wortmarke | `components/layout/Logo.tsx` (Wortmarke), `app/icon.tsx` + `app/opengraph-image.tsx` (Favicon/OG) |
-| `{{FOTO_1}}` | Foto Privatkunden-/Service-Bereich | `components/sections/ServicePrivat.tsx` |
+- **Kontakt:** Telefon 0511 760 773 0 · Fax 0511 760 773 49 · service@pcomplett.de · Hannover
+- **Firma:** PComplett, Inhaber Frank Bernhardt, Am Listholze 31A, 30177 Hannover · USt-IdNr. DE169516345
+- **Datenschutzbeauftragter:** Marc Schümann (Tel. 0511 760 773 12)
+- **Partner:** Starface, Jeester, HP, Fujitsu
+- **Kennzahlen:** 30+ Jahre Erfahrung (gegründet 1994), 5+ namhafte Referenzen
+- **Referenzen:** ThyssenKrupp Stahlbau, TUI, Deutsche Messe AG, HIS GmbH, J+S Druckfarben
+- **Rechtsseiten:** /impressum, /datenschutz (inkl. Newsletter & KI-Chatbot), /agb — befüllt
 
-> **Logo tauschen an einer Stelle:** Die Wortmarke steckt in
-> `components/layout/Logo.tsx`. Favicon und OG-Bild werden aus `app/icon.tsx`
-> bzw. `app/opengraph-image.tsx` generiert – dort das „P“/den Schriftzug durch
-> das echte Logo ersetzen. Farbe zentral in `app/globals.css` (`--brand`).
-> Fotos immer über `next/image` mit `alt`-Text einbinden (Platzhalter:
-> `components/ui/media-placeholder.tsx`).
+## Noch offen (echte Assets / Freigaben)
 
-## 2. Unternehmens- & Kontaktdaten — `lib/site.ts` (+ `public/llms.txt`)
+| Punkt | Ort | Hinweis |
+|-------|-----|---------|
+| Logo | `components/layout/Logo.tsx`, `app/icon.tsx`, `app/opengraph-image.tsx` | Text-Wortmarke → echtes Logo, wenn vorhanden |
+| Markenrot `{{BRAND_RED_HEX}}` | `app/globals.css` (`--brand`) | aktuell Fallback `#C1121F` |
+| Foto Privatkunden | `components/sections/ServicePrivat.tsx` | Platzhalter „Foto folgt" → echtes Foto via `next/image` |
+| Kundenzahl (optional) | `lib/content.ts` (`trust.stats`) | zweite Kachel ist „5+ Referenzen"; bei Bedarf echte Kundenzahl |
 
-`{{FIRMEN_RECHTSNAME}}`, `{{STRASSE_NR}}`, `{{PLZ}}`, `{{STADT}}`,
-`{{TELEFON}}`, `{{EMAIL}}`. Zusätzlich prüfen: `siteConfig.url`,
-`siteConfig.openingHours`, `siteConfig.legalName` (künftig „… IT GmbH“).
+## KI-Chat aktivieren
 
-## 3. Vertrauen, Partner & Referenzen — `lib/content.ts`
+`ANTHROPIC_API_KEY` in `.env.local` (lokal) bzw. in den Vercel-Environment-
+Variablen (Produktion) eintragen, dann Server neu starten. Modell:
+`claude-sonnet-5` (per `CHATBOT_MODEL` änderbar). Ohne Key zeigt das Widget einen
+freundlichen Hinweis statt eines Fehlers.
 
-| Platzhalter | Bedeutung |
-|-------------|-----------|
-| `{{JAHRE_ERFAHRUNG}}` | Kennzahl, z. B. „20“ |
-| `{{ANZAHL_KUNDEN}}` | Kennzahl, z. B. „150“ |
-| `{{WEITERE_PARTNER_1}}`, `{{WEITERE_PARTNER_2}}` | Weitere Partner (Starface & Jeester sind gesetzt) |
-| `{{TESTIMONIAL_1}}`–`{{TESTIMONIAL_3}}` | Kundenstimmen (mind. 1 Handwerks-/Kleinbetrieb – bei T1 vorgemerkt) |
-| `{{KUNDE_1_NAME}}`–`{{KUNDE_3_NAME}}` / `{{KUNDE_x_FIRMA}}` | Namen & Firmen der Zitatgebenden |
+## Rechtlicher Hinweis
 
-## 4. Privatkunden-Leistungen — `lib/content.ts`
-
-`{{B2C_LEISTUNGEN}}` markiert den Block `servicePrivat.items`. Es sind bereits
-sinnvolle Fallback-Inhalte gesetzt (PC-Service, Reparatur, Beratung) – bei
-Bedarf anpassen.
-
-## 5. Rechtsseiten (Pflicht!) — juristisch prüfen lassen
-
-**Impressum** (`app/impressum/page.tsx`): `{{FIRMEN_RECHTSNAME}}`,
-`{{STRASSE_NR}}`, `{{PLZ}}`, `{{STADT}}`, `{{LAND}}`,
-`{{VERTRETUNGSBERECHTIGTE_PERSON}}`, `{{TELEFON}}`, `{{EMAIL}}`,
-`{{REGISTERGERICHT}}`, `{{REGISTERNUMMER}}`, `{{UMSATZSTEUER_ID}}`,
-`{{VERANTWORTLICHE_PERSON}}`.
-
-**Datenschutz** (`app/datenschutz/page.tsx`):
-`{{DATENSCHUTZBEAUFTRAGTER_ODER_HINWEIS_ENTFAELLT}}`, `{{HOSTING_ANBIETER}}`,
-`{{AUFSICHTSBEHOERDE_BUNDESLAND}}`, `{{STAND_DATUM}}`.
-
-**AGB** (`app/agb/page.tsx`): sämtliche `{{AGB_*}}`-Abschnitte.
-
-> Impressum, Datenschutz und AGB müssen rechtssicher sein. Empfohlen:
-> Generator von **e-recht24.de** oder anwaltliche Prüfung.
-
-## 6. Funktionale Anbindungen (technisch, `.env`)
-
-| Variable | Zweck | Status |
-|----------|-------|--------|
-| `ANTHROPIC_API_KEY` | KI-Chatbot (Claude API) | Ohne Key zeigt das Widget einen Hinweis (kein Fehler) |
-| `CHATBOT_MODEL` | Chat-Modell (optional) | Standard: `claude-sonnet-4-6` |
-| `TICKET_PROVIDER` u. a. | Ticketsystem für Kontaktanfragen | Aktuell Mock-Adapter (`lib/tickets.ts`) |
-| `NEWSLETTER_PROVIDER` u. a. | Newsletter Double-Opt-in | Aktuell Stub (`app/api/newsletter/route.ts`) |
-| `RESEND_API_KEY`, `CONTACT_EMAIL` | Optionaler E-Mail-Versand | Optional |
-
-Details in `.env.example` und `DEPLOYMENT.md`. Der Einbau echter externer
-Dienste wurde bewusst offen gelassen und benötigt eine Freigabe.
-
-## 7. SEO/Local
-
-Für lokales SEO kann in `app/layout.tsx` und `public/llms.txt` der Standort
-`{{STADT}}` ergänzt/eingesetzt werden (Title-Tag, Keywords, llms.txt).
+Impressum, Datenschutz und AGB sind mit echten Daten befüllt, sollten aber vor
+dem Livegang rechtlich geprüft werden. Bei Gründung der geplanten **IT GmbH**
+sind Firmierung, Vertretung (Geschäftsführer), Handelsregister/HRB und USt-IdNr.
+zu aktualisieren.
