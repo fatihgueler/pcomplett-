@@ -5,7 +5,6 @@ import { KiPraxis } from "@/components/sections/KiPraxis";
 import { ServicePrivat } from "@/components/sections/ServicePrivat";
 import { Vertrauen } from "@/components/sections/Vertrauen";
 import { CtaBand } from "@/components/sections/CtaBand";
-import { Kontakt } from "@/components/sections/Kontakt";
 import { Newsletter } from "@/components/sections/Newsletter";
 
 export default function HomePage() {
@@ -18,7 +17,6 @@ export default function HomePage() {
       <ServicePrivat />
       <Vertrauen />
       <CtaBand />
-      <Kontakt />
       <Newsletter />
     </>
   );

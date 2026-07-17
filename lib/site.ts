@@ -16,6 +16,7 @@ export const siteConfig = {
 
   contact: {
     phone: "0511 760 773 0",
+    fax: "0511 760 773 49",
     email: "service@pcomplett.de",
     // Adresse strukturiert für JSON-LD LocalBusiness
     street: "Am Listholze 31A",

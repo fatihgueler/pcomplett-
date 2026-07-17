@@ -49,7 +49,7 @@ export function ServicePrivat() {
 
           <div>
             <Button asChild variant="outline" size="lg">
-              <Link href="/#kontakt">
+              <Link href="/kontakt">
                 Termin vereinbaren
                 <ArrowRight className="size-4" aria-hidden />
               </Link>

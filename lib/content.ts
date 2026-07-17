@@ -7,11 +7,10 @@
 export type NavLink = { label: string; href: string };
 
 export const navLinks: NavLink[] = [
-  { label: "Leistungen", href: "/#leistungen" },
-  { label: "KI in der Praxis", href: "/#ki-praxis" },
-  { label: "Privatkunden", href: "/#service-privat" },
-  { label: "Referenzen", href: "/#vertrauen" },
-  { label: "Kontakt", href: "/#kontakt" },
+  { label: "Leistungen", href: "/leistungen" },
+  { label: "Über uns", href: "/ueber-uns" },
+  { label: "Referenzen", href: "/referenzen" },
+  { label: "Kontakt", href: "/kontakt" },
 ];
 
 export const hero = {
@@ -20,8 +19,8 @@ export const hero = {
   headlineAccent: "einfacher machen.",
   subline:
     "Von der IT-Infrastruktur über smarte KI-Automatisierung bis zum schnellen PC-Service. PComplett ist Ihr verlässlicher Partner – für Unternehmen und Privatkunden.",
-  primaryCta: { label: "Beratung anfragen", href: "/#kontakt" },
-  secondaryCta: { label: "Leistungen entdecken", href: "/#leistungen" },
+  primaryCta: { label: "Beratung anfragen", href: "/kontakt" },
+  secondaryCta: { label: "Leistungen entdecken", href: "/leistungen" },
   highlights: [
     "Für Unternehmen & Privat",
     "KI aus eigener Praxis",
@@ -42,7 +41,7 @@ export const entryCards: EntryCard[] = [
     title: "Für Unternehmen",
     description:
       "IT-Betreuung, Sicherheit und KI-Automatisierung, die Ihr Geschäft effizienter und zukunftssicher machen.",
-    cta: { label: "Zu den Unternehmensleistungen", href: "/#leistungen" },
+    cta: { label: "Zu den Unternehmensleistungen", href: "/leistungen" },
   },
   {
     icon: "UserRound",
@@ -54,6 +53,7 @@ export const entryCards: EntryCard[] = [
 ];
 
 export type Service = {
+  slug: string;
   icon: string; // lucide-react Icon-Name (Mapping in der Komponente)
   title: string;
   description: string;
@@ -61,30 +61,35 @@ export type Service = {
 
 export const services: Service[] = [
   {
+    slug: "ki-loesungen",
     icon: "Sparkles",
     title: "KI-Lösungen",
     description:
       "Wir bringen KI dorthin, wo sie wirklich Zeit spart – von der automatisierten Auftragsbearbeitung bis zur intelligenten E-Mail-Verarbeitung. Praxiserprobt, denn wir setzen es täglich selbst ein.",
   },
   {
+    slug: "it-loesungen",
     icon: "Network",
     title: "IT-Lösungen",
     description:
       "Wir planen, modernisieren und betreuen Ihre komplette IT – Server, Netzwerke und Cloud. Stabil, sicher und ohne Ausfallsorgen.",
   },
   {
+    slug: "it-sicherheit",
     icon: "ShieldCheck",
     title: "IT-Sicherheit",
     description:
       "Firewalls, Backups und wirksamer Schutz vor Angriffen: Wir sichern Ihre Systeme und Daten ab, bevor ein Zwischenfall zum Problem wird.",
   },
   {
+    slug: "software-jtl",
     icon: "Puzzle",
     title: "Software & JTL-Module",
     description:
       "Individuelle Software und maßgeschneiderte JTL-Module für Ihre Prozesse. Wir erweitern Ihr System genau um das, was Ihnen im Alltag fehlt.",
   },
   {
+    slug: "development",
     icon: "Code2",
     title: "Development",
     description:
@@ -97,7 +102,7 @@ export const kiPraxis = {
   heading: "Wir nutzen KI selbst – jeden Tag",
   intro:
     "Keine Theorie, sondern gelebte Automatisierung aus unseren eigenen Abläufen. Genau diese Lösungen bauen wir auch für Sie.",
-  cta: { label: "Das bauen wir auch für Sie", href: "/#kontakt" },
+  cta: { label: "Das bauen wir auch für Sie", href: "/kontakt" },
   cases: [
     {
       icon: "FileText",
@@ -208,7 +213,7 @@ export const trust = {
 export const ctaBand = {
   heading: "Lassen Sie uns über Ihre IT & KI sprechen.",
   text: "Unverbindlich, ehrlich und ohne Fachchinesisch. Wir zeigen Ihnen, wo PComplett Ihren Alltag spürbar entlastet.",
-  cta: { label: "Kontakt aufnehmen", href: "/#kontakt" },
+  cta: { label: "Kontakt aufnehmen", href: "/kontakt" },
 };
 
 export const contact = {
