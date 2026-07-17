@@ -170,24 +170,38 @@ export const trust = {
   partnerHeading: "Unsere Technologie-Partner",
   partners: ["Starface", "Jeester", "HP", "Fujitsu"],
   stats: [
-    // "30+ Jahre Erfahrung" – belegbar: Firma im Dezember 1994 in Hannover gegründet.
+    // Belegbar: Firma im Dezember 1994 in Hannover gegründet.
     { value: "30", suffix: "+", label: "Jahre Erfahrung" },
-    // TODO(CONTENT): echte Zahl einsetzen (unbelegt).
-    { value: "{{ANZAHL_KUNDEN}}", suffix: "+", label: "Betreute Kunden" },
+    // Belegbar durch die namhaften Referenzprojekte unten.
+    { value: "5", suffix: "+", label: "Namhafte Referenzen" },
   ],
-  // TODO(CONTENT): Referenz-Darstellung ergänzen. Die Testimonial-Sektion nutzt
-  // ein Zitat-Format (Quote-Icon + blockquote) mit nur 3 Slots. Die 5
-  // freigegebenen Referenzen (Name + Projekt, OHNE Zitat) lassen sich hier nicht
-  // ohne Strukturänderung abbilden. Einzusetzende Referenzen:
-  //   1. ThyssenKrupp Stahlbau — Warenwirtschaftssoftware
-  //   2. TUI — Word-Automatisierung für Dokumentenvorlagen
-  //   3. Deutsche Messe AG Hannover — Abrechnungs- und Störungserfassungssoftware
-  //   4. HIS Hochschul-Informations-System GmbH — TK-Anlage mit 300 Anschlüssen
-  //   5. J+S Druckfarben — Warenwirtschaft und virtuelle Server
+  // Echte, zur Nennung freigegebene Referenzprojekte (neutrale Projektbeschreibung, keine erfundenen Zitate).
   testimonials: [
-    { quote: "{{TESTIMONIAL_1}}", author: "{{KUNDE_1_NAME}}", role: "{{KUNDE_1_FIRMA}} (Handwerksbetrieb)" },
-    { quote: "{{TESTIMONIAL_2}}", author: "{{KUNDE_2_NAME}}", role: "{{KUNDE_2_FIRMA}}" },
-    { quote: "{{TESTIMONIAL_3}}", author: "{{KUNDE_3_NAME}}", role: "{{KUNDE_3_FIRMA}}" },
+    {
+      quote: "Individuelle Warenwirtschaftssoftware – entwickelt und betreut von PComplett.",
+      author: "ThyssenKrupp Stahlbau",
+      role: "Projekt: Warenwirtschaft",
+    },
+    {
+      quote: "Word-Automatisierung für standardisierte Dokumentenvorlagen.",
+      author: "TUI",
+      role: "Projekt: Dokumenten-Automatisierung",
+    },
+    {
+      quote: "Software zur Abrechnung und Störungserfassung.",
+      author: "Deutsche Messe AG, Hannover",
+      role: "Projekt: Fachsoftware",
+    },
+    {
+      quote: "Telefonanlage mit 300 Anschlüssen – geplant und umgesetzt.",
+      author: "HIS Hochschul-Informations-System GmbH",
+      role: "Projekt: Telekommunikation",
+    },
+    {
+      quote: "Warenwirtschaft und Betrieb virtueller Server.",
+      author: "J+S Druckfarben",
+      role: "Projekt: IT & Warenwirtschaft",
+    },
   ],
 };
 

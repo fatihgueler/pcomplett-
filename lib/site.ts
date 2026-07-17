@@ -5,8 +5,8 @@
 
 export const siteConfig = {
   name: "PComplett",
-  // TODO(CONTENT): Firmierung der neuen IT GmbH vor Livegang bestätigen (GmbH-Gründung).
-  legalName: "{{FIRMEN_RECHTSNAME}}",
+  // Aktuell Einzelunternehmen (Inhaber Frank Bernhardt). Bei GmbH-Gründung Firmierung anpassen.
+  legalName: "PComplett – Inhaber Frank Bernhardt",
   // Produktions-URL – für Metadata, Sitemap, OG-Tags, JSON-LD.
   url: "https://www.pcomplett.de",
   city: "Hannover",
@@ -18,9 +18,8 @@ export const siteConfig = {
     phone: "0511 760 773 0",
     email: "service@pcomplett.de",
     // Adresse strukturiert für JSON-LD LocalBusiness
-    // TODO(CONTENT): Adresse noch nicht bestätigt — laut alter Website: Am Listholze 31A, 30177 Hannover. Vor Livegang verifizieren (GmbH-Gründung!).
-    street: "{{STRASSE_NR}}",
-    postalCode: "{{PLZ}}",
+    street: "Am Listholze 31A",
+    postalCode: "30177",
     addressLocality: "Hannover",
     addressCountry: "DE",
   },

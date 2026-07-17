@@ -58,8 +58,8 @@ export function ServicePrivat() {
         </div>
 
         <Reveal className="order-first lg:order-last">
-          {/* TODO(CONTENT): Foto einsetzen ({{FOTO_1}}, z.B. Werkstatt/Service-Situation) via next/image */}
-          <MediaPlaceholder label="{{FOTO_1}}" ratio="portrait" className="w-full" />
+          {/* TODO(CONTENT): Echtes Foto einsetzen (z.B. Werkstatt/Service-Situation) via next/image */}
+          <MediaPlaceholder label="Foto folgt" ratio="portrait" className="w-full" />
         </Reveal>
       </div>
     </section>
