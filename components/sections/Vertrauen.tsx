@@ -2,6 +2,7 @@ import { Quote } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { StatGrid } from "@/components/ui/stat-grid";
+import { PartnerMarquee } from "@/components/ui/partner-marquee";
 import { trust } from "@/lib/content";
 
 export function Vertrauen() {
@@ -23,16 +24,7 @@ export function Vertrauen() {
           <span className="text-sm font-semibold uppercase tracking-[0.14em] text-subtle-foreground">
             {trust.partnerHeading}
           </span>
-          <ul className="grid grid-cols-2 items-center gap-x-6 gap-y-8 sm:grid-cols-4">
-            {trust.partners.map((partner, index) => (
-              <li key={index} className="flex items-center justify-center sm:justify-start">
-                {/* Text-Platzhalter durch echte Logos (next/image) ersetzen */}
-                <span className="font-display text-xl font-semibold text-subtle-foreground grayscale transition-all duration-200 hover:text-brand hover:grayscale-0">
-                  {partner}
-                </span>
-              </li>
-            ))}
-          </ul>
+          <PartnerMarquee partners={trust.partners} />
         </Reveal>
 
         {/* Kennzahlen */}

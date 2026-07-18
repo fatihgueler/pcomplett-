@@ -3,10 +3,12 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Logo } from "./Logo";
 import { Button } from "@/components/ui/button";
 import { navLinks } from "@/lib/content";
+import { servicesDetail } from "@/lib/pages";
+import { getIcon } from "@/lib/icons";
 import { cn } from "@/lib/utils";
 
 function useIsActive() {
@@ -67,17 +69,64 @@ export function Header() {
         >
           {navLinks.map((link) => {
             const active = isActive(link.href);
+            const linkClass = cn(
+              "relative text-sm font-medium transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:rounded-full after:bg-brand after:transition-all after:duration-300",
+              active
+                ? "text-brand after:w-full"
+                : "text-muted-foreground after:w-0 hover:text-brand hover:after:w-full",
+            );
+
+            // Mega-Menü für die Leistungen
+            if (link.href === "/leistungen") {
+              return (
+                <div key={link.href} className="group relative">
+                  <Link
+                    href={link.href}
+                    aria-current={active ? "page" : undefined}
+                    className={cn(linkClass, "inline-flex items-center gap-1")}
+                  >
+                    {link.label}
+                    <ChevronDown
+                      className="size-3.5 transition-transform duration-200 group-hover:rotate-180"
+                      aria-hidden
+                    />
+                  </Link>
+                  <div className="invisible absolute left-1/2 top-full z-50 w-[36rem] -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                    <div className="glass-strong grid grid-cols-2 gap-1 rounded-2xl p-3">
+                      {servicesDetail.map((service) => {
+                        const Icon = getIcon(service.icon);
+                        return (
+                          <Link
+                            key={service.slug}
+                            href={`/leistungen/${service.slug}`}
+                            className="flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-muted"
+                          >
+                            <span className="mt-0.5 inline-flex size-9 shrink-0 items-center justify-center rounded-lg bg-brand-subtle text-brand">
+                              <Icon className="size-5" aria-hidden />
+                            </span>
+                            <span className="flex flex-col gap-0.5">
+                              <span className="text-sm font-semibold text-ink">
+                                {service.title}
+                              </span>
+                              <span className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+                                {service.tagline}
+                              </span>
+                            </span>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
             return (
               <Link
                 key={link.href}
                 href={link.href}
                 aria-current={active ? "page" : undefined}
-                className={cn(
-                  "relative text-sm font-medium transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:rounded-full after:bg-brand after:transition-all after:duration-300",
-                  active
-                    ? "text-brand after:w-full"
-                    : "text-muted-foreground after:w-0 hover:text-brand hover:after:w-full",
-                )}
+                className={linkClass}
               >
                 {link.label}
               </Link>

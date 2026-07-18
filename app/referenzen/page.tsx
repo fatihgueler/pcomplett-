@@ -3,6 +3,7 @@ import { Quote } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
 import { Reveal } from "@/components/Reveal";
 import { StatGrid } from "@/components/ui/stat-grid";
+import { PartnerMarquee } from "@/components/ui/partner-marquee";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { trust } from "@/lib/content";
 
@@ -50,18 +51,7 @@ export default function ReferenzenPage() {
             <span className="text-sm font-semibold uppercase tracking-[0.14em] text-subtle-foreground">
               {trust.partnerHeading}
             </span>
-            <ul className="grid grid-cols-2 items-center gap-x-6 gap-y-8 sm:grid-cols-4">
-              {trust.partners.map((partner, index) => (
-                <li
-                  key={index}
-                  className="flex items-center justify-center sm:justify-start"
-                >
-                  <span className="font-display text-xl font-semibold text-subtle-foreground grayscale transition-all duration-200 hover:text-brand hover:grayscale-0">
-                    {partner}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <PartnerMarquee partners={trust.partners} />
           </Reveal>
 
           <Reveal>

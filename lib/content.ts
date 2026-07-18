@@ -216,6 +216,70 @@ export const ctaBand = {
   cta: { label: "Kontakt aufnehmen", href: "/kontakt" },
 };
 
+export const prozess = {
+  eyebrow: "So arbeiten wir",
+  heading: "In vier Schritten zur Lösung",
+  intro:
+    "Klar, transparent und mit einem festen Ansprechpartner – von der ersten Idee bis zum laufenden Betrieb.",
+  steps: [
+    {
+      title: "Erstgespräch",
+      text: "Wir hören zu und verstehen Ihre Ziele, Abläufe und Herausforderungen – unverbindlich.",
+    },
+    {
+      title: "Analyse & Konzept",
+      text: "Wir prüfen Ihre Situation und schlagen eine konkrete, passende Lösung mit klaren Schritten vor.",
+    },
+    {
+      title: "Umsetzung",
+      text: "Wir realisieren die Lösung sauber und nachvollziehbar – ohne Ihren Betrieb auszubremsen.",
+    },
+    {
+      title: "Betreuung",
+      text: "Nach dem Start bleiben wir Ihr Ansprechpartner und halten alles zuverlässig am Laufen.",
+    },
+  ],
+};
+
+export const notfall = {
+  heading: "IT-Störung? Wir helfen sofort.",
+  text: "Wenn nichts mehr geht, zählt jede Minute. Rufen Sie uns an – wir unterstützen per Fernwartung oder vor Ort.",
+  cta: { label: "Jetzt anrufen", href: "tel:" },
+};
+
+export const faq = {
+  eyebrow: "Häufige Fragen",
+  heading: "Was Kunden oft fragen",
+  intro:
+    "Sie haben eine Frage, die hier nicht beantwortet wird? Melden Sie sich einfach – wir helfen gern weiter.",
+  items: [
+    {
+      q: "Betreuen Sie auch kleine Betriebe und Privatkunden?",
+      a: "Ja. Wir betreuen Unternehmen jeder Größe – vom Handwerksbetrieb bis zum Mittelstand – und helfen Privatkunden unkompliziert bei PC und Technik.",
+    },
+    {
+      q: "Was kostet eine Beratung?",
+      a: "Das Erstgespräch ist unverbindlich und kostenfrei. Erst danach erhalten Sie ein transparentes Angebot.",
+    },
+    {
+      q: "Wie schnell sind Sie im Notfall erreichbar?",
+      a: "Bei Störungen erreichen Sie uns telefonisch. Wir helfen per Fernwartung oder vor Ort – so schnell wie möglich.",
+    },
+    {
+      q: "Arbeiten Sie herstellerunabhängig?",
+      a: "Ja. Wir empfehlen die Lösung, die zu Ihnen passt, statt an bestimmte Hersteller gebunden zu sein.",
+    },
+    {
+      q: "Was macht Ihre KI-Lösungen besonders?",
+      a: "Wir setzen KI seit Jahren in unseren eigenen Abläufen ein und bauen nur, was sich in der Praxis bewährt – kein Hype, sondern echter Nutzen.",
+    },
+    {
+      q: "Sind Sie nur in Hannover tätig?",
+      a: "Unser Sitz ist in Hannover, Vor-Ort-Service bieten wir in der Region. Viele Leistungen erbringen wir deutschlandweit per Fernzugriff.",
+    },
+  ],
+};
+
 export const contact = {
   eyebrow: "Kontakt",
   heading: "Beratung anfragen",
