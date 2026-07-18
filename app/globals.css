@@ -237,6 +237,102 @@ body {
   animation: page-enter 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+/* Animiertes Logo – „Strom-Puls" entlang der Leiterbahn */
+@keyframes logo-pulse {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -340;
+  }
+}
+.logo-pulse {
+  stroke-dasharray: 16 340;
+  animation: logo-pulse 3.2s linear infinite;
+}
+
+/* Marken-Glow beim Hover auf Karten */
+.card-glow {
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+.card-glow:hover {
+  box-shadow:
+    0 20px 48px -24px rgba(13, 14, 17, 0.35),
+    0 0 0 1px rgba(193, 18, 31, 0.18);
+}
+
+/* Button-Sheen – feiner Lichtstreif beim Hover */
+.btn-sheen {
+  position: relative;
+  overflow: hidden;
+}
+.btn-sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 70%
+  );
+  transform: translateX(-130%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+.btn-sheen:hover::after {
+  transform: translateX(130%);
+}
+
+/* Endlos-Laufband (Partner-Logos) */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+/* Text-Reveal (Clip-Aufblenden) für große Überschriften */
+@keyframes text-reveal {
+  from {
+    clip-path: inset(0 0 105% 0);
+    transform: translateY(0.25em);
+  }
+  to {
+    clip-path: inset(0 0 -15% 0);
+    transform: none;
+  }
+}
+.text-reveal {
+  animation: text-reveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Sanftes 3D-Tilt (Transform via JS-Hook gesetzt) */
+.tilt {
+  transform: perspective(900px) rotateX(var(--tilt-x, 0deg))
+    rotateY(var(--tilt-y, 0deg));
+  transition: transform 0.2s ease;
+  transform-style: preserve-3d;
+}
+
 /* prefers-reduced-motion respektieren: alle Effekte abschalten */
 @media (prefers-reduced-motion: reduce) {
   html {

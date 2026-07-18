@@ -39,7 +39,7 @@ export function PageHero({
             </span>
           ) : null}
 
-          <h1 className="max-w-3xl font-display text-4xl font-bold leading-[1.08] tracking-tight text-ink sm:text-5xl">
+          <h1 className="text-reveal max-w-3xl font-display text-4xl font-bold leading-[1.08] tracking-tight text-ink sm:text-5xl">
             {title}
           </h1>
 
