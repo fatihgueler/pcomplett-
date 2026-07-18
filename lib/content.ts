@@ -174,7 +174,13 @@ export const trust = {
   // Vier Partner-Slots (Design sieht keine weiteren vor). Panasonic und
   // Deutsche Messe daher NICHT ergänzt.
   partnerHeading: "Unsere Technologie-Partner",
-  partners: ["Starface", "Jeester", "HP", "Fujitsu"],
+  // icon = Schlüssel aus brandLogoMap (echtes Logo). Ohne icon = Text-Wortmarke.
+  partners: [
+    { name: "HP", icon: "hp" },
+    { name: "Fujitsu", icon: "fujitsu" },
+    { name: "Starface" },
+    { name: "Jeester" },
+  ],
   stats: [
     // Belegbar: Firma im Dezember 1994 in Hannover gegründet.
     { value: "30", suffix: "+", label: "Jahre Erfahrung" },
@@ -319,6 +325,7 @@ export const footer = {
     { label: "Impressum", href: "/impressum" },
     { label: "Datenschutz", href: "/datenschutz" },
     { label: "AGB", href: "/agb" },
+    { label: "Barrierefreiheit", href: "/barrierefreiheit" },
   ],
 };
 

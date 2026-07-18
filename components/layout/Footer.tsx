@@ -36,6 +36,18 @@ export function Footer() {
           >
             KI in der Praxis
           </Link>
+          <Link
+            href="/fernwartung"
+            className="text-sm text-muted-foreground transition-colors hover:text-brand"
+          >
+            Fernwartung
+          </Link>
+          <Link
+            href="/karriere"
+            className="text-sm text-muted-foreground transition-colors hover:text-brand"
+          >
+            Karriere
+          </Link>
         </nav>
 
         {/* Kontakt */}

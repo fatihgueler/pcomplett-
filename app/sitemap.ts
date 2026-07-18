@@ -13,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteConfig.url}/ueber-uns`, lastModified, changeFrequency: "yearly", priority: 0.7 },
     { url: `${siteConfig.url}/referenzen`, lastModified, changeFrequency: "yearly", priority: 0.7 },
     { url: `${siteConfig.url}/blog`, lastModified, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${siteConfig.url}/fernwartung`, lastModified, changeFrequency: "yearly", priority: 0.7 },
+    { url: `${siteConfig.url}/karriere`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${siteConfig.url}/kontakt`, lastModified, changeFrequency: "yearly", priority: 0.8 },
   ];
 
@@ -34,6 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteConfig.url}/impressum`, lastModified, changeFrequency: "yearly", priority: 0.3 },
     { url: `${siteConfig.url}/datenschutz`, lastModified, changeFrequency: "yearly", priority: 0.3 },
     { url: `${siteConfig.url}/agb`, lastModified, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${siteConfig.url}/barrierefreiheit`, lastModified, changeFrequency: "yearly", priority: 0.3 },
   ];
 
   return [...main, ...serviceRoutes, ...blogRoutes, ...legal];

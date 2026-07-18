@@ -212,6 +212,80 @@ export const aboutPage = {
   ],
 };
 
+export const fernwartungPage = {
+  eyebrow: "Fernwartung",
+  heading: "Schnelle Hilfe per Fernzugriff",
+  intro:
+    "Mit unserer Fernwartung lösen wir viele Probleme direkt an Ihrem Bildschirm – ohne Anfahrt und ohne Wartezeit. Sie behalten dabei jederzeit die Kontrolle und sehen alles mit.",
+  // TODO(CONTENT): Nach Wahl des Tools den echten Download-Link einsetzen.
+  downloadLabel: "Fernwartung starten",
+  downloadHref: "{{FERNWARTUNG_DOWNLOAD_URL}}",
+  toolNote:
+    "Hinweis: Der Download-Link wird eingerichtet, sobald das Fernwartungs-Tool festgelegt ist.",
+  steps: [
+    {
+      title: "1. Anrufen",
+      text: "Rufen Sie uns an. Gemeinsam klären wir kurz Ihr Anliegen.",
+    },
+    {
+      title: "2. Programm starten",
+      text: "Sie starten das kleine Fernwartungs-Programm – keine Installation nötig.",
+    },
+    {
+      title: "3. Verbinden",
+      text: "Sie nennen uns die angezeigte ID und Ihr Einmal-Passwort. Erst dann bauen wir die Verbindung auf.",
+    },
+    {
+      title: "4. Lösen",
+      text: "Wir beheben das Problem direkt an Ihrem Rechner – Sie sehen jeden Schritt mit.",
+    },
+  ],
+  security: [
+    "Die Verbindung kommt nur mit Ihrer aktiven Zustimmung zustande.",
+    "Der Zugriff ist auf die Sitzung begrenzt und endet, sobald Sie das Programm schließen.",
+    "Übertragung verschlüsselt – Sie können jederzeit abbrechen.",
+  ],
+};
+
+export const karrierePage = {
+  eyebrow: "Karriere",
+  heading: "Werden Sie Teil von PComplett",
+  intro:
+    "Wir sind ein kleines, eingespieltes Team mit kurzen Wegen und viel Gestaltungsspielraum – und arbeiten mit modernster IT und KI. Bei uns übernehmen Sie Verantwortung und sehen, was Sie bewirken.",
+  benefits: [
+    { title: "Kurze Wege", text: "Flache Hierarchien, schnelle Entscheidungen und ein echtes Team statt Konzernstrukturen." },
+    { title: "Moderne Technik", text: "Sie arbeiten mit aktueller IT und praxiserprobter KI – nicht mit Alt-Systemen." },
+    { title: "Weiterentwicklung", text: "Zertifizierungen, Schulungen und Raum, Neues auszuprobieren." },
+    { title: "Region Hannover", text: "Ein sicherer Arbeitsplatz bei einem etablierten Partner mit über 30 Jahren Erfahrung." },
+  ],
+  // TODO(CONTENT): Offene Stellen ergänzen, sobald vorhanden.
+  openPositions: [] as { title: string; type: string }[],
+  initiativ:
+    "Aktuell sind keine Stellen ausgeschrieben. Sie passen trotzdem zu uns? Wir freuen uns über Ihre Initiativbewerbung – gern per E-Mail an service@pcomplett.de.",
+};
+
+export const barrierefreiheitPage = {
+  eyebrow: "Barrierefreiheit",
+  heading: "Erklärung zur Barrierefreiheit",
+  intro:
+    "Wir möchten, dass diese Website von möglichst allen Menschen genutzt werden kann – unabhängig von Einschränkungen oder Technik.",
+  // TODO(CONTENT): Vor Livegang rechtlich prüfen und Stand/Status bestätigen.
+  sections: [
+    {
+      heading: "Unser Anspruch",
+      text: "Wir orientieren uns bei der Gestaltung an den Web Content Accessibility Guidelines (WCAG 2.2, Stufe AA): semantisches HTML, ausreichende Kontraste, sichtbare Fokus-Markierungen, Tastaturbedienbarkeit und Rücksicht auf die Einstellung für reduzierte Bewegung.",
+    },
+    {
+      heading: "Stand der Vereinbarkeit",
+      text: "Diese Website ist nach unserer Einschätzung weitgehend barrierefrei nutzbar. Sollten einzelne Inhalte noch nicht vollständig barrierefrei sein, arbeiten wir laufend an Verbesserungen.",
+    },
+    {
+      heading: "Barrieren melden",
+      text: "Ist Ihnen eine Barriere aufgefallen oder benötigen Sie Inhalte in einer zugänglicheren Form? Melden Sie sich bitte – wir helfen weiter und bessern nach: service@pcomplett.de, Telefon 0511 760 773 0.",
+    },
+  ],
+};
+
 export const kontaktPage = {
   eyebrow: "Kontakt",
   heading: "Sprechen wir über Ihr Vorhaben",
