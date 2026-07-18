@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PageHero } from "@/components/ui/page-hero";
 import { Reveal } from "@/components/Reveal";
 import { StatGrid } from "@/components/ui/stat-grid";
-import { MediaPlaceholder } from "@/components/ui/media-placeholder";
+import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { aboutPage } from "@/lib/pages";
 import { trust } from "@/lib/content";
@@ -37,8 +38,34 @@ export default function UeberUnsPage() {
             <p className="mt-2 font-medium text-ink">{aboutPage.ownerNote}</p>
           </div>
           <Reveal className="order-first lg:order-last">
-            {/* TODO(CONTENT): Team-/Bürofoto einsetzen via next/image */}
-            <MediaPlaceholder label="Foto folgt" ratio="square" className="w-full" />
+            <div className="glass-strong flex flex-col items-start gap-6 rounded-2xl p-8">
+              <span className="text-sm font-semibold uppercase tracking-[0.14em] text-brand">
+                Ihr Ansprechpartner
+              </span>
+              <div className="flex items-center gap-4">
+                <span
+                  aria-hidden
+                  className="flex size-16 shrink-0 items-center justify-center rounded-2xl bg-brand font-display text-xl font-bold text-brand-foreground"
+                >
+                  FB
+                </span>
+                <span className="flex flex-col">
+                  <span className="font-display text-lg font-semibold text-ink">
+                    Frank Bernhardt
+                  </span>
+                  <span className="text-sm text-muted-foreground">
+                    Inhaber &amp; Geschäftsführung
+                  </span>
+                </span>
+              </div>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                &bdquo;Bei uns sprechen Sie mit Menschen, die Ihre IT kennen
+                &ndash; nicht mit einer Warteschleife.&ldquo;
+              </p>
+              <Button asChild variant="outline">
+                <Link href="/kontakt">Persönlich kennenlernen</Link>
+              </Button>
+            </div>
           </Reveal>
         </div>
       </section>

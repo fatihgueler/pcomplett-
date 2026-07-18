@@ -30,6 +30,12 @@ export function Footer() {
               {link.label}
             </Link>
           ))}
+          <Link
+            href="/ki-in-der-praxis"
+            className="text-sm text-muted-foreground transition-colors hover:text-brand"
+          >
+            KI in der Praxis
+          </Link>
         </nav>
 
         {/* Kontakt */}

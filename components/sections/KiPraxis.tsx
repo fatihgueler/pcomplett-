@@ -47,12 +47,15 @@ export function KiPraxis() {
           })}
         </ul>
 
-        <Reveal className="mt-10 flex justify-center">
+        <Reveal className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button asChild size="lg">
             <Link href={kiPraxis.cta.href}>
               {kiPraxis.cta.label}
               <ArrowRight className="size-4" aria-hidden />
             </Link>
+          </Button>
+          <Button asChild size="lg" variant="outline">
+            <Link href="/ki-in-der-praxis">Alle KI-Beispiele ansehen</Link>
           </Button>
         </Reveal>
       </div>

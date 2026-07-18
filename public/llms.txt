@@ -30,6 +30,12 @@
 
 ## Wichtige Seiten
 - Startseite: https://www.pcomplett.de/
+- Leistungen: https://www.pcomplett.de/leistungen
+- KI in der Praxis: https://www.pcomplett.de/ki-in-der-praxis
+- Über uns: https://www.pcomplett.de/ueber-uns
+- Referenzen: https://www.pcomplett.de/referenzen
+- Aktuelles/Blog: https://www.pcomplett.de/blog
+- Kontakt: https://www.pcomplett.de/kontakt
 - Impressum: https://www.pcomplett.de/impressum
 - Datenschutz: https://www.pcomplett.de/datenschutz
 - AGB: https://www.pcomplett.de/agb
