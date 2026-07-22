@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
 import { Header } from "@/components/layout/Header";
@@ -8,15 +8,19 @@ import { Chatbot } from "@/components/Chatbot";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { LocalBusinessJsonLd } from "@/components/seo/JsonLd";
 
-const inter = Inter({
-  variable: "--font-inter",
+// IBM Plex Sans (Body/Headlines) + IBM Plex Mono (Labels/Kennzahlen) –
+// technisches, seriöses B2B-Schriftsystem, self-hosted (DSGVO).
+const plexSans = IBM_Plex_Sans({
+  variable: "--font-sans-src",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-mono-src",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -71,7 +75,7 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${inter.variable} ${spaceGrotesk.variable} h-full`}
+      className={`${plexSans.variable} ${plexMono.variable} h-full`}
     >
       <body className="flex min-h-full flex-col bg-background text-foreground antialiased">
         <LocalBusinessJsonLd />

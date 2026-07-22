@@ -2,13 +2,13 @@ import { ImageResponse } from "next/og";
 import { siteConfig } from "@/lib/site";
 
 export const alt =
-  "PComplett – IT-Systemhaus für kleine und mittlere Unternehmen";
+  "PComplett-IT – IT-Systemhaus für Unternehmen in Hannover";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-// Markenrot {{BRAND_RED_HEX}} – Fallback
-const BRAND = "#c1121f";
-const INK = "#0d0e11";
+// Markenfarbe: Stahlblau (siehe brand.md)
+const BRAND = "#0369a1";
+const INK = "#0f172a";
 
 export default function OpengraphImage() {
   return new ImageResponse(
@@ -70,17 +70,17 @@ export default function OpengraphImage() {
               lineHeight: 1.12,
             }}
           >
-            <div>IT und KI, die Ihren Alltag</div>
-            <div style={{ color: BRAND }}>einfacher machen.</div>
+            <div>Professionelle IT-Betreuung</div>
+            <div style={{ color: BRAND }}>für Unternehmen.</div>
           </div>
-          <div style={{ display: "flex", fontSize: 30, color: "#5b5d66" }}>
+          <div style={{ display: "flex", fontSize: 30, color: "#475569" }}>
             {`${siteConfig.slogan} · Hannover`}
           </div>
         </div>
 
-        <div style={{ display: "flex", fontSize: 24, color: "#5b5d66" }}>
-          KI-Lösungen · IT-Lösungen · IT-Sicherheit · Software &amp; JTL-Module ·
-          Development
+        <div style={{ display: "flex", fontSize: 24, color: "#475569" }}>
+          Serviceverträge · Serveraufbau · Netzwerke · Arbeitsplätze ·
+          Telefonanlagen · IT-Sicherheit
         </div>
       </div>
     ),

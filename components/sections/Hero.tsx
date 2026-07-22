@@ -58,11 +58,12 @@ export function Hero() {
         ))}
       </div>
 
-      {/* Lesbarkeits-Overlay */}
+      {/* Lesbarkeits-Overlay: ruhiger Navy-Scrim */}
       <div
         aria-hidden
-        className="absolute inset-0 bg-gradient-to-br from-ink/85 via-ink/70 to-ink/55"
+        className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/80 to-ink/60"
       />
+      <div aria-hidden className="absolute inset-0 bg-dot-grid opacity-[0.15]" />
 
       {/* Embla-Engine-Ebene: treibt Timing/Index/Loop, visuell unsichtbar */}
       <div
@@ -79,7 +80,7 @@ export function Hero() {
 
       {/* Inhalt */}
       <div className="container-page relative flex min-h-[30rem] flex-col items-start justify-center gap-6 py-20 md:min-h-[36rem] md:py-28">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-white backdrop-blur-sm">
+        <span className="inline-flex items-center gap-2 rounded-sm border-l-2 border-brand bg-white/5 px-3 py-1.5 font-mono text-xs font-medium uppercase tracking-[0.18em] text-white/90">
           <span aria-hidden className="size-1.5 rounded-full bg-brand" />
           {hero.eyebrow}
         </span>

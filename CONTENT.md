@@ -33,7 +33,7 @@ Zielgruppe ist ausschließlich B2B; Kontaktdaten erscheinen nur als Bild.
 | `{{AKTION_TITEL/TEXT/ZEITRAUM_1..2}}` | `lib/blog.ts` (`aktionen`) | echte Werbeaktionen eintragen |
 | `{{LOGO_STARFACE/YEASTAR/JEESTER}}` | `components/ui/brand-logos.tsx` | echte Partner-Logos als SVG ergänzen |
 | Firmenlogo | `public/logo/*` (3 Entwürfe) | finale Variante wählen/freigeben |
-| Markenrot `{{BRAND_RED_HEX}}` | `app/globals.css` (`--brand`) | aktuell Fallback `#C1121F` |
+| Markenfarbe `{{BRAND_HEX}}` | `app/globals.css` (`--brand`) | Stahlblau, aktuell `#0369A1` (siehe `brand.md`) |
 
 ## KI-Chat aktivieren
 

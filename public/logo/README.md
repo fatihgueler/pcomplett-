@@ -2,7 +2,7 @@
 
 Drei schlichte, technische und einfarbig skalierbare Entwürfe. Alle greifen die
 vorhandene Bildmarke auf (das „P" als Leiterbahn mit Knotenpunkten) und passen
-zum Farbsystem der Website (Ink `#0b1220`, Markenrot `#c1121f`).
+zum Farbsystem der Website (Navy `#0f172a`, Akzent Stahlblau `#0369a1`).
 
 ## Varianten
 
@@ -24,7 +24,7 @@ einfarbig ohne Detailverlust; die Knotenpunkte bleiben bis in kleine Größen le
 
 ## Hinweise
 - Einfarbig: Für Negativ-/Dunkelvarianten `#0b1220` durch `#ffffff` ersetzen.
-- Markenrot ist nur Akzent (Knotenpunkte bzw. „-IT"); die Marke funktioniert auch
+- Stahlblau ist nur Akzent (Knotenpunkte bzw. „-IT"); die Marke funktioniert auch
   vollständig einfarbig.
 - Schrift: systemnahe Sans-Serif (`Segoe UI`/`Roboto`/`Arial`). Für finale
   Reinzeichnung ggf. auf die Hausschrift (Space Grotesk) umstellen und Text in

@@ -31,7 +31,7 @@ export function SectionHeading({
       )}
     >
       {eyebrow ? (
-        <span className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.14em] text-brand">
+        <span className="inline-flex items-center gap-2.5 font-mono text-xs font-medium uppercase tracking-[0.2em] text-brand">
           <span aria-hidden className="h-px w-6 bg-brand" />
           {eyebrow}
         </span>

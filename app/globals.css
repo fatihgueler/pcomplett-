@@ -14,38 +14,38 @@
 */
 
 :root {
-  /* Marke – roter CTA-/CI-Akzent */
-  --brand: #c1121f; /* {{BRAND_RED_HEX}} – Fallback */
-  --brand-hover: #9e0f1a;
-  --brand-active: #820c15;
-  --brand-subtle: #fdeff0;
-  --brand-ring: rgba(193, 18, 31, 0.4);
+  /* Marke „Ruhiger Maschinenraum" – EIN Akzent: Stahlblau (kein Rot mehr). */
+  --brand: #0369a1; /* {{BRAND_HEX}} – Stahlblau, AA auf Weiß (~5.4:1) */
+  --brand-hover: #075985;
+  --brand-active: #0c4a6e;
+  --brand-subtle: #e0f2fe;
+  --brand-ring: rgba(3, 105, 161, 0.4);
 
-  /* Technik-Akzent – Stahl-/Petrolblau (Struktur, Info, technische Highlights) */
-  --accent: #0f5f80; /* AA auf Weiß (~5.6:1) */
-  --accent-hover: #0c4d68;
-  --accent-active: #093a4f;
-  --accent-subtle: #e8f2f6;
+  /* Akzent = gleiche Farbfamilie wie die Marke (ein Akzent schlägt drei). */
+  --accent: #0369a1;
+  --accent-hover: #075985;
+  --accent-active: #0c4a6e;
+  --accent-subtle: #eff6ff;
 
   /* Neutrale Slate-Töne (kühl, technisch) */
-  --background: #ffffff;
+  --background: #f8fafc; /* slate-50 – ruhiger als reines Weiß */
   --foreground: #0f172a; /* slate-900 – sehr hoher Kontrast */
   --card: #ffffff;
   --card-foreground: #0f172a;
-  --muted: #f1f5f9; /* slate-100 – zarter Sektions-Hintergrund */
-  --muted-foreground: #45505f; /* Fließtext gedämpft – AA (~7:1) */
-  --subtle-foreground: #5b6672; /* Labels, Meta – AA (~5.3:1) */
+  --muted: #eef2f6; /* zarter Sektions-Hintergrund */
+  --muted-foreground: #475569; /* Fließtext gedämpft – AA (~7:1) */
+  --subtle-foreground: #64748b; /* Labels, Meta – AA (~4.9:1) */
   --border: #e2e8f0; /* slate-200 */
   --border-strong: #cbd5e1; /* slate-300 */
-  --ink: #0b1220; /* fast-schwarzes Navy für starke Kontraste */
+  --ink: #0f172a; /* Navy für starke Kontrast-/Dunkelflächen */
 
   /* Fokus */
   --ring: var(--brand);
 
   /* Rhythmus */
-  --radius: 0.75rem;
-  --radius-sm: 0.5rem;
-  --radius-lg: 1.25rem;
+  --radius: 0.5rem;
+  --radius-sm: 0.375rem;
+  --radius-lg: 0.875rem;
 }
 
 @theme inline {
@@ -76,8 +76,9 @@
   --radius-sm: var(--radius-sm);
   --radius-lg: var(--radius-lg);
 
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-space-grotesk);
+  --font-sans: var(--font-sans-src);
+  --font-display: var(--font-sans-src);
+  --font-mono: var(--font-mono-src);
 }
 
 * {
@@ -168,70 +169,36 @@ body {
   will-change: auto;
 }
 
-/* Dezentes Punkt-Raster für Hintergrund-Atmosphäre */
+/* Feines technisches Raster (dezent, „Blueprint"-Anmutung) */
 .bg-dot-grid {
-  background-image: radial-gradient(
-    circle at 1px 1px,
-    rgba(22, 23, 26, 0.06) 1px,
-    transparent 0
-  );
-  background-size: 26px 26px;
+  background-image:
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
 }
 
-/* Glassmorphism – frosted surfaces mit echter Tiefe */
+/* „Glass" bewusst entschärft: klare, leicht erhöhte Fläche statt Frost-Effekt */
 .glass {
-  background: color-mix(in oklab, var(--background) 68%, transparent);
-  backdrop-filter: blur(14px) saturate(150%);
-  -webkit-backdrop-filter: blur(14px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow:
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.6),
-    0 18px 48px -24px rgba(13, 14, 17, 0.32);
+  background: color-mix(in oklab, var(--background) 92%, white);
+  border: 1px solid var(--border);
 }
 .glass-strong {
-  background: color-mix(in oklab, var(--background) 82%, transparent);
-  backdrop-filter: blur(20px) saturate(170%);
-  -webkit-backdrop-filter: blur(20px) saturate(170%);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow:
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.7),
-    0 26px 64px -28px rgba(13, 14, 17, 0.4);
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 12px 32px -20px rgba(15, 23, 42, 0.25);
 }
 
-/* Aurora – weiche, animierte Marken-Lichter im Hintergrund */
+/* Ruhiger, technischer Sektions-Hintergrund (kein bunter Aurora-Effekt) */
 .bg-aurora {
   position: relative;
   isolation: isolate;
-}
-.bg-aurora::before {
-  content: "";
-  position: absolute;
-  inset: -25% -10% auto -10%;
-  height: 140%;
-  z-index: -1;
-  pointer-events: none;
   background:
-    radial-gradient(38% 48% at 12% 18%, rgba(193, 18, 31, 0.16), transparent 70%),
-    radial-gradient(42% 52% at 88% 8%, rgba(193, 18, 31, 0.1), transparent 70%),
-    radial-gradient(50% 60% at 72% 82%, rgba(13, 14, 17, 0.06), transparent 70%);
-  filter: blur(18px);
-  animation: aurora-drift 20s ease-in-out infinite alternate;
-}
-@keyframes aurora-drift {
-  from {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  to {
-    transform: translate3d(0, -3%, 0) scale(1.08);
-  }
+    radial-gradient(60% 90% at 88% -10%, var(--brand-subtle), transparent 60%);
 }
 
-/* Marken-Gradient-Text für Akzent-Headlines */
+/* Akzent-Text: klare Volltonfarbe statt Verlauf */
 .text-gradient-brand {
-  background: linear-gradient(120deg, var(--brand), var(--brand-active));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--brand);
 }
 
 /* Parallax-Basis (Transform via JS-Hook, compositor-freundlich) */
@@ -268,40 +235,20 @@ body {
   animation: logo-pulse 3.2s linear infinite;
 }
 
-/* Marken-Glow beim Hover auf Karten */
+/* Dezenter Hover auf Karten – feiner Schatten, kein farbiger Glow */
 .card-glow {
   transition:
-    box-shadow 0.25s ease,
+    box-shadow 0.2s ease,
     border-color 0.2s ease,
     transform 0.2s ease;
 }
 .card-glow:hover {
-  box-shadow:
-    0 20px 48px -24px rgba(13, 14, 17, 0.35),
-    0 0 0 1px rgba(193, 18, 31, 0.18);
+  box-shadow: 0 14px 36px -22px rgba(15, 23, 42, 0.35);
 }
 
-/* Button-Sheen – feiner Lichtstreif beim Hover */
+/* btn-sheen bewusst neutralisiert (kein Lichtstreif-Effekt mehr) */
 .btn-sheen {
   position: relative;
-  overflow: hidden;
-}
-.btn-sheen::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.35) 50%,
-    transparent 70%
-  );
-  transform: translateX(-130%);
-  transition: transform 0.6s ease;
-  pointer-events: none;
-}
-.btn-sheen:hover::after {
-  transform: translateX(130%);
 }
 
 /* Endlos-Laufband (Partner-Logos) */

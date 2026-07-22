@@ -115,7 +115,7 @@ export const erklaerSlides = [
   },
   {
     title: "Vor Ort in der Region Hannover",
-    text: "Kurze Wege, schnelle Hilfe: Wir sind persönlich für Sie da – vor Ort oder per Fernwartung.",
+    text: "Kurze Wege in der Region: Unterstützung vor Ort oder per Fernwartung – schnell und verbindlich.",
     placeholder: "{{BILD_VOR_ORT}}",
   },
 ];
