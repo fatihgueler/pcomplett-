@@ -8,6 +8,7 @@ import { CtaBand } from "@/components/sections/CtaBand";
 import { Button } from "@/components/ui/button";
 import { getIcon } from "@/lib/icons";
 import { servicesDetail, getServiceDetail } from "@/lib/pages";
+import { siteConfig } from "@/lib/site";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -34,8 +35,28 @@ export default async function ServiceDetailPage({ params }: Params) {
   const Icon = getIcon(service.icon);
   const others = servicesDetail.filter((s) => s.slug !== service.slug);
 
+  // Service-Schema (GEO/SEO): beschreibt die Leistung maschinenlesbar.
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.tagline,
+    serviceType: service.title,
+    areaServed: siteConfig.contact.addressLocality,
+    provider: {
+      "@type": "Organization",
+      name: siteConfig.legalName,
+      url: siteConfig.url,
+    },
+    url: `${siteConfig.url}/leistungen/${service.slug}`,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <PageHero
         eyebrow="Leistung"
         title={service.title}
