@@ -185,7 +185,7 @@ export const aboutPage = {
   eyebrow: "Über uns",
   heading: "Seit 1994 Ihr IT-Partner in Hannover",
   intro:
-    "PComplett wurde im Dezember 1994 in Hannover gegründet und begleitet Unternehmen und Privatkunden seither durch den digitalen Wandel. Aus dem klassischen IT-Service ist ein Partner geworden, der IT und KI verbindet – bodenständig, persönlich und verlässlich.",
+    "PComplett betreut Unternehmen in Hannover und der Region seit 1994 – zuverlässig, persönlich und aus einer Hand. Im Mittelpunkt steht die professionelle Betreuung Ihrer IT.",
   ownerNote: "Inhaber: Frank Bernhardt",
   values: [
     {
@@ -197,8 +197,8 @@ export const aboutPage = {
       text: "Wir empfehlen, was zu Ihnen passt – nicht, was wir verkaufen müssen.",
     },
     {
-      title: "Praxisnah",
-      text: "Was wir anbieten, setzen wir auch selbst ein – besonders bei KI.",
+      title: "Betreuungsqualität",
+      text: "Wir halten Ihre IT dauerhaft am Laufen – planbar über Serviceverträge.",
     },
     {
       title: "Regional verwurzelt",
@@ -206,9 +206,16 @@ export const aboutPage = {
     },
   ],
   story: [
-    "Angefangen als klassisches IT-Systemhaus, haben wir Unternehmen über drei Jahrzehnte bei jedem Technologiesprung begleitet – von den ersten Netzwerken bis zur Cloud.",
-    "Heute verbinden wir bewährte IT-Betreuung mit praxiserprobter KI-Automatisierung. Wir probieren neue Technologien zuerst in unseren eigenen Abläufen aus und geben nur weiter, was sich bewährt.",
-    "Für Privatkunden sind wir die unkomplizierte Anlaufstelle rund um PC und Technik geblieben – mit ehrlicher Beratung und schneller Hilfe.",
+    "Als IT-Systemhaus begleiten wir Unternehmen seit über drei Jahrzehnten bei jedem Technologiesprung – von den ersten Netzwerken bis zur heutigen Infrastruktur.",
+    "Unsere Kompetenz reicht von Serveraufbau und Netzwerken über Arbeitsplätze bis zu Telefonanlagen. Vieles läuft im Rahmen fester Serviceverträge – damit Sie sich auf Ihr Geschäft konzentrieren können.",
+  ],
+  // Kompetenzfelder als kurze Stichworte (B2B).
+  competences: [
+    "Serviceverträge & IT-Betreuung",
+    "Serveraufbau & Infrastruktur",
+    "Netzwerke",
+    "Telefonanlagen",
+    "IT-Sicherheit & Hardware",
   ],
 };
 

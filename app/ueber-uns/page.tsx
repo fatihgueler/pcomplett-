@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Check } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
 import { Reveal } from "@/components/Reveal";
-import { StatGrid } from "@/components/ui/stat-grid";
 import { Button } from "@/components/ui/button";
+import { MediaPlaceholder } from "@/components/ui/media-placeholder";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { aboutPage } from "@/lib/pages";
-import { trust } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Über uns – IT-Systemhaus aus Hannover seit 1994",
   description:
-    "PComplett ist seit 1994 Ihr IT-Partner in Hannover. Persönlich, herstellerunabhängig und praxisnah – heute mit dem Schwerpunkt IT und KI.",
+    "PComplett ist seit 1994 Ihr IT-Partner für Unternehmen in Hannover. Persönlich, herstellerunabhängig und mit dem Schwerpunkt professionelle IT-Betreuung.",
   alternates: { canonical: "/ueber-uns" },
 };
 
@@ -35,8 +35,26 @@ export default function UeberUnsPage() {
                 </p>
               </Reveal>
             ))}
-            <p className="mt-2 font-medium text-ink">{aboutPage.ownerNote}</p>
+
+            {/* Kompetenzfelder inkl. Telefonanlagen */}
+            <Reveal className="mt-2 flex flex-col gap-3">
+              <span className="text-sm font-semibold uppercase tracking-[0.14em] text-brand">
+                Unsere Kompetenzen
+              </span>
+              <ul className="flex flex-wrap gap-x-6 gap-y-2">
+                {aboutPage.competences.map((item) => (
+                  <li
+                    key={item}
+                    className="inline-flex items-center gap-2 text-sm font-medium text-foreground"
+                  >
+                    <Check className="size-4 text-brand" aria-hidden />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
+
           <Reveal className="order-first lg:order-last">
             <div className="glass-strong flex flex-col items-start gap-6 rounded-2xl p-8">
               <span className="text-sm font-semibold uppercase tracking-[0.14em] text-brand">
@@ -70,7 +88,26 @@ export default function UeberUnsPage() {
         </div>
       </section>
 
+      {/* Team / Büro – Bildplatzhalter */}
       <section className="section-y bg-muted/50">
+        <div className="container-page flex flex-col gap-10">
+          <div className="flex flex-col gap-3">
+            <span className="text-sm font-semibold uppercase tracking-[0.14em] text-brand">
+              Team &amp; Büro
+            </span>
+            <h2 className="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+              Ein eingespieltes Team in Hannover
+            </h2>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <MediaPlaceholder label="{{BILD_TEAM}}" ratio="video" className="w-full" />
+            <MediaPlaceholder label="{{BILD_BUERO}}" ratio="video" className="w-full" />
+            <MediaPlaceholder label="{{BILD_WERKSTATT}}" ratio="video" className="w-full" />
+          </div>
+        </div>
+      </section>
+
+      <section className="section-y">
         <div className="container-page flex flex-col gap-10">
           <div className="flex flex-col gap-3">
             <span className="text-sm font-semibold uppercase tracking-[0.14em] text-brand">
@@ -98,10 +135,6 @@ export default function UeberUnsPage() {
               </Reveal>
             ))}
           </ul>
-
-          <Reveal>
-            <StatGrid stats={trust.stats} />
-          </Reveal>
         </div>
       </section>
 
