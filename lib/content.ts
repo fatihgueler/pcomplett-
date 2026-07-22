@@ -222,6 +222,7 @@ export const trust = {
     { name: "Fujitsu", icon: "fujitsu" },
     { name: "Starface" },
     { name: "Yeastar" },
+    { name: "Jeester" },
   ],
   stats: [
     // Belegbar: Firma im Dezember 1994 in Hannover gegründet.
