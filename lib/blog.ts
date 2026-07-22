@@ -124,3 +124,30 @@ export const blogPosts: BlogPost[] = [
 export function getBlogPost(slug: string): BlogPost | undefined {
   return blogPosts.find((p) => p.slug === slug);
 }
+
+/**
+ * Aktionen – Bereich für gezielte Werbeaktionen (B2B).
+ * Inhalte sind Platzhalter und vom Kunden mit echten Aktionen zu füllen.
+ * Struktur bewusst schlank: Titel, Kurztext, Zeitraum.
+ */
+export type Aktion = {
+  badge: string;
+  title: string;
+  description: string;
+  period: string;
+};
+
+export const aktionen: Aktion[] = [
+  {
+    badge: "Aktion",
+    title: "{{AKTION_TITEL_1}}",
+    description: "{{AKTION_TEXT_1}}",
+    period: "{{AKTION_ZEITRAUM_1}}",
+  },
+  {
+    badge: "Aktion",
+    title: "{{AKTION_TITEL_2}}",
+    description: "{{AKTION_TEXT_2}}",
+    period: "{{AKTION_ZEITRAUM_2}}",
+  },
+];
