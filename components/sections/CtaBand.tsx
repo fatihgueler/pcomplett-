@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BlueprintLines } from "@/components/BlueprintLines";
 import { ctaBand } from "@/lib/content";
 
 export function CtaBand() {
@@ -16,6 +17,7 @@ export function CtaBand() {
             aria-hidden
             className="absolute -bottom-20 -left-10 h-64 w-64 rounded-full bg-black/10 blur-2xl"
           />
+          <BlueprintLines className="pointer-events-none absolute right-4 top-1/2 hidden h-56 w-auto -translate-y-1/2 text-white/15 lg:block" />
           <div className="relative flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
             <div className="flex flex-col gap-3">
               <h2

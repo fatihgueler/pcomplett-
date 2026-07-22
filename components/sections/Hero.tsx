@@ -6,6 +6,8 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ArrowRight, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BlueprintLines } from "@/components/BlueprintLines";
+import { TypingText } from "@/components/TypingText";
 import { hero } from "@/lib/content";
 import { usePrefersReducedMotion } from "@/lib/use-reduced-motion";
 import { cn } from "@/lib/utils";
@@ -65,6 +67,9 @@ export function Hero() {
       />
       <div aria-hidden className="absolute inset-0 bg-dot-grid opacity-[0.15]" />
 
+      {/* Dezente Blueprint-Linien, die sich beim Laden/Scrollen zeichnen */}
+      <BlueprintLines className="pointer-events-none absolute -right-10 top-1/2 hidden h-[26rem] w-auto -translate-y-1/2 text-white/10 lg:block" />
+
       {/* Embla-Engine-Ebene: treibt Timing/Index/Loop, visuell unsichtbar */}
       <div
         ref={emblaRef}
@@ -82,7 +87,7 @@ export function Hero() {
       <div className="container-page relative flex min-h-[30rem] flex-col items-start justify-center gap-6 py-20 md:min-h-[36rem] md:py-28">
         <span className="inline-flex items-center gap-2 rounded-sm border-l-2 border-brand bg-white/5 px-3 py-1.5 font-mono text-xs font-medium uppercase tracking-[0.18em] text-white/90">
           <span aria-hidden className="size-1.5 rounded-full bg-brand" />
-          {hero.eyebrow}
+          <TypingText text={hero.eyebrow} />
         </span>
 
         <h1
