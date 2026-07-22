@@ -11,6 +11,12 @@ import {
   AudioLines,
   Cog,
   HardDrive,
+  Server,
+  PhoneCall,
+  MonitorSmartphone,
+  FileCheck2,
+  Boxes,
+  Cpu,
   type LucideIcon,
 } from "lucide-react";
 
@@ -28,6 +34,12 @@ export const iconMap: Record<string, LucideIcon> = {
   AudioLines,
   Cog,
   HardDrive,
+  Server,
+  PhoneCall,
+  MonitorSmartphone,
+  FileCheck2,
+  Boxes,
+  Cpu,
 };
 
 export function getIcon(name: string): LucideIcon {

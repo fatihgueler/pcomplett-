@@ -4,29 +4,40 @@
   PComplett Design-System – Light-Theme (kein Dark Mode angefordert).
   Alle Tokens hier zentral definieren, niemals Farben/Spacing in Komponenten hartcodieren.
 
+  Relaunch-Palette: professionell-technisch, hoher Kontrast (WCAG AA).
+  - Marke (--brand): kräftiges Rot als CTA-/CI-Akzent (passend zum Logo).
+  - Technik-Akzent (--accent): tiefes Stahl-/Petrolblau für seriösen B2B-Ton.
+  - Neutrale: kühle Slate-Töne mit dunkleren Fließtext-Werten für starke Lesbarkeit.
+
   Markenrot: {{BRAND_RED_HEX}} – aktuell Fallback #C1121F.
-  Zum Anpassen NUR die --brand-* Werte unten ändern.
+  Zum Anpassen NUR die Werte in :root ändern, niemals in Komponenten.
 */
 
 :root {
-  /* Marke */
+  /* Marke – roter CTA-/CI-Akzent */
   --brand: #c1121f; /* {{BRAND_RED_HEX}} – Fallback */
   --brand-hover: #9e0f1a;
   --brand-active: #820c15;
-  --brand-subtle: #fef2f3;
-  --brand-ring: rgba(193, 18, 31, 0.35);
+  --brand-subtle: #fdeff0;
+  --brand-ring: rgba(193, 18, 31, 0.4);
 
-  /* Neutrale Grautöne (3–4 Stufen + Extreme) */
+  /* Technik-Akzent – Stahl-/Petrolblau (Struktur, Info, technische Highlights) */
+  --accent: #0f5f80; /* AA auf Weiß (~5.6:1) */
+  --accent-hover: #0c4d68;
+  --accent-active: #093a4f;
+  --accent-subtle: #e8f2f6;
+
+  /* Neutrale Slate-Töne (kühl, technisch) */
   --background: #ffffff;
-  --foreground: #16171a;
+  --foreground: #0f172a; /* slate-900 – sehr hoher Kontrast */
   --card: #ffffff;
-  --card-foreground: #16171a;
-  --muted: #f4f4f6; /* zarter Sektions-Hintergrund */
-  --muted-foreground: #5b5d66; /* Fließtext gedämpft */
-  --subtle-foreground: #83858f; /* Labels, Meta */
-  --border: #e6e6ea;
-  --border-strong: #d3d4da;
-  --ink: #0d0e11; /* fast-schwarz für starke Kontraste */
+  --card-foreground: #0f172a;
+  --muted: #f1f5f9; /* slate-100 – zarter Sektions-Hintergrund */
+  --muted-foreground: #45505f; /* Fließtext gedämpft – AA (~7:1) */
+  --subtle-foreground: #5b6672; /* Labels, Meta – AA (~5.3:1) */
+  --border: #e2e8f0; /* slate-200 */
+  --border-strong: #cbd5e1; /* slate-300 */
+  --ink: #0b1220; /* fast-schwarzes Navy für starke Kontraste */
 
   /* Fokus */
   --ring: var(--brand);
@@ -54,6 +65,12 @@
   --color-brand-active: var(--brand-active);
   --color-brand-subtle: var(--brand-subtle);
   --color-brand-foreground: #ffffff;
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-active: var(--accent-active);
+  --color-accent-subtle: var(--accent-subtle);
+  --color-accent-foreground: #ffffff;
 
   --radius-DEFAULT: var(--radius);
   --radius-sm: var(--radius-sm);

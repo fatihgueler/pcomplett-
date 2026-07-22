@@ -261,7 +261,7 @@ export const karrierePage = {
   // TODO(CONTENT): Offene Stellen ergänzen, sobald vorhanden.
   openPositions: [] as { title: string; type: string }[],
   initiativ:
-    "Aktuell sind keine Stellen ausgeschrieben. Sie passen trotzdem zu uns? Wir freuen uns über Ihre Initiativbewerbung – gern per E-Mail an service@pcomplett.de.",
+    "Aktuell sind keine Stellen ausgeschrieben. Sie passen trotzdem zu uns? Wir freuen uns über Ihre Initiativbewerbung – am einfachsten über unser Kontaktformular oder den Rückrufservice.",
 };
 
 export const barrierefreiheitPage = {
@@ -281,7 +281,7 @@ export const barrierefreiheitPage = {
     },
     {
       heading: "Barrieren melden",
-      text: "Ist Ihnen eine Barriere aufgefallen oder benötigen Sie Inhalte in einer zugänglicheren Form? Melden Sie sich bitte – wir helfen weiter und bessern nach: service@pcomplett.de, Telefon 0511 760 773 0.",
+      text: "Ist Ihnen eine Barriere aufgefallen oder benötigen Sie Inhalte in einer zugänglicheren Form? Melden Sie sich bitte über unser Kontaktformular oder den Rückrufservice – wir helfen weiter und bessern nach.",
     },
   ],
 };

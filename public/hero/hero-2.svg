@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-label="Platzhalter Hero-Bild 2">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0e2a3a"/>
+      <stop offset="1" stop-color="#0f5f80"/>
+    </linearGradient>
+    <pattern id="d2" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="2" fill="#ffffff" fill-opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="720" fill="url(#g2)"/>
+  <rect width="1280" height="720" fill="url(#d2)"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.14" stroke-width="2">
+    <path d="M120 560 L120 220 L360 220 Q470 220 470 320 Q470 420 360 420 L220 420"/>
+    <circle cx="120" cy="560" r="9" fill="#ffffff" fill-opacity="0.18" stroke="none"/>
+    <circle cx="220" cy="420" r="9" fill="#ffffff" fill-opacity="0.18" stroke="none"/>
+  </g>
+  <text x="640" y="368" text-anchor="middle" font-family="'Segoe UI',Roboto,Arial,sans-serif" font-size="52" font-weight="700" fill="#ffffff" fill-opacity="0.9">{{HERO_BILD_2}}</text>
+  <text x="640" y="418" text-anchor="middle" font-family="'Segoe UI',Roboto,Arial,sans-serif" font-size="24" fill="#ffffff" fill-opacity="0.55">16:9 · vom Kunden 1:1 austauschbar</text>
+</svg>

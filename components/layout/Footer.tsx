@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { Logo } from "./Logo";
+import { ContactMedia } from "@/components/ui/contact-media";
 import { siteConfig } from "@/lib/site";
 import { footer, navLinks } from "@/lib/content";
 
@@ -50,24 +51,12 @@ export function Footer() {
           </Link>
         </nav>
 
-        {/* Kontakt */}
+        {/* Kontakt – E-Mail/Telefon aus Spam-Schutz nur als Bild, nicht verlinkt */}
         <div className="flex flex-col gap-3">
           <h2 className="text-sm font-semibold text-ink">Kontakt</h2>
-          <a
-            href={`tel:${siteConfig.contact.phone}`}
-            className="inline-flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-brand"
-          >
-            <Phone className="size-4 text-brand" aria-hidden />
-            {siteConfig.contact.phone}
-          </a>
-          <a
-            href={`mailto:${siteConfig.contact.email}`}
-            className="inline-flex items-center gap-2.5 text-sm text-muted-foreground transition-colors hover:text-brand"
-          >
-            <Mail className="size-4 text-brand" aria-hidden />
-            {siteConfig.contact.email}
-          </a>
-          <p className="inline-flex items-start gap-2.5 text-sm text-muted-foreground">
+          <ContactMedia kind="telefon" label="Telefon" />
+          <ContactMedia kind="email-service" label="E-Mail" />
+          <p className="mt-1 inline-flex items-start gap-2.5 text-sm text-muted-foreground">
             <MapPin className="mt-0.5 size-4 shrink-0 text-brand" aria-hidden />
             <span>
               {siteConfig.contact.street}
@@ -75,6 +64,12 @@ export function Footer() {
               {siteConfig.contact.postalCode}{" "}
               {siteConfig.contact.addressLocality}
             </span>
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Schnellster Weg:{" "}
+            <Link href="/#rueckruf" className="font-medium text-brand hover:underline">
+              Rückruf anfordern
+            </Link>
           </p>
         </div>
       </div>

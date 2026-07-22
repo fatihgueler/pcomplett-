@@ -2,6 +2,9 @@
  * Zentrale Inhalts-Datei (Single Source of Truth für alle Texte).
  * Änderungen an Website-Texten ausschließlich hier vornehmen.
  * Platzhalter {{NAME}} = vom Kunden mit echten Daten ersetzen.
+ *
+ * Zielgruppe: ausschließlich Geschäftskunden (B2B).
+ * Leitmotiv: professionelle Betreuung.
  */
 
 export type NavLink = { label: string; href: string };
@@ -14,44 +17,133 @@ export const navLinks: NavLink[] = [
   { label: "Kontakt", href: "/kontakt" },
 ];
 
+/**
+ * Hero: automatisches Bild-Karussell + Werbeslogan.
+ * Die vier Slides sind 16:9-Platzhalter (gleiche Maße) und können vom Kunden
+ * 1:1 ausgetauscht werden ({{HERO_BILD_1}} … {{HERO_BILD_4}}).
+ */
 export const hero = {
-  eyebrow: "IT- & KI-Systemhaus",
-  headlineLead: "IT und KI, die Ihren Alltag",
-  headlineAccent: "einfacher machen.",
-  subline:
-    "Von der IT-Infrastruktur über smarte KI-Automatisierung bis zum schnellen PC-Service. PComplett ist Ihr verlässlicher Partner – für Unternehmen und Privatkunden.",
-  primaryCta: { label: "Beratung anfragen", href: "/kontakt" },
-  secondaryCta: { label: "Leistungen entdecken", href: "/leistungen" },
-  highlights: [
-    "Für Unternehmen & Privat",
-    "KI aus eigener Praxis",
-    "Persönlich & regional",
+  eyebrow: "IT-Systemhaus · Hannover",
+  // {{WERBESLOGAN}} – zentrale Werbeaussage, vom Kunden final festlegen.
+  slogan: "{{WERBESLOGAN}}",
+  sublineFallback:
+    "Serviceverträge, Serveraufbau, Netzwerke, Arbeitsplätze und Telefonanlagen – professionelle IT-Betreuung für Unternehmen aus einer Hand.",
+  primaryCta: { label: "Rückruf anfordern", href: "#rueckruf" },
+  secondaryCta: { label: "Leistungen ansehen", href: "#leistungen" },
+  slides: [
+    { src: "/hero/hero-1.svg", placeholder: "{{HERO_BILD_1}}" },
+    { src: "/hero/hero-2.svg", placeholder: "{{HERO_BILD_2}}" },
+    { src: "/hero/hero-3.svg", placeholder: "{{HERO_BILD_3}}" },
+    { src: "/hero/hero-4.svg", placeholder: "{{HERO_BILD_4}}" },
   ],
 };
 
-export type EntryCard = {
+/**
+ * Leistungsmodule der Startseite – die Haupteinnahmequellen prominent beworben.
+ * icon = Schlüssel aus lib/icons.ts.
+ */
+export type LeistungsModul = {
   icon: string;
   title: string;
   description: string;
-  cta: { label: string; href: string };
 };
 
-export const entryCards: EntryCard[] = [
+export const homeLeistungen: LeistungsModul[] = [
   {
-    icon: "Building2",
-    title: "Für Unternehmen",
+    icon: "FileCheck2",
+    title: "Serviceverträge",
     description:
-      "IT-Betreuung, Sicherheit und KI-Automatisierung, die Ihr Geschäft effizienter und zukunftssicher machen.",
-    cta: { label: "Zu den Unternehmensleistungen", href: "/leistungen" },
+      "Feste Ansprechpartner, planbare Kosten und schnelle Reaktion. Wir betreuen Ihre IT dauerhaft – im Hintergrund, damit Sie arbeiten können.",
   },
   {
-    icon: "UserRound",
-    title: "Für Privatkunden",
+    icon: "Server",
+    title: "Serveraufbau",
     description:
-      "Schnelle Hilfe bei PC, Technik und allen digitalen Fragen – unkompliziert, verständlich und fair.",
-    cta: { label: "Zum Privatkunden-Service", href: "/#service-privat" },
+      "Planung, Einrichtung und Betrieb Ihrer Server – vor Ort oder virtualisiert. Stabil, ausfallsicher und sauber dokumentiert.",
+  },
+  {
+    icon: "Network",
+    title: "Netzwerke",
+    description:
+      "Strukturierte Verkabelung, WLAN und sichere Netzwerktechnik – zuverlässig geplant und für Wachstum vorbereitet.",
+  },
+  {
+    icon: "MonitorSmartphone",
+    title: "Arbeitsplätze einrichten",
+    description:
+      "Neue PC-Arbeitsplätze komplett startklar: Hardware, Software und Anbindung – einheitlich eingerichtet und übergeben.",
+  },
+  {
+    icon: "PhoneCall",
+    title: "Telefonanlagen",
+    description:
+      "Moderne Telefonie für Unternehmen: Planung, Einrichtung und Betreuung Ihrer Telefonanlage – klar und wartungsarm.",
+  },
+  {
+    icon: "ShieldCheck",
+    title: "IT-Sicherheit & Hardware",
+    description:
+      "Firewalls, Backups und geprüfte Hardware. Wir sichern Systeme und Daten ab, bevor ein Zwischenfall zum Problem wird.",
+  },
+  {
+    icon: "Boxes",
+    title: "Hardware & Software",
+    description:
+      "Beschaffung und Auflistung passender Hardware und Software – herstellerunabhängig empfohlen und einsatzfertig geliefert.",
   },
 ];
+
+/**
+ * Erklär-Abschnitte (als Bild-Karussell dargestellt).
+ * Bildplatzhalter mit korrektem 16:9-Seitenverhältnis.
+ */
+export const erklaerSlides = [
+  {
+    title: "Ihre IT in professioneller Betreuung",
+    text: "Ein fester Ansprechpartner kümmert sich um Server, Netzwerk und Arbeitsplätze – Sie müssen sich um nichts kümmern.",
+    placeholder: "{{BILD_BETREUUNG}}",
+  },
+  {
+    title: "Serveraufbau & Infrastruktur",
+    text: "Wir planen und betreiben eine Infrastruktur, die stabil läuft und mit Ihrem Unternehmen mitwächst.",
+    placeholder: "{{BILD_SERVERRAUM}}",
+  },
+  {
+    title: "Telefonanlagen & Vernetzung",
+    text: "Von der Telefonanlage bis zum Netzwerk verbinden wir Ihre Standorte zuverlässig und sicher.",
+    placeholder: "{{BILD_TELEFONIE}}",
+  },
+  {
+    title: "Vor Ort in der Region Hannover",
+    text: "Kurze Wege, schnelle Hilfe: Wir sind persönlich für Sie da – vor Ort oder per Fernwartung.",
+    placeholder: "{{BILD_VOR_ORT}}",
+  },
+];
+
+/**
+ * Rückrufservice mit Terminwunsch – primärer Kontaktweg der Startseite.
+ */
+export const rueckruf = {
+  eyebrow: "Rückrufservice",
+  heading: "Wir rufen Sie zurück",
+  text: "Wählen Sie Wunschtag und -zeit – wir melden uns zuverlässig bei Ihnen. Ohne Warteschleife, direkt beim richtigen Ansprechpartner.",
+  successTitle: "Vielen Dank – wir rufen Sie zurück!",
+  successText:
+    "Ihre Rückrufbitte ist bei uns eingegangen. Wir melden uns zum gewünschten Zeitpunkt bei Ihnen.",
+  note: "Ihre Angaben nutzen wir ausschließlich für den Rückruf. Details in unserer Datenschutzerklärung.",
+};
+
+/**
+ * KI-Baustein (auf der Startseite bewusst untergeordnet, ein Anwendungsfall).
+ */
+export const kiHome = {
+  eyebrow: "Ergänzend: KI in der Praxis",
+  heading: "Sprache-zu-Text – lokal und datenschutzkonform",
+  text: "Ein Beispiel aus unserem Alltag: Mit lokal laufender KI (Whisper) wandeln wir Sprache automatisch in Text um – ohne Cloud, ohne Datenabfluss.",
+  cta: { label: "Mehr zur KI-Praxis", href: "/ki-in-der-praxis" },
+};
+
+// --- Leistungen (Detailfelder für /leistungen und Chatbot-Kontext) ----------
 
 export type Service = {
   slug: string;
@@ -62,18 +154,11 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    slug: "ki-loesungen",
-    icon: "Sparkles",
-    title: "KI-Lösungen",
-    description:
-      "Wir bringen KI dorthin, wo sie wirklich Zeit spart – von der automatisierten Auftragsbearbeitung bis zur intelligenten E-Mail-Verarbeitung. Praxiserprobt, denn wir setzen es täglich selbst ein.",
-  },
-  {
     slug: "it-loesungen",
     icon: "Network",
-    title: "IT-Lösungen",
+    title: "IT-Lösungen & Infrastruktur",
     description:
-      "Wir planen, modernisieren und betreuen Ihre komplette IT – Server, Netzwerke und Cloud. Stabil, sicher und ohne Ausfallsorgen.",
+      "Wir planen, modernisieren und betreuen Ihre komplette IT – Server, Netzwerke und Arbeitsplätze. Stabil, sicher und ohne Ausfallsorgen.",
   },
   {
     slug: "it-sicherheit",
@@ -87,7 +172,7 @@ export const services: Service[] = [
     icon: "Puzzle",
     title: "Software & JTL-Module",
     description:
-      "Individuelle Software und maßgeschneiderte JTL-Module für Ihre Prozesse. Wir erweitern Ihr System genau um das, was Ihnen im Alltag fehlt.",
+      "Individuelle Software und maßgeschneiderte JTL-Module für Ihre Prozesse. Wir erweitern Ihr System genau um das, was im Alltag fehlt.",
   },
   {
     slug: "development",
@@ -96,90 +181,47 @@ export const services: Service[] = [
     description:
       "Von der Web-Anwendung bis zur Schnittstelle: Wir entwickeln Software, die exakt zu Ihren Abläufen passt und mit Ihnen wächst.",
   },
+  {
+    slug: "ki-loesungen",
+    icon: "Sparkles",
+    title: "KI-Lösungen",
+    description:
+      "Praxiserprobte KI dort, wo sie Zeit spart – etwa Sprache-zu-Text mit lokal laufender KI, datenschutzkonform ohne Cloud.",
+  },
 ];
 
 export const kiPraxis = {
   eyebrow: "KI in der Praxis",
-  heading: "Wir nutzen KI selbst – jeden Tag",
+  heading: "Sprache-zu-Text mit lokaler KI",
   intro:
-    "Keine Theorie, sondern gelebte Automatisierung aus unseren eigenen Abläufen. Genau diese Lösungen bauen wir auch für Sie.",
-  cta: { label: "Das bauen wir auch für Sie", href: "/kontakt" },
+    "Ein klarer Anwendungsfall statt großer Versprechen: Wir wandeln Sprache automatisch in durchsuchbaren Text um – mit lokal laufender KI (Whisper), ohne Cloud und ohne Datenabfluss.",
+  cta: { label: "Das richten wir auch für Sie ein", href: "/kontakt" },
   cases: [
     {
-      icon: "FileText",
-      title: "Automatisierte Auftragsbearbeitung",
-      problem:
-        "Problem: Eingehende Aufträge mussten manuell erfasst und verteilt werden – zeitaufwändig und fehleranfällig.",
-      solution:
-        "Lösung: Eine KI liest die Auftragsdaten automatisch aus und legt sie strukturiert im System an.",
-      result:
-        "Ergebnis: Deutlich weniger manuelle Erfassung und spürbar schnellere Bearbeitung.",
-    },
-    {
-      icon: "Mail",
-      title: "KI-gestützte E-Mail-Bearbeitung",
-      problem:
-        "Problem: Das Postfach lief über, wichtige Anfragen gingen zwischen Standardmails unter.",
-      solution:
-        "Lösung: Eine KI kategorisiert eingehende E-Mails, priorisiert sie und schlägt passende Antworten vor.",
-      result:
-        "Ergebnis: Schnellere Reaktionszeiten und ein dauerhaft aufgeräumter Posteingang.",
-    },
-    {
       icon: "AudioLines",
-      title: "Sprach-zu-Text-Workflows",
+      title: "Sprache-zu-Text mit Whisper",
       problem:
-        "Problem: Notizen und Besprechungen kosteten im Nachgang viel Tipparbeit.",
+        "Problem: Notizen, Besprechungen und Serviceeinsätze kosten im Nachgang viel Tipparbeit.",
       solution:
-        "Lösung: Mit Whisper wandeln wir Sprache automatisch in durchsuchbaren Text um.",
+        "Lösung: Eine lokal laufende KI (Whisper) wandelt Sprache automatisch in Text um – die Daten bleiben im Haus.",
       result:
-        "Ergebnis: Dokumentation entsteht nebenbei – ganz ohne Abtippen.",
-    },
-  ],
-};
-
-export const servicePrivat = {
-  eyebrow: "Für Privatkunden",
-  heading: "Schnelle Hilfe bei Technik & PC",
-  intro:
-    "Wenn der Rechner streikt oder die Technik nicht mitspielt: Wir helfen unkompliziert und erklären alles verständlich.",
-  // {{B2C_LEISTUNGEN}} – bei Bedarf anpassen. Fallback-Inhalte:
-  items: [
-    {
-      icon: "Cog",
-      title: "PC-Service & Aufrüstung",
-      description:
-        "Einrichtung, Optimierung und Aufrüstung Ihres Rechners – damit alles wieder rund läuft.",
-    },
-    {
-      icon: "HardDrive",
-      title: "Reparatur & Datenrettung",
-      description:
-        "Defekte Hardware, verlorene Dateien? Wir reparieren und retten, was zu retten ist.",
-    },
-    {
-      icon: "UserRound",
-      title: "Beratung & Einrichtung",
-      description:
-        "Neues Gerät, WLAN, Smart Home: Wir beraten ehrlich und richten alles startklar ein.",
+        "Ergebnis: Dokumentation entsteht nebenbei – datenschutzkonform, ohne Cloud und ohne Abtippen.",
     },
   ],
 };
 
 export const trust = {
   eyebrow: "Partner & Vertrauen",
-  heading: "Verlässlich für Unternehmen und Privatkunden",
+  heading: "Verlässlich für Unternehmen",
   intro:
     "Wir arbeiten mit bewährten Technologiepartnern und begleiten unsere Kunden langfristig – bodenständig und verbindlich.",
-  // Vier Partner-Slots (Design sieht keine weiteren vor). Panasonic und
-  // Deutsche Messe daher NICHT ergänzt.
   partnerHeading: "Unsere Technologie-Partner",
   // icon = Schlüssel aus brandLogoMap (echtes Logo). Ohne icon = Text-Wortmarke.
   partners: [
     { name: "HP", icon: "hp" },
     { name: "Fujitsu", icon: "fujitsu" },
     { name: "Starface" },
-    { name: "Jeester" },
+    { name: "Yeastar" },
   ],
   stats: [
     // Belegbar: Firma im Dezember 1994 in Hannover gegründet.
@@ -218,9 +260,9 @@ export const trust = {
 };
 
 export const ctaBand = {
-  heading: "Lassen Sie uns über Ihre IT & KI sprechen.",
-  text: "Unverbindlich, ehrlich und ohne Fachchinesisch. Wir zeigen Ihnen, wo PComplett Ihren Alltag spürbar entlastet.",
-  cta: { label: "Kontakt aufnehmen", href: "/kontakt" },
+  heading: "Lassen Sie uns über Ihre IT sprechen.",
+  text: "Unverbindlich, ehrlich und ohne Fachchinesisch. Wir zeigen Ihnen, wo PComplett Ihren Betrieb spürbar entlastet.",
+  cta: { label: "Rückruf anfordern", href: "/#rueckruf" },
 };
 
 export const prozess = {
@@ -248,37 +290,31 @@ export const prozess = {
   ],
 };
 
-export const notfall = {
-  heading: "IT-Störung? Wir helfen sofort.",
-  text: "Wenn nichts mehr geht, zählt jede Minute. Rufen Sie uns an – wir unterstützen per Fernwartung oder vor Ort.",
-  cta: { label: "Jetzt anrufen", href: "tel:" },
-};
-
 export const faq = {
   eyebrow: "Häufige Fragen",
   heading: "Was Kunden oft fragen",
   intro:
-    "Sie haben eine Frage, die hier nicht beantwortet wird? Melden Sie sich einfach – wir helfen gern weiter.",
+    "Sie haben eine Frage, die hier nicht beantwortet wird? Fordern Sie einfach einen Rückruf an – wir helfen gern weiter.",
   items: [
     {
-      q: "Betreuen Sie auch kleine Betriebe und Privatkunden?",
-      a: "Ja. Wir betreuen Unternehmen jeder Größe – vom Handwerksbetrieb bis zum Mittelstand – und helfen Privatkunden unkompliziert bei PC und Technik.",
+      q: "Für welche Unternehmen arbeiten Sie?",
+      a: "Wir betreuen Unternehmen jeder Größe – vom Handwerksbetrieb bis zum Mittelstand – mit Serviceverträgen, Infrastruktur, Telefonie und IT-Sicherheit.",
     },
     {
-      q: "Was kostet eine Beratung?",
-      a: "Das Erstgespräch ist unverbindlich und kostenfrei. Erst danach erhalten Sie ein transparentes Angebot.",
+      q: "Was bringt ein Servicevertrag?",
+      a: "Planbare Kosten, feste Ansprechpartner und schnelle Reaktion. Wir betreuen Ihre IT laufend, statt erst im Störungsfall zu reagieren.",
     },
     {
       q: "Wie schnell sind Sie im Notfall erreichbar?",
-      a: "Bei Störungen erreichen Sie uns telefonisch. Wir helfen per Fernwartung oder vor Ort – so schnell wie möglich.",
+      a: "Bei Störungen helfen wir per Fernwartung oder vor Ort – so schnell wie möglich, im Rahmen Ihres Servicevertrags priorisiert.",
     },
     {
       q: "Arbeiten Sie herstellerunabhängig?",
-      a: "Ja. Wir empfehlen die Lösung, die zu Ihnen passt, statt an bestimmte Hersteller gebunden zu sein.",
+      a: "Ja. Wir empfehlen die Lösung, die zu Ihrem Betrieb passt, statt an bestimmte Hersteller gebunden zu sein.",
     },
     {
-      q: "Was macht Ihre KI-Lösungen besonders?",
-      a: "Wir setzen KI seit Jahren in unseren eigenen Abläufen ein und bauen nur, was sich in der Praxis bewährt – kein Hype, sondern echter Nutzen.",
+      q: "Richten Sie auch Telefonanlagen ein?",
+      a: "Ja. Wir planen, installieren und betreuen moderne Telefonanlagen für Unternehmen – vom kleinen Team bis zu mehreren Hundert Anschlüssen.",
     },
     {
       q: "Sind Sie nur in Hannover tätig?",
@@ -292,10 +328,13 @@ export const contact = {
   heading: "Beratung anfragen",
   intro:
     "Erzählen Sie uns kurz von Ihrem Anliegen – wir melden uns zeitnah mit einer konkreten Einschätzung. Kein Callcenter, sondern ein fester Ansprechpartner.",
-  // Auswahlmöglichkeiten für das Feld „Anliegen“
+  // Auswahlmöglichkeiten für das Feld „Anliegen"
   subjects: [
-    "Unternehmen – IT / KI",
-    "Privatkunde – PC & Service",
+    "Servicevertrag / IT-Betreuung",
+    "Serveraufbau / Netzwerk",
+    "Arbeitsplätze / Hardware & Software",
+    "Telefonanlage",
+    "IT-Sicherheit",
     "Sonstiges",
   ],
   formNote:
@@ -305,22 +344,9 @@ export const contact = {
     "Wir haben Ihre Nachricht erhalten und melden uns so schnell wie möglich bei Ihnen.",
 };
 
-export const newsletter = {
-  eyebrow: "Newsletter",
-  heading: "Bleiben Sie auf dem Laufenden",
-  text: "Praktische Tipps zu IT, KI und Technik – für Unternehmen und Privatkunden. Kein Spam, jederzeit abbestellbar.",
-  segments: [
-    { value: "unternehmen", label: "Unternehmen" },
-    { value: "privat", label: "Privat" },
-  ],
-  successTitle: "Fast geschafft!",
-  successText:
-    "Bitte bestätigen Sie Ihre Anmeldung über den Link, den wir Ihnen per E-Mail gesendet haben (Double-Opt-in).",
-};
-
 export const footer = {
   tagline:
-    "IT- & KI-Systemhaus für Unternehmen und Privatkunden. Zuverlässig, persönlich und aus einer Hand.",
+    "IT-Systemhaus für Unternehmen in Hannover. Professionelle Betreuung – zuverlässig, persönlich und aus einer Hand.",
   legalLinks: [
     { label: "Impressum", href: "/impressum" },
     { label: "Datenschutz", href: "/datenschutz" },
@@ -336,9 +362,9 @@ export const chatbot = {
   closeLabel: "Chat schließen",
   placeholder: "Ihre Frage …",
   greeting:
-    "Hallo! Ich beantworte gern Ihre Fragen zu den Leistungen von PComplett – IT, KI-Automatisierung oder PC-Service. Wie kann ich helfen?",
+    "Hallo! Ich beantworte gern Ihre Fragen zu den Leistungen von PComplett – IT-Betreuung, Serveraufbau, Netzwerke, Telefonanlagen und IT-Sicherheit. Wie kann ich helfen?",
   unavailable:
-    "Der Chat-Assistent ist derzeit nicht verfügbar. Schreiben Sie uns gern direkt über das Kontaktformular – wir melden uns zeitnah.",
+    "Der Chat-Assistent ist derzeit nicht verfügbar. Fordern Sie gern einen Rückruf an oder nutzen Sie das Kontaktformular – wir melden uns zeitnah.",
   errorText:
     "Entschuldigung, das hat gerade nicht geklappt. Bitte versuchen Sie es erneut oder nutzen Sie das Kontaktformular.",
 };

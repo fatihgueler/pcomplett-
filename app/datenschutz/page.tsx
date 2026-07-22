@@ -78,16 +78,15 @@ export default function DatenschutzPage() {
         </p>
       </LegalSection>
 
-      <LegalSection heading="6. Newsletter">
+      <LegalSection heading="6. Rückrufservice">
         <p>
-          Wenn Sie sich für unseren Newsletter anmelden, verarbeiten wir Ihre
-          E-Mail-Adresse sowie das gewählte Segment (Unternehmen oder Privat),
-          um Ihnen die gewünschten Informationen zuzusenden. Die Anmeldung
-          erfolgt im Double-Opt-in-Verfahren: Sie erhalten zunächst eine
-          Bestätigungs-E-Mail, und Ihre Einwilligung wird protokolliert.
-          Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).
-          Sie können den Newsletter jederzeit abbestellen und Ihre Einwilligung
-          mit Wirkung für die Zukunft widerrufen.
+          Wenn Sie über unseren Rückrufservice einen Rückruf anfordern,
+          verarbeiten wir die von Ihnen angegebenen Daten (Name, Firma,
+          Telefonnummer sowie Wunschtag und -zeit) ausschließlich zur
+          Durchführung des gewünschten Rückrufs. Rechtsgrundlage ist Art. 6
+          Abs. 1 lit. b bzw. lit. f DSGVO. Die Daten werden gelöscht, sobald sie
+          nicht mehr erforderlich sind und keine gesetzlichen
+          Aufbewahrungspflichten entgegenstehen.
         </p>
       </LegalSection>
 

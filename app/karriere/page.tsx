@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Briefcase, Mail } from "lucide-react";
+import Link from "next/link";
+import { Briefcase, ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
 import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { ContactMedia } from "@/components/ui/contact-media";
 import { karrierePage } from "@/lib/pages";
-import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Karriere – Jobs bei einem IT- & KI-Systemhaus in Hannover",
@@ -72,11 +73,12 @@ export default function KarrierePage() {
                 <p className="max-w-2xl leading-relaxed text-muted-foreground">
                   {karrierePage.initiativ}
                 </p>
+                <ContactMedia kind="email-service" label="Bewerbung an" />
                 <Button asChild>
-                  <a href={`mailto:${siteConfig.contact.email}`}>
-                    <Mail className="size-4" aria-hidden />
+                  <Link href="/kontakt">
                     Initiativ bewerben
-                  </a>
+                    <ArrowRight className="size-4" aria-hidden />
+                  </Link>
                 </Button>
               </div>
             )}

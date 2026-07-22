@@ -1,29 +1,25 @@
 import { Hero } from "@/components/sections/Hero";
-import { EntryCards } from "@/components/sections/EntryCards";
 import { Leistungen } from "@/components/sections/Leistungen";
+import { Erklaerung } from "@/components/sections/Erklaerung";
 import { Prozess } from "@/components/sections/Prozess";
-import { KiPraxis } from "@/components/sections/KiPraxis";
-import { ServicePrivat } from "@/components/sections/ServicePrivat";
-import { Notfall } from "@/components/sections/Notfall";
+import { KiHome } from "@/components/sections/KiHome";
 import { Vertrauen } from "@/components/sections/Vertrauen";
+import { Rueckruf } from "@/components/sections/Rueckruf";
 import { Faq } from "@/components/sections/Faq";
 import { CtaBand } from "@/components/sections/CtaBand";
-import { Newsletter } from "@/components/sections/Newsletter";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <EntryCards />
       <Leistungen />
+      <Erklaerung />
       <Prozess />
-      <KiPraxis />
-      <ServicePrivat />
-      <Notfall />
+      <KiHome />
       <Vertrauen />
+      <Rueckruf />
       <Faq />
       <CtaBand />
-      <Newsletter />
     </>
   );
 }

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 44" width="320" height="44" role="img" aria-label="E-Mail-Adresse als Bild">
+  <g fill="none" stroke="#0b1220" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(6 11) scale(0.92)">
+    <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+  </g>
+  <text x="38" y="29" font-family="'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="21" font-weight="600" fill="#0b1220">service@pcomplett.de</text>
+</svg>

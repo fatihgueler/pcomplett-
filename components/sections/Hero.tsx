@@ -1,115 +1,136 @@
+"use client";
+
+import * as React from "react";
 import Link from "next/link";
-import { Check, ShieldCheck, Activity, Headset } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import { ArrowRight, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Parallax } from "@/components/Parallax";
 import { hero } from "@/lib/content";
+import { usePrefersReducedMotion } from "@/lib/use-reduced-motion";
+import { cn } from "@/lib/utils";
 
-const statusItems = [
-  { icon: Activity, label: "Systeme", value: "Online", tone: "ok" },
-  { icon: ShieldCheck, label: "Backup", value: "Aktuell", tone: "ok" },
-  { icon: Headset, label: "Support", value: "Erreichbar", tone: "ok" },
-];
-
+/**
+ * Hero mit automatischem Bild-Karussell (shadcn/embla + Autoplay-Plugin).
+ * - Autoplay ~5 s pro Slide, Endlosschleife, sanfte Überblendung (CSS-Crossfade).
+ * - Bei prefers-reduced-motion wird kein Autoplay geladen (Karussell steht still).
+ * - Über dem Karussell: Werbeslogan {{WERBESLOGAN}} mit Overlay für Lesbarkeit.
+ * Die vier Slides sind 16:9-Platzhalter und lassen sich 1:1 austauschen.
+ */
 export function Hero() {
+  const reduced = usePrefersReducedMotion();
+  const autoplay = React.useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: false }),
+  );
+
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, watchDrag: false },
+    reduced ? [] : [autoplay.current],
+  );
+  const [selected, setSelected] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSelected(emblaApi.selectedScrollSnap());
+    emblaApi.on("select", onSelect);
+    onSelect();
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi]);
+
   return (
     <section
       aria-labelledby="hero-heading"
-      className="bg-aurora relative overflow-hidden border-b border-border"
+      className="relative overflow-hidden border-b border-border bg-ink"
     >
-      {/* Atmosphäre: Punkt-Raster + weicher Marken-Schimmer */}
-      <div aria-hidden className="absolute inset-0 bg-dot-grid opacity-70" />
+      {/* Sichtbare Crossfade-Ebene (folgt dem Karussell-Index) */}
+      <div aria-hidden className="absolute inset-0">
+        {hero.slides.map((slide, index) => (
+          <div
+            key={slide.src}
+            className={cn(
+              "absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out motion-reduce:transition-none",
+              index === selected ? "opacity-100" : "opacity-0",
+            )}
+            style={{ backgroundImage: `url(${slide.src})` }}
+          />
+        ))}
+      </div>
+
+      {/* Lesbarkeits-Overlay */}
       <div
         aria-hidden
-        className="absolute -right-40 -top-40 h-[32rem] w-[32rem] rounded-full bg-brand-subtle blur-3xl"
+        className="absolute inset-0 bg-gradient-to-br from-ink/85 via-ink/70 to-ink/55"
       />
 
-      <div className="container-page relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-28">
-        {/* Textspalte */}
-        <div className="flex flex-col items-start gap-6">
-          <span className="hero-rise hero-rise-1 inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-brand">
-            <span aria-hidden className="size-1.5 rounded-full bg-brand" />
-            {hero.eyebrow}
-          </span>
+      {/* Embla-Engine-Ebene: treibt Timing/Index/Loop, visuell unsichtbar */}
+      <div
+        ref={emblaRef}
+        aria-hidden
+        className="pointer-events-none absolute inset-0 overflow-hidden opacity-0"
+      >
+        <div className="flex h-full">
+          {hero.slides.map((slide) => (
+            <div key={slide.src} className="min-w-0 shrink-0 grow-0 basis-full" />
+          ))}
+        </div>
+      </div>
 
-          <h1
-            id="hero-heading"
-            className="hero-rise hero-rise-1 font-display text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-5xl md:text-6xl"
+      {/* Inhalt */}
+      <div className="container-page relative flex min-h-[30rem] flex-col items-start justify-center gap-6 py-20 md:min-h-[36rem] md:py-28">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-white backdrop-blur-sm">
+          <span aria-hidden className="size-1.5 rounded-full bg-brand" />
+          {hero.eyebrow}
+        </span>
+
+        <h1
+          id="hero-heading"
+          className="max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl"
+        >
+          {hero.slogan}
+        </h1>
+
+        <p className="max-w-xl text-lg leading-relaxed text-white/80">
+          {hero.sublineFallback}
+        </p>
+
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <Button asChild size="lg">
+            <Link href={hero.primaryCta.href}>
+              <PhoneCall className="size-4" aria-hidden />
+              {hero.primaryCta.label}
+            </Link>
+          </Button>
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="border-white/30 bg-white/10 text-white hover:border-white hover:bg-white/15 hover:text-white"
           >
-            {hero.headlineLead}{" "}
-            <span className="text-gradient-brand">{hero.headlineAccent}</span>
-          </h1>
-
-          <p className="hero-rise hero-rise-2 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            {hero.subline}
-          </p>
-
-          <div className="hero-rise hero-rise-3 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button asChild size="lg">
-              <Link href={hero.primaryCta.href}>{hero.primaryCta.label}</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <Link href={hero.secondaryCta.href}>
-                {hero.secondaryCta.label}
-              </Link>
-            </Button>
-          </div>
-
-          <ul className="hero-rise hero-rise-4 mt-2 flex flex-wrap gap-x-6 gap-y-2">
-            {hero.highlights.map((item) => (
-              <li
-                key={item}
-                className="inline-flex items-center gap-2 text-sm font-medium text-foreground"
-              >
-                <Check className="size-4 text-brand" aria-hidden />
-                {item}
-              </li>
-            ))}
-          </ul>
+            <Link href={hero.secondaryCta.href}>
+              {hero.secondaryCta.label}
+              <ArrowRight className="size-4" aria-hidden />
+            </Link>
+          </Button>
         </div>
 
-        {/* Dekorative Verlässlichkeits-Karte (rein visuell) */}
-        <Parallax
-          speed={0.12}
-          className="hero-rise hero-rise-3 relative mx-auto w-full max-w-md lg:mx-0"
-        >
-          <div aria-hidden className="glass absolute -left-6 -top-6 hidden h-24 w-24 rounded-2xl sm:block" />
-          <div
-            aria-hidden
-            className="glass-strong relative rounded-2xl p-6"
-          >
-            <div className="mb-5 flex items-center justify-between">
-              <span className="font-display text-sm font-semibold text-ink">
-                IT-Statusübersicht
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-subtle px-2.5 py-1 text-xs font-medium text-brand">
-                <span className="size-1.5 animate-pulse rounded-full bg-brand" />
-                Live
-              </span>
-            </div>
-            <ul className="flex flex-col gap-3">
-              {statusItems.map((item) => (
-                <li
-                  key={item.label}
-                  className="flex items-center justify-between rounded-lg border border-border bg-muted/40 px-4 py-3"
-                >
-                  <span className="inline-flex items-center gap-3 text-sm font-medium text-foreground">
-                    <item.icon className="size-4 text-brand" />
-                    {item.label}
-                  </span>
-                  <span className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-                    {item.value}
-                    <span className="size-2 rounded-full bg-emerald-500" />
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-5 rounded-lg bg-ink px-4 py-3 text-sm text-white/90">
-              <span className="font-medium text-white">Rundum betreut</span> –
-              wir behalten Ihre IT im Blick, damit Sie sich auf Ihr Geschäft
-              konzentrieren können.
-            </div>
-          </div>
-        </Parallax>
+        {/* Slide-Indikatoren */}
+        <div className="mt-2 flex items-center gap-2" role="presentation">
+          {hero.slides.map((slide, index) => (
+            <button
+              key={slide.src}
+              type="button"
+              aria-label={`Zu Slide ${index + 1}`}
+              aria-current={index === selected}
+              onClick={() => emblaApi?.scrollTo(index)}
+              className={cn(
+                "h-1.5 rounded-full transition-all",
+                index === selected ? "w-8 bg-brand" : "w-4 bg-white/40 hover:bg-white/70",
+              )}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

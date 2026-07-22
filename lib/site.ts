@@ -11,8 +11,8 @@ export const siteConfig = {
   url: "https://www.pcomplett.de",
   city: "Hannover",
   description:
-    "PComplett ist Ihr IT- & KI-Systemhaus für Unternehmen und Privatkunden: KI-Lösungen, IT-Betreuung, IT-Sicherheit, Software & JTL-Module, Development sowie PC-Service – aus einer Hand.",
-  slogan: "IT & KI für Unternehmen und Privatkunden",
+    "PComplett ist Ihr IT-Systemhaus für Unternehmen in Hannover: Serviceverträge, Serveraufbau, Netzwerke, Arbeitsplätze, Telefonanlagen sowie Hardware & Software – professionelle Betreuung aus einer Hand.",
+  slogan: "Professionelle IT-Betreuung für Unternehmen",
 
   contact: {
     phone: "0511 760 773 0",

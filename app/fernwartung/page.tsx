@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PhoneCall, ShieldCheck, MonitorSmartphone, Check } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
 import { Reveal } from "@/components/Reveal";
 import { CtaBand } from "@/components/sections/CtaBand";
+import { ContactMedia } from "@/components/ui/contact-media";
 import { fernwartungPage } from "@/lib/pages";
-import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Fernwartung – schnelle IT-Hilfe per Fernzugriff",
@@ -12,8 +13,6 @@ export const metadata: Metadata = {
     "Schnelle IT-Hilfe ohne Anfahrt: Mit der Fernwartung von PComplett lösen wir Probleme direkt an Ihrem Bildschirm – sicher und mit Ihrer Zustimmung.",
   alternates: { canonical: "/fernwartung" },
 };
-
-const telHref = `tel:${siteConfig.contact.phone.replace(/\s/g, "")}`;
 
 export default function FernwartungPage() {
   const hasDownload = !fernwartungPage.downloadHref.includes("{{");
@@ -93,17 +92,18 @@ export default function FernwartungPage() {
                   {fernwartungPage.toolNote}
                 </p>
               )}
-              <p className="text-sm text-muted-foreground">
+              <p className="inline-flex items-center gap-2 text-sm text-muted-foreground">
+                <PhoneCall className="size-4 shrink-0 text-brand" aria-hidden />
                 Rufen Sie uns vorher kurz an – dann begleiten wir Sie durch die
                 wenigen Schritte:
               </p>
-              <a
-                href={telHref}
-                className="inline-flex items-center gap-2 font-semibold text-brand hover:text-brand-hover"
-              >
-                <PhoneCall className="size-4" aria-hidden />
-                {siteConfig.contact.phone}
-              </a>
+              <ContactMedia kind="telefon" />
+              <p className="text-sm text-muted-foreground">
+                Lieber zurückrufen lassen?{" "}
+                <Link href="/#rueckruf" className="font-medium text-brand hover:underline">
+                  Rückruf anfordern
+                </Link>
+              </p>
             </div>
           </aside>
         </div>
