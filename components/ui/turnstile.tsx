@@ -75,14 +75,9 @@ export function Turnstile({ onVerify, onExpire }: Props) {
     return () => script.removeEventListener("load", render);
   }, [siteKey, onVerify, onExpire]);
 
-  if (!siteKey) {
-    return (
-      <div className="rounded-md border border-dashed border-border-strong bg-muted/60 px-4 py-3 text-xs text-subtle-foreground">
-        Captcha aktiv, sobald der Cloudflare-Turnstile-Site-Key
-        (<code>NEXT_PUBLIC_TURNSTILE_SITE_KEY</code>) hinterlegt ist.
-      </div>
-    );
-  }
+  // Ohne konfigurierten Site-Key wird nichts gerendert (kein Debug-Hinweis im
+  // Frontend). Das Captcha erscheint automatisch, sobald der Key gesetzt ist.
+  if (!siteKey) return null;
 
   return <div ref={ref} className="min-h-[65px]" />;
 }
