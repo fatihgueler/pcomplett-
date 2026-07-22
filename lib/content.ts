@@ -134,6 +134,98 @@ export const rueckruf = {
 };
 
 /**
+ * Serviceverträge – drei Stufen, bewusst OHNE Preise (nur Leistungsumfang).
+ * Reaktionszeiten sind Platzhalter und werden individuell festgelegt.
+ */
+export const servicevertraege = {
+  eyebrow: "Serviceverträge",
+  heading: "Betreuung nach Maß – planbar statt überraschend",
+  intro:
+    "Drei Stufen, ein Ziel: Ihre IT läuft. Sie wählen den Umfang, wir kümmern uns im Hintergrund.",
+  note: "Konkrete Konditionen und Reaktionszeiten stimmen wir individuell mit Ihnen ab.",
+  reactionLabel: "Reaktionszeit",
+  tiers: [
+    {
+      name: "Basis",
+      tagline: "Solide Grundabsicherung",
+      featured: false,
+      reaction: "{{SLA_BASIS}}",
+      features: [
+        "Support per Fernwartung",
+        "Update- & Patch-Management",
+        "Backup-Überwachung",
+        "Fester Ansprechpartner",
+      ],
+    },
+    {
+      name: "Komfort",
+      tagline: "Für den laufenden Betrieb",
+      featured: true,
+      reaction: "{{SLA_KOMFORT}}",
+      features: [
+        "Alles aus Basis",
+        "Proaktives Monitoring",
+        "Vor-Ort-Service nach Bedarf",
+        "Priorisierte Bearbeitung",
+      ],
+    },
+    {
+      name: "Premium",
+      tagline: "Maximale Verfügbarkeit",
+      featured: false,
+      reaction: "{{SLA_PREMIUM}}",
+      features: [
+        "Alles aus Komfort",
+        "Erweiterte IT-Sicherheit",
+        "Regelmäßige IT-Strategiegespräche",
+        "Bevorzugte Reaktionszeiten",
+      ],
+    },
+  ],
+};
+
+/**
+ * Branchen-/Anwendungsfälle – Relevanz und SEO.
+ */
+export const branchen = {
+  eyebrow: "Branchen",
+  heading: "IT-Betreuung, die Ihre Branche versteht",
+  intro:
+    "Wir kennen die Anforderungen unterschiedlicher Branchen und richten IT, Netzwerke und Telefonie passend ein.",
+  items: [
+    {
+      icon: "Boxes",
+      title: "Handel & E-Commerce",
+      text: "Stabile Systeme für Verkauf und Warenwirtschaft – inklusive JTL-Umfeld.",
+    },
+    {
+      icon: "Wrench",
+      title: "Handwerk & Mittelstand",
+      text: "Verlässliche IT und Telefonie für den Betriebsalltag – ohne eigenes IT-Team.",
+    },
+    {
+      icon: "Scale",
+      title: "Kanzleien & Praxen",
+      text: "Sichere, datenschutzkonforme IT für den Umgang mit sensiblen Daten.",
+    },
+    {
+      icon: "Building2",
+      title: "Dienstleister & Büros",
+      text: "Moderne Arbeitsplätze, Netzwerke und Telefonanlagen aus einer Hand.",
+    },
+  ],
+};
+
+/**
+ * Dezenter Störungs-/Notfall-Hinweis – führt zum Rückrufservice.
+ */
+export const stoerung = {
+  heading: "IT-Störung? Wir kümmern uns – schnell.",
+  text: "Melden Sie Ihre Störung über den Rückrufservice. Wir helfen per Fernwartung oder vor Ort.",
+  cta: { label: "Rückruf anfordern", href: "#rueckruf" },
+};
+
+/**
  * KI-Baustein (auf der Startseite bewusst untergeordnet, ein Anwendungsfall).
  */
 export const kiHome = {
@@ -216,6 +308,19 @@ export const trust = {
   intro:
     "Wir arbeiten mit bewährten Technologiepartnern und begleiten unsere Kunden langfristig – bodenständig und verbindlich.",
   partnerHeading: "Unsere Technologie-Partner",
+  // „Diese Unternehmen vertrauen uns" – echte Referenzkunden. Logo-Nutzung nur
+  // nach Freigabe des jeweiligen Kunden, daher zunächst Namensplatzhalter.
+  kundenHeading: "Diese Unternehmen vertrauen uns",
+  kunden: [
+    "ThyssenKrupp Stahlbau",
+    "TUI",
+    "Deutsche Messe AG",
+    "HIS GmbH",
+    "J+S Druckfarben",
+  ],
+  // Zertifizierungen/Partnerstatus – Platzhalter, mit echten Nachweisen füllen.
+  zertifikateHeading: "Zertifizierungen & Partnerstatus",
+  zertifikate: ["{{ZERTIFIKAT_1}}", "{{ZERTIFIKAT_2}}", "{{ZERTIFIKAT_3}}"],
   // icon = Schlüssel aus brandLogoMap (echtes Logo). Ohne icon = Text-Wortmarke.
   partners: [
     { name: "HP", icon: "hp" },
@@ -333,6 +438,14 @@ export const faq = {
     {
       q: "Richten Sie auch Telefonanlagen ein?",
       a: "Ja. Wir planen, installieren und betreuen moderne Telefonanlagen für Unternehmen – vom kleinen Team bis zu mehreren Hundert Anschlüssen.",
+    },
+    {
+      q: "Wie läuft der Wechsel des IT-Dienstleisters ab?",
+      a: "Strukturiert und ohne Ausfall: Wir übernehmen Dokumentation und Zugänge, prüfen Ihre Systeme und übernehmen die Betreuung schrittweise – Ihr Betrieb läuft dabei weiter.",
+    },
+    {
+      q: "Wie ist der Datenschutz geregelt?",
+      a: "Wir arbeiten DSGVO-konform, schließen bei Bedarf einen Auftragsverarbeitungsvertrag ab und setzen – wo möglich – auf Lösungen, die Ihre Daten im Haus halten.",
     },
     {
       q: "Sind Sie nur in Hannover tätig?",

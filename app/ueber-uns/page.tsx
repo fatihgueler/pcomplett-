@@ -61,12 +61,11 @@ export default function UeberUnsPage() {
                 Ihr Ansprechpartner
               </span>
               <div className="flex items-center gap-4">
-                <span
-                  aria-hidden
-                  className="flex size-16 shrink-0 items-center justify-center rounded-2xl bg-brand font-display text-xl font-bold text-brand-foreground"
-                >
-                  FB
-                </span>
+                <MediaPlaceholder
+                  label="{{FOTO_ANSPRECHPARTNER}}"
+                  ratio="square"
+                  className="size-16 shrink-0 rounded-2xl"
+                />
                 <span className="flex flex-col">
                   <span className="font-display text-lg font-semibold text-ink">
                     Frank Bernhardt

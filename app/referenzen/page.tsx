@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Quote, ImageIcon } from "lucide-react";
+import { Quote, ImageIcon, BadgeCheck } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
 import { Reveal } from "@/components/Reveal";
 import { TrustStrip } from "@/components/ui/trust-strip";
@@ -53,6 +53,28 @@ export default function ReferenzenPage() {
 
           <Reveal>
             <TrustStrip points={trust.points} />
+          </Reveal>
+
+          {/* „Diese Unternehmen vertrauen uns" – Kunden-Raster (Logos nach Freigabe) */}
+          <Reveal className="flex flex-col gap-6">
+            <span className="text-sm font-semibold uppercase tracking-[0.14em] text-subtle-foreground">
+              {trust.kundenHeading}
+            </span>
+            <ul className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
+              {trust.kunden.map((name) => (
+                <li
+                  key={name}
+                  className="flex aspect-[3/2] items-center justify-center rounded-lg border border-dashed border-border-strong bg-muted/50 p-4 text-center"
+                >
+                  <span className="font-display text-sm font-semibold leading-snug text-ink">
+                    {name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-xs text-subtle-foreground">
+              Logo-Darstellung folgt nach Freigabe des jeweiligen Kunden.
+            </p>
           </Reveal>
         </div>
       </section>
@@ -112,6 +134,24 @@ export default function ReferenzenPage() {
               </span>
             </p>
           ) : null}
+
+          {/* Zertifizierungen & Partnerstatus (Platzhalter) */}
+          <div className="flex flex-col gap-5 border-t border-border pt-10">
+            <span className="text-sm font-semibold uppercase tracking-[0.14em] text-subtle-foreground">
+              {trust.zertifikateHeading}
+            </span>
+            <ul className="flex flex-wrap gap-4">
+              {trust.zertifikate.map((z) => (
+                <li
+                  key={z}
+                  className="inline-flex items-center gap-2 rounded-lg border border-dashed border-accent/50 bg-accent-subtle px-4 py-3 text-sm font-medium text-accent"
+                >
+                  <BadgeCheck className="size-4" aria-hidden />
+                  {z}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 

@@ -17,6 +17,8 @@ import {
   FileCheck2,
   Boxes,
   Cpu,
+  Wrench,
+  Scale,
   type LucideIcon,
 } from "lucide-react";
 
@@ -40,6 +42,8 @@ export const iconMap: Record<string, LucideIcon> = {
   FileCheck2,
   Boxes,
   Cpu,
+  Wrench,
+  Scale,
 };
 
 export function getIcon(name: string): LucideIcon {
