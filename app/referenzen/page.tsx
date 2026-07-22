@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Quote, ImageIcon } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
 import { Reveal } from "@/components/Reveal";
-import { StatGrid } from "@/components/ui/stat-grid";
+import { TrustStrip } from "@/components/ui/trust-strip";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { brandLogoMap } from "@/components/ui/brand-logos";
 import { trust } from "@/lib/content";
@@ -52,7 +52,7 @@ export default function ReferenzenPage() {
           </ul>
 
           <Reveal>
-            <StatGrid stats={trust.stats} />
+            <TrustStrip points={trust.points} />
           </Reveal>
         </div>
       </section>

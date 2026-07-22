@@ -77,8 +77,8 @@ export default function UeberUnsPage() {
                 </span>
               </div>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                &bdquo;Bei uns sprechen Sie mit Menschen, die Ihre IT kennen
-                &ndash; nicht mit einer Warteschleife.&ldquo;
+                &bdquo;Bei uns sprechen Sie mit Fachleuten, die Ihre IT kennen
+                &ndash; direkt und verlässlich.&ldquo;
               </p>
               <Button asChild variant="outline">
                 <Link href="/kontakt">Persönlich kennenlernen</Link>

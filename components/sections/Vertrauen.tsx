@@ -1,7 +1,7 @@
 import { Quote } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { StatGrid } from "@/components/ui/stat-grid";
+import { TrustStrip } from "@/components/ui/trust-strip";
 import { PartnerMarquee } from "@/components/ui/partner-marquee";
 import { trust } from "@/lib/content";
 
@@ -27,9 +27,9 @@ export function Vertrauen() {
           <PartnerMarquee partners={trust.partners} />
         </Reveal>
 
-        {/* Kennzahlen */}
+        {/* Vertrauens-Merkmale */}
         <Reveal className="mt-12">
-          <StatGrid stats={trust.stats} />
+          <TrustStrip points={trust.points} />
         </Reveal>
 
         {/* Kundenstimmen */}

@@ -97,7 +97,7 @@ export const servicesDetail: ServiceDetail[] = [
       },
       {
         title: "Verständlich",
-        text: "Wir erklären Risiken und Maßnahmen ohne Fachchinesisch.",
+        text: "Wir erklären Risiken und Maßnahmen klar und verständlich.",
       },
     ],
     leistungen: [
@@ -190,7 +190,7 @@ export const aboutPage = {
   values: [
     {
       title: "Persönlich",
-      text: "Kein Callcenter, sondern feste Ansprechpartner, die Ihre IT kennen.",
+      text: "Feste Ansprechpartner, die Ihre Systeme kennen – keine wechselnden Hotlines.",
     },
     {
       title: "Herstellerunabhängig",
@@ -297,7 +297,7 @@ export const kontaktPage = {
   eyebrow: "Kontakt",
   heading: "Sprechen wir über Ihr Vorhaben",
   intro:
-    "Ob Servicevertrag, Serveraufbau, Netzwerk oder Telefonanlage: Erzählen Sie uns kurz von Ihrem Anliegen. Wir melden uns zeitnah mit einer konkreten Einschätzung – persönlich und ohne Fachchinesisch.",
+    "Ob Servicevertrag, Serveraufbau, Netzwerk oder Telefonanlage: Erzählen Sie uns kurz von Ihrem Anliegen. Wir melden uns zeitnah mit einer konkreten, verständlichen Einschätzung.",
   anfahrtHeading: "So finden Sie uns",
   anfahrt: [
     {

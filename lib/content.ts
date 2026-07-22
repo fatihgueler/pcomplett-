@@ -126,7 +126,7 @@ export const erklaerSlides = [
 export const rueckruf = {
   eyebrow: "Rückrufservice",
   heading: "Wir rufen Sie zurück",
-  text: "Wählen Sie Wunschtag und -zeit – wir melden uns zuverlässig bei Ihnen. Ohne Warteschleife, direkt beim richtigen Ansprechpartner.",
+  text: "Wählen Sie Wunschtag und -zeit – wir rufen Sie verlässlich zurück. Direkt bei einem festen Ansprechpartner, ohne Umwege.",
   successTitle: "Vielen Dank – wir rufen Sie zurück!",
   successText:
     "Ihre Rückrufbitte ist bei uns eingegangen. Wir melden uns zum gewünschten Zeitpunkt bei Ihnen.",
@@ -224,11 +224,28 @@ export const trust = {
     { name: "Yeastar" },
     { name: "Jeester" },
   ],
-  stats: [
-    // Belegbar: Firma im Dezember 1994 in Hannover gegründet.
-    { value: "30", suffix: "+", label: "Jahre Erfahrung" },
-    // Belegbar durch die namhaften Referenzprojekte unten.
-    { value: "5", suffix: "+", label: "Namhafte Referenzen" },
+  // Qualitative Vertrauens-Merkmale (belegbar, keine „dünnen" Zahlen).
+  points: [
+    {
+      icon: "Award",
+      title: "Seit 1994",
+      text: "Über 30 Jahre Erfahrung als IT-Systemhaus in Hannover.",
+    },
+    {
+      icon: "ShieldCheck",
+      title: "Herstellerunabhängig",
+      text: "Wir empfehlen die Lösung, die zu Ihrem Betrieb passt.",
+    },
+    {
+      icon: "UserRound",
+      title: "Fester Ansprechpartner",
+      text: "Persönliche Betreuung statt wechselnder Hotlines.",
+    },
+    {
+      icon: "MapPin",
+      title: "Region Hannover",
+      text: "Schnell vor Ort – und deutschlandweit per Fernwartung.",
+    },
   ],
   // Echte, zur Nennung freigegebene Referenzprojekte (neutrale Projektbeschreibung, keine erfundenen Zitate).
   testimonials: [
@@ -262,7 +279,7 @@ export const trust = {
 
 export const ctaBand = {
   heading: "Lassen Sie uns über Ihre IT sprechen.",
-  text: "Unverbindlich, ehrlich und ohne Fachchinesisch. Wir zeigen Ihnen, wo PComplett Ihren Betrieb spürbar entlastet.",
+  text: "Wir analysieren Ihre Situation und zeigen Ihnen konkret, wo wir Ihren Betrieb entlasten und absichern – unverbindlich und verständlich.",
   cta: { label: "Rückruf anfordern", href: "/#rueckruf" },
 };
 
@@ -328,7 +345,7 @@ export const contact = {
   eyebrow: "Kontakt",
   heading: "Beratung anfragen",
   intro:
-    "Erzählen Sie uns kurz von Ihrem Anliegen – wir melden uns zeitnah mit einer konkreten Einschätzung. Kein Callcenter, sondern ein fester Ansprechpartner.",
+    "Erzählen Sie uns kurz von Ihrem Anliegen – wir melden uns zeitnah mit einer konkreten Einschätzung. Sie sprechen direkt mit einem festen Ansprechpartner.",
   // Auswahlmöglichkeiten für das Feld „Anliegen"
   subjects: [
     "Servicevertrag / IT-Betreuung",
