@@ -9,7 +9,7 @@ import { blogPosts, aktionen } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "Aktuelles – Neuigkeiten, Fachbeiträge & Aktionen",
   description:
-    "Neuigkeiten, Fachbeiträge und aktuelle Aktionen von PComplett rund um IT-Betreuung, Server, Netzwerke und Telefonanlagen – für Unternehmen.",
+    "Neuigkeiten, Fachbeiträge und aktuelle Aktionen von PComplett-IT rund um IT-Betreuung, Server, Netzwerke und Telefonanlagen – für Unternehmen.",
   alternates: { canonical: "/blog" },
 };
 

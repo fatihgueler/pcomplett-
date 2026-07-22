@@ -7,7 +7,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Impressum",
-  description: "Impressum und Anbieterkennzeichnung der PComplett.",
+  description: "Impressum und Anbieterkennzeichnung der PComplett-IT.",
   robots: { index: false, follow: true },
   alternates: { canonical: "/impressum" },
 };
@@ -22,7 +22,7 @@ export default function ImpressumPage() {
 
       <LegalSection heading="Diensteanbieter">
         <p>
-          PComplett
+          PComplett-IT
           <br />
           Inhaber: Frank Bernhardt
           <br />

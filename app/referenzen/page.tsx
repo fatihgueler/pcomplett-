@@ -10,7 +10,7 @@ import { trust } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Referenzen – ausgewählte Projekte & Partner",
   description:
-    "Ausgewählte Referenzprojekte von PComplett: Warenwirtschaft, Automatisierung, Fachsoftware und Telekommunikation. Technologie-Partner u. a. HP, Fujitsu, Starface und Yeastar.",
+    "Ausgewählte Referenzprojekte von PComplett-IT: Warenwirtschaft, Automatisierung, Fachsoftware und Telekommunikation. Technologie-Partner u. a. HP, Fujitsu, Starface und Yeastar.",
   alternates: { canonical: "/referenzen" },
 };
 

@@ -10,7 +10,7 @@ import { kiPraxis } from "@/lib/content";
 export const metadata: Metadata = {
   title: "KI in der Praxis – Sprache-zu-Text mit lokaler KI",
   description:
-    "PComplett wandelt Sprache mit lokal laufender KI (Whisper) automatisch in Text um – ohne Cloud, ohne Datenabfluss, datenschutzkonform.",
+    "PComplett-IT wandelt Sprache mit lokal laufender KI (Whisper) automatisch in Text um – ohne Cloud, ohne Datenabfluss, datenschutzkonform.",
   alternates: { canonical: "/ki-in-der-praxis" },
 };
 

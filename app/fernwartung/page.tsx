@@ -10,7 +10,7 @@ import { fernwartungPage } from "@/lib/pages";
 export const metadata: Metadata = {
   title: "Fernwartung – schnelle IT-Hilfe per Fernzugriff",
   description:
-    "Schnelle IT-Hilfe ohne Anfahrt: Mit der Fernwartung von PComplett lösen wir Probleme direkt an Ihrem Bildschirm – sicher und mit Ihrer Zustimmung.",
+    "Schnelle IT-Hilfe ohne Anfahrt: Mit der Fernwartung von PComplett-IT lösen wir Probleme direkt an Ihrem Bildschirm – sicher und mit Ihrer Zustimmung.",
   alternates: { canonical: "/fernwartung" },
 };
 

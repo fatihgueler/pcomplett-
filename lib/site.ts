@@ -4,9 +4,9 @@
  */
 
 export const siteConfig = {
-  name: "PComplett",
+  name: "PComplett-IT",
   // Aktuell Einzelunternehmen (Inhaber Frank Bernhardt). Bei GmbH-Gründung Firmierung anpassen.
-  legalName: "PComplett – Inhaber Frank Bernhardt",
+  legalName: "PComplett-IT – Inhaber Frank Bernhardt",
   // Produktions-URL – für Metadata, Sitemap, OG-Tags, JSON-LD.
   url: "https://www.pcomplett.de",
   city: "Hannover",

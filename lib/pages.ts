@@ -197,7 +197,7 @@ export const aboutPage = {
   eyebrow: "Über uns",
   heading: "Seit 1994 Ihr IT-Partner in Hannover",
   intro:
-    "Seit 1994 verantwortet PComplett die IT von Unternehmen in Hannover und der Region – vom einzelnen Serverprojekt bis zur vollständigen Betriebsübernahme.",
+    "Seit 1994 verantwortet PComplett-IT die IT von Unternehmen in Hannover und der Region – vom einzelnen Serverprojekt bis zur vollständigen Betriebsübernahme.",
   ownerNote: "Inhaber: Frank Bernhardt",
   values: [
     {
@@ -268,7 +268,7 @@ export const fernwartungPage = {
 
 export const karrierePage = {
   eyebrow: "Karriere",
-  heading: "Werden Sie Teil von PComplett",
+  heading: "Werden Sie Teil von PComplett-IT",
   intro:
     "Wir sind ein kleines, eingespieltes Team mit kurzen Wegen und viel Gestaltungsspielraum – und arbeiten mit modernster IT und KI. Bei uns übernehmen Sie Verantwortung und sehen, was Sie bewirken.",
   benefits: [

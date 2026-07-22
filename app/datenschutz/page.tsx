@@ -7,7 +7,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
-  description: "Informationen zum Datenschutz gemäß DSGVO bei PComplett.",
+  description: "Informationen zum Datenschutz gemäß DSGVO bei PComplett-IT.",
   robots: { index: false, follow: true },
   alternates: { canonical: "/datenschutz" },
 };
@@ -29,7 +29,7 @@ export default function DatenschutzPage() {
         <p>
           Verantwortlich für die Datenverarbeitung auf dieser Website ist:
           <br />
-          PComplett, Inhaber Frank Bernhardt
+          PComplett-IT, Inhaber Frank Bernhardt
           <br />
           Am Listholze 31A, 30177 Hannover
           <br />

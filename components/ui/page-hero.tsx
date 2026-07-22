@@ -1,16 +1,35 @@
 import type { LucideIcon } from "lucide-react";
 import { Breadcrumbs } from "./breadcrumbs";
+import { siteConfig } from "@/lib/site";
+
+type Crumb = { label: string; href?: string };
 
 type Props = {
   eyebrow?: string;
   title: string;
   subtitle?: string;
   icon?: LucideIcon;
-  breadcrumbs?: { label: string; href?: string }[];
+  breadcrumbs?: Crumb[];
 };
 
+/** BreadcrumbList-Structured-Data passend zu den sichtbaren Breadcrumbs. */
+function breadcrumbJsonLd(items: Crumb[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      ...(item.href
+        ? { item: `${siteConfig.url}${item.href === "/" ? "" : item.href}` }
+        : {}),
+    })),
+  };
+}
+
 /**
- * Einheitlicher Seitenkopf für Unterseiten – mit Aurora-Atmosphäre.
+ * Einheitlicher Seitenkopf für Unterseiten.
  */
 export function PageHero({
   eyebrow,
@@ -23,7 +42,17 @@ export function PageHero({
     <section className="bg-aurora relative overflow-hidden border-b border-border">
       <div aria-hidden className="absolute inset-0 bg-dot-grid opacity-60" />
       <div className="container-page relative flex flex-col gap-6 py-14 md:py-20">
-        {breadcrumbs ? <Breadcrumbs items={breadcrumbs} /> : null}
+        {breadcrumbs ? (
+          <>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(breadcrumbJsonLd(breadcrumbs)),
+              }}
+            />
+            <Breadcrumbs items={breadcrumbs} />
+          </>
+        ) : null}
 
         <div className="flex flex-col gap-5">
           {Icon ? (

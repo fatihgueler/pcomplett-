@@ -9,7 +9,7 @@ import { barrierefreiheitPage } from "@/lib/pages";
 export const metadata: Metadata = {
   title: "Erklärung zur Barrierefreiheit",
   description:
-    "Erklärung zur Barrierefreiheit der Website von PComplett – unser Anspruch, der Stand der Vereinbarkeit und wie Sie Barrieren melden können.",
+    "Erklärung zur Barrierefreiheit der Website von PComplett-IT – unser Anspruch, der Stand der Vereinbarkeit und wie Sie Barrieren melden können.",
   robots: { index: false, follow: true },
   alternates: { canonical: "/barrierefreiheit" },
 };

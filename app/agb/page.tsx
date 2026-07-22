@@ -8,7 +8,7 @@ import {
 export const metadata: Metadata = {
   title: "AGB",
   description:
-    "Allgemeine Geschäftsbedingungen der PComplett für IT- und KI-Dienstleistungen.",
+    "Allgemeine Geschäftsbedingungen der PComplett-IT für IT- und KI-Dienstleistungen.",
   robots: { index: false, follow: true },
   alternates: { canonical: "/agb" },
 };
@@ -27,7 +27,7 @@ export default function AgbPage() {
       <LegalSection heading="§ 1 Geltungsbereich">
         <p>
           Diese Bedingungen gelten für Verträge über IT- und KI-Dienstleistungen
-          zwischen PComplett (Inhaber Frank Bernhardt) und dem Auftraggeber.
+          zwischen PComplett-IT (Inhaber Frank Bernhardt) und dem Auftraggeber.
           Ergänzend und vorrangig gelten die im jeweiligen Angebot bzw. Auftrag
           individuell vereinbarten Regelungen.
         </p>

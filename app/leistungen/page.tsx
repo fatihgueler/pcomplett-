@@ -10,7 +10,7 @@ import { servicesDetail } from "@/lib/pages";
 export const metadata: Metadata = {
   title: "Leistungen – IT-Betrieb, Infrastruktur & Software",
   description:
-    "IT-Lösungen, IT-Sicherheit, Software & JTL-Module und Entwicklung – die Leistungen von PComplett für Unternehmen in Hannover und der Region.",
+    "IT-Lösungen, IT-Sicherheit, Software & JTL-Module und Entwicklung – die Leistungen von PComplett-IT für Unternehmen in Hannover und der Region.",
   alternates: { canonical: "/leistungen" },
 };
 

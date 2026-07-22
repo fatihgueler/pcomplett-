@@ -11,7 +11,7 @@ import { aboutPage } from "@/lib/pages";
 export const metadata: Metadata = {
   title: "Über uns – IT-Systemhaus aus Hannover seit 1994",
   description:
-    "PComplett ist seit 1994 Ihr IT-Partner für Unternehmen in Hannover. Persönlich, herstellerunabhängig und mit dem Schwerpunkt professionelle IT-Betreuung.",
+    "PComplett-IT ist seit 1994 Ihr IT-Partner für Unternehmen in Hannover. Persönlich, herstellerunabhängig und mit dem Schwerpunkt professionelle IT-Betreuung.",
   alternates: { canonical: "/ueber-uns" },
 };
 

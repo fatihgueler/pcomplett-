@@ -12,7 +12,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Kontakt – Anfrage & Rückruf",
   description:
-    "Kontaktieren Sie PComplett in Hannover: Beschreiben Sie Ihr Anliegen über das Formular oder fordern Sie einen Rückruf an. Persönlich und zeitnah – für Unternehmen.",
+    "Kontaktieren Sie PComplett-IT in Hannover: Beschreiben Sie Ihr Anliegen über das Formular oder fordern Sie einen Rückruf an. Persönlich und zeitnah – für Unternehmen.",
   alternates: { canonical: "/kontakt" },
 };
 

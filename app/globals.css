@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
-  PComplett Design-System – Light-Theme (kein Dark Mode angefordert).
+  PComplett-IT Design-System – Light-Theme (kein Dark Mode angefordert).
   Alle Tokens hier zentral definieren, niemals Farben/Spacing in Komponenten hartcodieren.
 
   Relaunch-Palette: professionell-technisch, hoher Kontrast (WCAG AA).

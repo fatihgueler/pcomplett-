@@ -1,6 +1,6 @@
-# PComplett – IT-Systemhaus für Unternehmen
+# PComplett-IT – IT-Systemhaus für Unternehmen
 
-> PComplett ist ein IT-Systemhaus aus Hannover für Geschäftskunden (B2B). Schwerpunkt ist die professionelle Betreuung der IT von Unternehmen – von Serviceverträgen über Serveraufbau, Netzwerke und Arbeitsplätze bis zu Telefonanlagen sowie Hardware und Software.
+> PComplett-IT ist ein IT-Systemhaus aus Hannover für Geschäftskunden (B2B). Schwerpunkt ist die professionelle Betreuung der IT von Unternehmen – von Serviceverträgen über Serveraufbau, Netzwerke und Arbeitsplätze bis zu Telefonanlagen sowie Hardware und Software.
 
 ## Zielgruppe
 - Ausschließlich Unternehmen/Geschäftskunden (B2B): Mittelstand, Handel, Handwerks- und Kleinbetriebe.

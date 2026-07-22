@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { ContactMedia } from "@/components/ui/contact-media";
 import { karrierePage } from "@/lib/pages";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Karriere – IT-Systemhaus Hannover",
@@ -18,8 +19,37 @@ export const metadata: Metadata = {
 export default function KarrierePage() {
   const { openPositions } = karrierePage;
 
+  // JobPosting-Structured-Data – nur wenn tatsächlich Stellen gelistet sind.
+  const jobPostingsJsonLd = openPositions.map((position) => ({
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    title: position.title,
+    employmentType: position.type,
+    hiringOrganization: {
+      "@type": "Organization",
+      name: siteConfig.legalName,
+      sameAs: siteConfig.url,
+    },
+    jobLocation: {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: siteConfig.contact.addressLocality,
+        postalCode: siteConfig.contact.postalCode,
+        addressCountry: siteConfig.contact.addressCountry,
+      },
+    },
+  }));
+
   return (
     <>
+      {jobPostingsJsonLd.map((jsonLd, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      ))}
       <PageHero
         eyebrow={karrierePage.eyebrow}
         title={karrierePage.heading}

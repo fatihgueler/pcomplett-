@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
@@ -67,6 +67,11 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
+};
+
+export const viewport: Viewport = {
+  // Markenfarbe (Firmen-Rot) für Browser-UI / mobile Adressleiste.
+  themeColor: "#c1121f",
 };
 
 export default function RootLayout({

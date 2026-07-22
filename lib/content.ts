@@ -355,7 +355,7 @@ export const trust = {
   // Echte, zur Nennung freigegebene Referenzprojekte (neutrale Projektbeschreibung, keine erfundenen Zitate).
   testimonials: [
     {
-      quote: "Individuelle Warenwirtschaftssoftware – entwickelt und betreut von PComplett.",
+      quote: "Individuelle Warenwirtschaftssoftware – entwickelt und betreut von PComplett-IT.",
       author: "ThyssenKrupp Stahlbau",
       role: "Projekt: Warenwirtschaft",
     },
@@ -487,13 +487,13 @@ export const footer = {
 };
 
 export const chatbot = {
-  title: "PComplett Assistent",
+  title: "PComplett-IT Assistent",
   subtitle: "Fragen zu unseren Leistungen? Fragen Sie mich.",
   openLabel: "Chat öffnen",
   closeLabel: "Chat schließen",
   placeholder: "Ihre Frage …",
   greeting:
-    "Hallo! Ich beantworte gern Ihre Fragen zu den Leistungen von PComplett – IT-Betreuung, Serveraufbau, Netzwerke, Telefonanlagen und IT-Sicherheit. Wie kann ich helfen?",
+    "Hallo! Ich beantworte gern Ihre Fragen zu den Leistungen von PComplett-IT – IT-Betreuung, Serveraufbau, Netzwerke, Telefonanlagen und IT-Sicherheit. Wie kann ich helfen?",
   unavailable:
     "Der Chat-Assistent ist derzeit nicht verfügbar. Fordern Sie gern einen Rückruf an oder nutzen Sie das Kontaktformular – wir melden uns zeitnah.",
   errorText:
