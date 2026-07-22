@@ -68,7 +68,7 @@ export function Hero() {
       <div aria-hidden className="absolute inset-0 bg-dot-grid opacity-[0.15]" />
 
       {/* Dezente Blueprint-Linien, die sich beim Laden/Scrollen zeichnen */}
-      <BlueprintLines className="pointer-events-none absolute -right-10 top-1/2 hidden h-[26rem] w-auto -translate-y-1/2 text-white/10 lg:block" />
+      <BlueprintLines className="pointer-events-none absolute -right-6 top-1/2 hidden h-[34rem] w-auto -translate-y-1/2 text-white/30 md:block" />
 
       {/* Embla-Engine-Ebene: treibt Timing/Index/Loop, visuell unsichtbar */}
       <div

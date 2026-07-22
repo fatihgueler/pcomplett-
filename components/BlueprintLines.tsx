@@ -38,7 +38,7 @@ export function BlueprintLines({ className }: { className?: string }) {
       preserveAspectRatio="xMidYMid meet"
       className={cn("blueprint", visible && "is-visible", className)}
     >
-      <g stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <g stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path pathLength={1} d="M20 250 L20 90 L180 90 Q250 90 250 150 Q250 210 180 210 L90 210" />
         <path pathLength={1} d="M320 40 L320 160 L470 160 L470 260 L560 260" />
         <path pathLength={1} d="M20 170 L-40 170 M250 150 L360 150 L360 60" />
