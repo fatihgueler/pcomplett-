@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 72" width="300" height="72" role="img" aria-label="PComplett GmbH Wortmarke">
+  <!-- Bildmarke: P als Leiterbahn -->
+  <g transform="translate(6 8) scale(0.42)" fill="none">
+    <path d="M 48 138 L 48 34 L 100 34 Q 122 34 122 62 Q 122 90 100 90 L 66 90"
+      stroke="#0b1220" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 48 116 L 22 116" stroke="#0b1220" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="48" cy="138" r="9" fill="#c1121f"/>
+    <circle cx="66" cy="90" r="9" fill="#c1121f"/>
+    <circle cx="16" cy="116" r="6" fill="#c1121f"/>
+  </g>
+  <!-- Wortmarke -->
+  <text x="74" y="40" font-family="'Segoe UI',Roboto,Arial,sans-serif" font-size="30" font-weight="700" fill="#0b1220" letter-spacing="-0.5">PComplett<tspan fill="#c1121f">-IT</tspan></text>
+  <text x="75" y="58" font-family="'Segoe UI',Roboto,Arial,sans-serif" font-size="13" font-weight="600" fill="#5b6672" letter-spacing="3">GmbH · HANNOVER</text>
+</svg>

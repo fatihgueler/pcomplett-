@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="PComplett Bildmarke">
+  <!-- Reines Symbol: P als Leiterbahn, einfarbig skalierbar -->
+  <g transform="translate(2 -14)" fill="none">
+    <path d="M 48 138 L 48 34 L 100 34 Q 122 34 122 62 Q 122 90 100 90 L 66 90"
+      stroke="#0b1220" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 48 116 L 22 116" stroke="#0b1220" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="48" cy="138" r="9" fill="#0b1220"/>
+    <circle cx="66" cy="90" r="9" fill="#0b1220"/>
+    <circle cx="16" cy="116" r="6" fill="#0b1220"/>
+  </g>
+</svg>
