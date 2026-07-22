@@ -9,9 +9,9 @@ import { ContactMedia } from "@/components/ui/contact-media";
 import { karrierePage } from "@/lib/pages";
 
 export const metadata: Metadata = {
-  title: "Karriere – Jobs bei einem IT- & KI-Systemhaus in Hannover",
+  title: "Karriere – IT-Systemhaus Hannover",
   description:
-    "Werden Sie Teil von PComplett in Hannover: kurze Wege, moderne IT und KI, echte Verantwortung. Initiativbewerbungen jederzeit willkommen.",
+    "Werden Sie Teil von PComplett-IT in Hannover: kurze Wege, moderne Technik und echte Verantwortung. Initiativbewerbungen sind jederzeit willkommen.",
   alternates: { canonical: "/karriere" },
 };
 

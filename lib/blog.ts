@@ -8,6 +8,8 @@ export type BlogSection = { heading?: string; paragraphs: string[] };
 export type BlogPost = {
   slug: string;
   title: string;
+  /** Kurzer SEO-Titel (< 45 Zeichen, damit inkl. Marken-Suffix < 60). */
+  metaTitle?: string;
   excerpt: string;
   date: string; // ISO (für Schema/Sortierung)
   dateLabel: string;
@@ -20,6 +22,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "ki-im-mittelstand-wo-sie-sich-lohnt",
     title: "Künstliche Intelligenz im Mittelstand: Wo sie sich heute wirklich lohnt",
+    metaTitle: "KI im Mittelstand: Wo sie sich lohnt",
     excerpt:
       "KI muss kein Großprojekt sein. Wir zeigen drei Bereiche, in denen kleine und mittlere Betriebe schon heute mit überschaubarem Aufwand spürbar Zeit sparen.",
     date: "2026-07-15",
@@ -56,6 +59,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "it-sicherheit-grundlagen-kleine-betriebe",
     title: "IT-Sicherheit für kleine Betriebe: Die wichtigsten Grundlagen",
+    metaTitle: "IT-Sicherheit: Grundlagen für Betriebe",
     excerpt:
       "Cyberangriffe treffen längst nicht nur Konzerne. Mit wenigen, konsequent umgesetzten Maßnahmen schützen Sie Ihren Betrieb wirksam – ganz ohne eigene IT-Abteilung.",
     date: "2026-07-08",
@@ -92,6 +96,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "sprache-statt-tippen-whisper-im-buero",
     title: "Sprache statt Tippen: Wie automatische Verschriftung Büroarbeit beschleunigt",
+    metaTitle: "Sprache statt Tippen: KI-Verschriftung",
     excerpt:
       "Aus Gesprächen und Notizen wird durchsuchbarer Text – automatisch. Wir erklären, wie Sprach-zu-Text-Workflows funktionieren und wo sie im Alltag am meisten bringen.",
     date: "2026-06-30",
