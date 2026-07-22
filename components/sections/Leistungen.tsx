@@ -21,8 +21,8 @@ export function Leistungen() {
       <div className="container-page">
         <SectionHeading
           eyebrow="Unsere Leistungen"
-          title="Professionelle IT-Betreuung für Unternehmen"
-          intro="Von der laufenden Betreuung über Serveraufbau und Netzwerke bis zur Telefonanlage – ein Ansprechpartner für Ihre komplette IT."
+          title="Alles, was Ihre IT im Betrieb hält"
+          intro="Sieben Kompetenzfelder, die ineinandergreifen – vom Serverraum über das Netzwerk bis zum einzelnen Arbeitsplatz."
         />
 
         <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

@@ -8,9 +8,9 @@ import { getIcon } from "@/lib/icons";
 import { servicesDetail } from "@/lib/pages";
 
 export const metadata: Metadata = {
-  title: "Leistungen – IT, KI & Software für Unternehmen",
+  title: "Leistungen – IT-Betrieb, Infrastruktur & Software",
   description:
-    "KI-Lösungen, IT-Betreuung, IT-Sicherheit, Software & JTL-Module und Development – die Leistungen von PComplett für Unternehmen aus Hannover und Umgebung.",
+    "IT-Lösungen, IT-Sicherheit, Software & JTL-Module und Entwicklung – die Leistungen von PComplett für Unternehmen in Hannover und der Region.",
   alternates: { canonical: "/leistungen" },
 };
 
@@ -19,8 +19,8 @@ export default function LeistungenPage() {
     <>
       <PageHero
         eyebrow="Leistungen"
-        title="Von KI bis Infrastruktur – aus einer Hand"
-        subtitle="Fünf Kompetenzfelder, ein Ansprechpartner. Wir kombinieren sie passgenau zu einer Lösung, die zu Ihrem Betrieb passt."
+        title="Leistungen für den laufenden IT-Betrieb"
+        subtitle="Fünf Kompetenzfelder, die wir einzeln oder kombiniert übernehmen – abgestimmt auf die Anforderungen Ihres Betriebs."
         breadcrumbs={[{ label: "Start", href: "/" }, { label: "Leistungen" }]}
       />
 

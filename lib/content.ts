@@ -27,7 +27,7 @@ export const hero = {
   // {{WERBESLOGAN}} – zentrale Werbeaussage, vom Kunden final festlegen.
   slogan: "{{WERBESLOGAN}}",
   sublineFallback:
-    "Serviceverträge, Serveraufbau, Netzwerke, Arbeitsplätze und Telefonanlagen – professionelle IT-Betreuung für Unternehmen aus einer Hand.",
+    "Wir übernehmen den Betrieb Ihrer IT – zuverlässig, dokumentiert und mit verbindlichen Reaktionszeiten. Sie konzentrieren sich auf Ihr Kerngeschäft.",
   primaryCta: { label: "Rückruf anfordern", href: "#rueckruf" },
   secondaryCta: { label: "Leistungen ansehen", href: "#leistungen" },
   slides: [
@@ -53,7 +53,7 @@ export const homeLeistungen: LeistungsModul[] = [
     icon: "FileCheck2",
     title: "Serviceverträge",
     description:
-      "Feste Ansprechpartner, planbare Kosten und schnelle Reaktion. Wir betreuen Ihre IT dauerhaft – im Hintergrund, damit Sie arbeiten können.",
+      "Definierte Leistungen, kalkulierbare Kosten und verbindliche Reaktionszeiten für den laufenden Betrieb Ihrer Systeme.",
   },
   {
     icon: "Server",
@@ -99,23 +99,23 @@ export const homeLeistungen: LeistungsModul[] = [
  */
 export const erklaerSlides = [
   {
-    title: "Ihre IT in professioneller Betreuung",
-    text: "Ein fester Ansprechpartner kümmert sich um Server, Netzwerk und Arbeitsplätze – Sie müssen sich um nichts kümmern.",
+    title: "Ein Verantwortlicher für Ihre gesamte IT",
+    text: "Server, Netzwerk und Arbeitsplätze bleiben in einer Hand – überwacht, dokumentiert und jederzeit ansprechbar.",
     placeholder: "{{BILD_BETREUUNG}}",
   },
   {
-    title: "Serveraufbau & Infrastruktur",
-    text: "Wir planen und betreiben eine Infrastruktur, die stabil läuft und mit Ihrem Unternehmen mitwächst.",
+    title: "Infrastruktur, die mitwächst",
+    text: "Wir konzipieren Server- und Speicherlandschaften, die dem Wachstum Ihres Betriebs standhalten – heute wie in fünf Jahren.",
     placeholder: "{{BILD_SERVERRAUM}}",
   },
   {
-    title: "Telefonanlagen & Vernetzung",
-    text: "Von der Telefonanlage bis zum Netzwerk verbinden wir Ihre Standorte zuverlässig und sicher.",
+    title: "Telefonie und Vernetzung",
+    text: "Standorte, Endgeräte und Telefonanlage greifen sauber ineinander – abgesichert und leicht zu erweitern.",
     placeholder: "{{BILD_TELEFONIE}}",
   },
   {
-    title: "Vor Ort in der Region Hannover",
-    text: "Kurze Wege in der Region: Unterstützung vor Ort oder per Fernwartung – schnell und verbindlich.",
+    title: "Präsenz in der Region Hannover",
+    text: "Kurze Anfahrtswege für den Ernstfall, ergänzt um Fernwartung für die schnelle Lösung dazwischen.",
     placeholder: "{{BILD_VOR_ORT}}",
   },
 ];
@@ -126,7 +126,7 @@ export const erklaerSlides = [
 export const rueckruf = {
   eyebrow: "Rückrufservice",
   heading: "Wir rufen Sie zurück",
-  text: "Wählen Sie Wunschtag und -zeit – wir rufen Sie verlässlich zurück. Direkt bei einem festen Ansprechpartner, ohne Umwege.",
+  text: "Nennen Sie uns Wunschtag und -zeit. Sie sprechen direkt mit einer zuständigen Fachkraft – nicht mit einer Warteschleife.",
   successTitle: "Vielen Dank – wir rufen Sie zurück!",
   successText:
     "Ihre Rückrufbitte ist bei uns eingegangen. Wir melden uns zum gewünschten Zeitpunkt bei Ihnen.",
@@ -141,7 +141,7 @@ export const servicevertraege = {
   eyebrow: "Serviceverträge",
   heading: "Betreuung nach Maß – planbar statt überraschend",
   intro:
-    "Drei Stufen, ein Ziel: Ihre IT läuft. Sie wählen den Umfang, wir kümmern uns im Hintergrund.",
+    "Drei klar umrissene Stufen. Sie bestimmen die Tiefe der Betreuung, wir sichern den laufenden Betrieb – vom Monitoring bis zum Vor-Ort-Einsatz.",
   note: "Konkrete Konditionen und Reaktionszeiten stimmen wir individuell mit Ihnen ab.",
   reactionLabel: "Reaktionszeit",
   tiers: [
@@ -211,7 +211,7 @@ export const branchen = {
     {
       icon: "Building2",
       title: "Dienstleister & Büros",
-      text: "Moderne Arbeitsplätze, Netzwerke und Telefonanlagen aus einer Hand.",
+      text: "Moderne Arbeitsplätze, Netzwerke und Telefonie in einem stimmigen Setup.",
     },
   ],
 };
@@ -220,8 +220,8 @@ export const branchen = {
  * Dezenter Störungs-/Notfall-Hinweis – führt zum Rückrufservice.
  */
 export const stoerung = {
-  heading: "IT-Störung? Wir kümmern uns – schnell.",
-  text: "Melden Sie Ihre Störung über den Rückrufservice. Wir helfen per Fernwartung oder vor Ort.",
+  heading: "Störung im Betrieb? Schnelle Reaktion – aus der Ferne oder vor Ort.",
+  text: "Ein Anruf über den Rückrufservice genügt. Wir grenzen das Problem per Fernzugriff ein und kommen, wenn nötig, vorbei.",
   cta: { label: "Rückruf anfordern", href: "#rueckruf" },
 };
 
@@ -231,7 +231,7 @@ export const stoerung = {
 export const kiHome = {
   eyebrow: "Ergänzend: KI in der Praxis",
   heading: "Sprache-zu-Text – lokal und datenschutzkonform",
-  text: "Ein Beispiel aus unserem Alltag: Mit lokal laufender KI (Whisper) wandeln wir Sprache automatisch in Text um – ohne Cloud, ohne Datenabfluss.",
+  text: "In eigenen Abläufen bereits im Einsatz: lokal laufende KI (Whisper) verschriftet Sprache automatisch – ohne Cloud, ohne Datenabfluss.",
   cta: { label: "Mehr zur KI-Praxis", href: "/ki-in-der-praxis" },
 };
 
@@ -392,7 +392,7 @@ export const prozess = {
   eyebrow: "So arbeiten wir",
   heading: "In vier Schritten zur Lösung",
   intro:
-    "Klar, transparent und mit einem festen Ansprechpartner – von der ersten Idee bis zum laufenden Betrieb.",
+    "Vier nachvollziehbare Schritte – von der ersten Bestandsaufnahme bis zum dauerhaften Betrieb.",
   steps: [
     {
       title: "Erstgespräch",
@@ -425,7 +425,7 @@ export const faq = {
     },
     {
       q: "Was bringt ein Servicevertrag?",
-      a: "Planbare Kosten, feste Ansprechpartner und schnelle Reaktion. Wir betreuen Ihre IT laufend, statt erst im Störungsfall zu reagieren.",
+      a: "Kalkulierbare Kosten, verbindliche Reaktionszeiten und laufende Wartung – statt erst dann zu handeln, wenn bereits etwas ausgefallen ist.",
     },
     {
       q: "Wie schnell sind Sie im Notfall erreichbar?",
@@ -458,7 +458,7 @@ export const contact = {
   eyebrow: "Kontakt",
   heading: "Beratung anfragen",
   intro:
-    "Erzählen Sie uns kurz von Ihrem Anliegen – wir melden uns zeitnah mit einer konkreten Einschätzung. Sie sprechen direkt mit einem festen Ansprechpartner.",
+    "Schildern Sie uns Ihr Anliegen – wir antworten zeitnah mit einer fachlichen Ersteinschätzung. Kein anonymes Ticket, sondern eine konkrete Rückmeldung.",
   // Auswahlmöglichkeiten für das Feld „Anliegen"
   subjects: [
     "Servicevertrag / IT-Betreuung",
@@ -477,7 +477,7 @@ export const contact = {
 
 export const footer = {
   tagline:
-    "IT-Systemhaus für Unternehmen in Hannover. Professionelle Betreuung – zuverlässig, persönlich und aus einer Hand.",
+    "IT-Systemhaus für Unternehmen in Hannover. Seit 1994 verlässlicher Partner für Betrieb, Sicherheit und Telefonie der Unternehmens-IT.",
   legalLinks: [
     { label: "Impressum", href: "/impressum" },
     { label: "Datenschutz", href: "/datenschutz" },

@@ -31,9 +31,9 @@ export function Erklaerung() {
     >
       <div className="container-page">
         <SectionHeading
-          eyebrow="So unterstützen wir Sie"
-          title="Ein Partner für Ihre komplette IT"
-          intro="Von der laufenden Betreuung bis zur Telefonanlage – ein Überblick, wie wir Unternehmen im Alltag entlasten."
+          eyebrow="So arbeiten wir"
+          title="Was das im Betrieb konkret bedeutet"
+          intro="Vier Einblicke, wie wir Systeme absichern, Standorte verbinden und im Ernstfall schnell zur Stelle sind."
         />
 
         <Carousel

@@ -6,8 +6,8 @@ export const alt =
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-// Markenfarbe: Stahlblau (siehe brand.md)
-const BRAND = "#0369a1";
+// Markenfarbe: Firmen-Rot (CI), siehe brand.md
+const BRAND = "#c1121f";
 const INK = "#0f172a";
 
 export default function OpengraphImage() {

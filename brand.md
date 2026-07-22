@@ -10,13 +10,15 @@ Zielgruppe ausschließlich B2B. Muster: „Enterprise Gateway / Trust & Authorit
 |-------|------|-------|
 | Basis dunkel (Navy) | `#0F172A` | `--ink` |
 | Basis hell (Slate-50) | `#F8FAFC` | `--background` |
-| Struktur Text | `#334155` | `--muted-foreground` |
+| Struktur Text | `#475569` | `--muted-foreground` |
 | Struktur Border | `#E2E8F0` | `--border` |
-| **Akzent (einzig!) Stahlblau** | `#0369A1` | `--brand` |
-| Akzent hover / aktiv | `#075985` / `#0C4A6E` | `--brand-hover/-active` |
-| Akzent zart | `#E0F2FE` | `--brand-subtle` |
+| **Akzent (einzig!) Firmen-Rot** | `#C1121F` | `--brand` |
+| Akzent hover / aktiv | `#9E0F1A` / `#820C15` | `--brand-hover/-active` |
+| Akzent zart | `#FDEEF0` | `--brand-subtle` |
+| Sekundär-Struktur (Slate) | `#1E293B` | `--accent` |
 
-Kein Rot mehr als Marke. Akzent sparsam = wirkt hochwertiger.
+Firmen-Rot als einziger Akzent (CI), Navy/Slate als ruhige Struktur.
+Rot sparsam einsetzen (CTAs, Links, Logo) = wirkt hochwertiger.
 
 ## Typografie
 

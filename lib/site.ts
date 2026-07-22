@@ -11,8 +11,8 @@ export const siteConfig = {
   url: "https://www.pcomplett.de",
   city: "Hannover",
   description:
-    "PComplett ist Ihr IT-Systemhaus für Unternehmen in Hannover: Serviceverträge, Serveraufbau, Netzwerke, Arbeitsplätze, Telefonanlagen sowie Hardware & Software – professionelle Betreuung aus einer Hand.",
-  slogan: "Professionelle IT-Betreuung für Unternehmen",
+    "IT-Systemhaus für Unternehmen in Hannover: Serviceverträge, Serveraufbau, Netzwerke, Arbeitsplätze und Telefonanlagen. Wir übernehmen den Betrieb Ihrer IT – seit 1994.",
+  slogan: "IT-Systemhaus für Unternehmen",
 
   contact: {
     phone: "0511 760 773 0",

@@ -14,18 +14,18 @@
 */
 
 :root {
-  /* Marke „Ruhiger Maschinenraum" – EIN Akzent: Stahlblau (kein Rot mehr). */
-  --brand: #0369a1; /* {{BRAND_HEX}} – Stahlblau, AA auf Weiß (~5.4:1) */
-  --brand-hover: #075985;
-  --brand-active: #0c4a6e;
-  --brand-subtle: #e0f2fe;
-  --brand-ring: rgba(3, 105, 161, 0.4);
+  /* Marke: Firmenfarbe Rot als EINZIGER Akzent (CI). Navy/Slate als Struktur. */
+  --brand: #c1121f; /* {{BRAND_HEX}} – Firmen-Rot, AA auf Weiß (~5.9:1) */
+  --brand-hover: #9e0f1a;
+  --brand-active: #820c15;
+  --brand-subtle: #fdeef0;
+  --brand-ring: rgba(193, 18, 31, 0.4);
 
-  /* Akzent = gleiche Farbfamilie wie die Marke (ein Akzent schlägt drei). */
-  --accent: #0369a1;
-  --accent-hover: #075985;
-  --accent-active: #0c4a6e;
-  --accent-subtle: #eff6ff;
+  /* Struktur-Sekundärton: Navy/Slate (kein zweiter Akzent, nur ruhige Fläche). */
+  --accent: #1e293b;
+  --accent-hover: #0f172a;
+  --accent-active: #0f172a;
+  --accent-subtle: #f1f5f9;
 
   /* Neutrale Slate-Töne (kühl, technisch) */
   --background: #f8fafc; /* slate-50 – ruhiger als reines Weiß */
