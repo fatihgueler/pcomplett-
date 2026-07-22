@@ -22,8 +22,13 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (!service) return {};
   return {
     title: `${service.title} – Leistungen`,
-    description: service.tagline,
+    description: service.metaDescription,
     alternates: { canonical: `/leistungen/${service.slug}` },
+    openGraph: {
+      type: "website",
+      title: `${service.title} – Leistungen`,
+      description: service.metaDescription,
+    },
   };
 }
 

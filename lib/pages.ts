@@ -8,6 +8,8 @@ export type ServiceDetail = {
   icon: string;
   title: string;
   tagline: string;
+  /** Einzigartige Meta-Description (140–160 Zeichen) für <head>. */
+  metaDescription: string;
   intro: string;
   benefits: { title: string; text: string }[];
   leistungen: string[];
@@ -20,6 +22,8 @@ export const servicesDetail: ServiceDetail[] = [
     icon: "Sparkles",
     title: "KI-Lösungen",
     tagline: "Künstliche Intelligenz, die im Alltag wirklich Zeit spart.",
+    metaDescription:
+      "KI-Lösungen für Unternehmen in Hannover: Wir automatisieren wiederkehrende Aufgaben wie Dokumenten- und Sprachverarbeitung – praxiserprobt und DSGVO-konform.",
     intro:
       "Viele KI-Projekte bleiben Theorie. Bei uns nicht: Wir setzen KI seit Jahren in unseren eigenen Abläufen ein und bauen genau diese praxiserprobten Lösungen für Ihr Unternehmen – vom ersten Anwendungsfall bis zum laufenden Betrieb.",
     benefits: [
@@ -52,6 +56,8 @@ export const servicesDetail: ServiceDetail[] = [
     icon: "Network",
     title: "IT-Lösungen",
     tagline: "Eine IT, die einfach läuft – geplant, modernisiert und betreut.",
+    metaDescription:
+      "IT-Betreuung und Infrastruktur für Unternehmen in Hannover: Server, Netzwerke und Arbeitsplätze planen, modernisieren und stabil betreiben – ohne Ausfallsorgen.",
     intro:
       "Ihre IT soll Ihr Geschäft tragen, nicht bremsen. Wir planen, modernisieren und betreuen Ihre gesamte Infrastruktur – von Servern und Netzwerken bis zur Cloud. Zuverlässig, sicher und mit einem festen Ansprechpartner.",
     benefits: [
@@ -84,6 +90,8 @@ export const servicesDetail: ServiceDetail[] = [
     icon: "ShieldCheck",
     title: "IT-Sicherheit",
     tagline: "Schutz, bevor aus einem Vorfall ein Problem wird.",
+    metaDescription:
+      "IT-Sicherheit für Unternehmen in Hannover: Firewalls, Backups und Schutz vor Ransomware und Phishing – bevor ein Zwischenfall zum Stillstand wird.",
     intro:
       "Cyberangriffe treffen längst nicht nur Konzerne. Wir sichern Ihre Systeme und Daten mit einem stimmigen Konzept ab – von der Firewall über Backups bis zur Sensibilisierung Ihrer Mitarbeitenden.",
     benefits: [
@@ -116,6 +124,8 @@ export const servicesDetail: ServiceDetail[] = [
     icon: "Puzzle",
     title: "Software & JTL-Module",
     tagline: "Software, die genau zu Ihren Prozessen passt.",
+    metaDescription:
+      "Individuelle Software und JTL-Module für Unternehmen in Hannover: Wir erweitern Ihre Warenwirtschaft um die Funktionen, die Ihnen im Tagesgeschäft fehlen.",
     intro:
       "Standardsoftware kann viel – aber selten alles. Wir entwickeln individuelle Anwendungen und maßgeschneiderte JTL-Module, die Ihr System genau um das erweitern, was Ihnen im Alltag fehlt.",
     benefits: [
@@ -148,6 +158,8 @@ export const servicesDetail: ServiceDetail[] = [
     icon: "Code2",
     title: "Development",
     tagline: "Individuelle Software, die mit Ihnen wächst.",
+    metaDescription:
+      "Softwareentwicklung für Unternehmen in Hannover: Web-Anwendungen, Schnittstellen und Datenbanken – passgenau zu Ihren Abläufen und langfristig wartbar.",
     intro:
       "Wenn Standardlösungen an ihre Grenzen kommen, entwickeln wir passgenaue Software – von der Web-Anwendung bis zur Schnittstelle zwischen Ihren Systemen. Sauber umgesetzt und langfristig wartbar.",
     benefits: [
