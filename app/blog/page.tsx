@@ -41,37 +41,54 @@ export default function BlogPage() {
             </h2>
           </div>
 
-          <ul className="grid gap-5 md:grid-cols-2">
-            {aktionen.map((aktion) => (
-              <Reveal
-                as="li"
-                key={aktion.title}
-                className="flex h-full flex-col gap-4 rounded-2xl border border-brand/30 bg-brand-subtle p-6"
-              >
-                <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-brand px-2.5 py-1 text-xs font-medium text-brand-foreground">
-                  <Tag className="size-3" aria-hidden />
-                  {aktion.badge}
-                </span>
-                <h3 className="font-display text-xl font-semibold tracking-tight text-ink">
-                  {aktion.title}
-                </h3>
-                <p className="flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {aktion.description}
-                </p>
-                <p className="inline-flex items-center gap-2 text-sm font-medium text-brand">
-                  <CalendarClock className="size-4" aria-hidden />
-                  {aktion.period}
-                </p>
-                <Link
-                  href="/#rueckruf"
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:underline"
+          {aktionen.length > 0 ? (
+            <ul className="grid gap-5 md:grid-cols-2">
+              {aktionen.map((aktion) => (
+                <Reveal
+                  as="li"
+                  key={aktion.title}
+                  className="flex h-full flex-col gap-4 rounded-2xl border border-brand/30 bg-brand-subtle p-6"
                 >
-                  Rückruf zur Aktion anfordern
-                  <ArrowRight className="size-4" aria-hidden />
-                </Link>
-              </Reveal>
-            ))}
-          </ul>
+                  <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-brand px-2.5 py-1 text-xs font-medium text-brand-foreground">
+                    <Tag className="size-3" aria-hidden />
+                    {aktion.badge}
+                  </span>
+                  <h3 className="font-display text-xl font-semibold tracking-tight text-ink">
+                    {aktion.title}
+                  </h3>
+                  <p className="flex-1 text-sm leading-relaxed text-muted-foreground">
+                    {aktion.description}
+                  </p>
+                  <p className="inline-flex items-center gap-2 text-sm font-medium text-brand">
+                    <CalendarClock className="size-4" aria-hidden />
+                    {aktion.period}
+                  </p>
+                  <Link
+                    href="/#rueckruf"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:underline"
+                  >
+                    Rückruf zur Aktion anfordern
+                    <ArrowRight className="size-4" aria-hidden />
+                  </Link>
+                </Reveal>
+              ))}
+            </ul>
+          ) : (
+            <div className="flex flex-col items-start gap-4 rounded-2xl border border-border bg-card p-8">
+              <p className="max-w-2xl leading-relaxed text-muted-foreground">
+                Aktuell läuft keine gesonderte Aktion. Sprechen Sie uns gern auf
+                passende Angebote für Ihren Betrieb an – etwa bei Serverwechsel,
+                Arbeitsplatz-Rollout oder einem neuen Servicevertrag.
+              </p>
+              <Link
+                href="/#rueckruf"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:underline"
+              >
+                Rückruf anfordern
+                <ArrowRight className="size-4" aria-hidden />
+              </Link>
+            </div>
+          )}
         </div>
       </section>
 

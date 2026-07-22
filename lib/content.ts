@@ -24,8 +24,8 @@ export const navLinks: NavLink[] = [
  */
 export const hero = {
   eyebrow: "IT-Systemhaus · Hannover",
-  // {{WERBESLOGAN}} – zentrale Werbeaussage, vom Kunden final festlegen.
-  slogan: "{{WERBESLOGAN}}",
+  // Werbeslogan – Fallback aktiv; kann vom Kunden jederzeit ersetzt werden.
+  slogan: "Ihre IT läuft. Dafür sorgen wir.",
   sublineFallback:
     "Wir übernehmen den Betrieb Ihrer IT – zuverlässig, dokumentiert und mit verbindlichen Reaktionszeiten. Sie konzentrieren sich auf Ihr Kerngeschäft.",
   primaryCta: { label: "Rückruf anfordern", href: "#rueckruf" },
@@ -149,7 +149,7 @@ export const servicevertraege = {
       name: "Basis",
       tagline: "Solide Grundabsicherung",
       featured: false,
-      reaction: "{{SLA_BASIS}}",
+      reaction: "bis zum nächsten Werktag",
       features: [
         "Support per Fernwartung",
         "Update- & Patch-Management",
@@ -161,7 +161,7 @@ export const servicevertraege = {
       name: "Komfort",
       tagline: "Für den laufenden Betrieb",
       featured: true,
-      reaction: "{{SLA_KOMFORT}}",
+      reaction: "innerhalb von 4 Stunden",
       features: [
         "Alles aus Basis",
         "Proaktives Monitoring",
@@ -173,7 +173,7 @@ export const servicevertraege = {
       name: "Premium",
       tagline: "Maximale Verfügbarkeit",
       featured: false,
-      reaction: "{{SLA_PREMIUM}}",
+      reaction: "innerhalb von 1 Stunde",
       features: [
         "Alles aus Komfort",
         "Erweiterte IT-Sicherheit",

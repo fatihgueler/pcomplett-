@@ -142,17 +142,6 @@ export type Aktion = {
   period: string;
 };
 
-export const aktionen: Aktion[] = [
-  {
-    badge: "Aktion",
-    title: "{{AKTION_TITEL_1}}",
-    description: "{{AKTION_TEXT_1}}",
-    period: "{{AKTION_ZEITRAUM_1}}",
-  },
-  {
-    badge: "Aktion",
-    title: "{{AKTION_TITEL_2}}",
-    description: "{{AKTION_TEXT_2}}",
-    period: "{{AKTION_ZEITRAUM_2}}",
-  },
-];
+// Echte Aktionen hier eintragen. Solange leer, zeigt die Seite einen
+// neutralen Hinweis statt roher Platzhalter.
+export const aktionen: Aktion[] = [];

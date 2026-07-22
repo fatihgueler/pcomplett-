@@ -15,9 +15,8 @@ export const metadata: Metadata = {
 };
 
 // Fehlende Logos, die noch als echte SVG geliefert werden müssen.
-const fehlendeLogos = trust.partners
-  .filter((p) => !p.icon)
-  .map((p) => `{{LOGO_${p.name.toUpperCase()}}}`);
+// Nur echte (nicht als Platzhalter markierte) Zertifikate anzeigen.
+const echteZertifikate = trust.zertifikate.filter((z) => !z.includes("{{"));
 
 export default function ReferenzenPage() {
   return (
@@ -126,32 +125,25 @@ export default function ReferenzenPage() {
             })}
           </ul>
 
-          {fehlendeLogos.length > 0 ? (
-            <p className="text-sm text-subtle-foreground">
-              Noch als echtes Logo (SVG) zu liefern:{" "}
-              <span className="font-medium text-foreground">
-                {fehlendeLogos.join(", ")}
+          {/* Zertifizierungen & Partnerstatus – nur bei echten Nachweisen */}
+          {echteZertifikate.length > 0 ? (
+            <div className="flex flex-col gap-5 border-t border-border pt-10">
+              <span className="text-sm font-semibold uppercase tracking-[0.14em] text-subtle-foreground">
+                {trust.zertifikateHeading}
               </span>
-            </p>
+              <ul className="flex flex-wrap gap-4">
+                {echteZertifikate.map((z) => (
+                  <li
+                    key={z}
+                    className="inline-flex items-center gap-2 rounded-lg border border-accent/40 bg-accent-subtle px-4 py-3 text-sm font-medium text-accent"
+                  >
+                    <BadgeCheck className="size-4" aria-hidden />
+                    {z}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ) : null}
-
-          {/* Zertifizierungen & Partnerstatus (Platzhalter) */}
-          <div className="flex flex-col gap-5 border-t border-border pt-10">
-            <span className="text-sm font-semibold uppercase tracking-[0.14em] text-subtle-foreground">
-              {trust.zertifikateHeading}
-            </span>
-            <ul className="flex flex-wrap gap-4">
-              {trust.zertifikate.map((z) => (
-                <li
-                  key={z}
-                  className="inline-flex items-center gap-2 rounded-lg border border-dashed border-accent/50 bg-accent-subtle px-4 py-3 text-sm font-medium text-accent"
-                >
-                  <BadgeCheck className="size-4" aria-hidden />
-                  {z}
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
       </section>
 
