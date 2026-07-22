@@ -25,6 +25,10 @@ export const siteConfig = {
     addressCountry: "DE",
   },
 
+  // Koordinaten für die Karte (Leaflet/OpenStreetMap).
+  // {{KARTE_KOORDINATEN}} – Näherungswert, bitte exakte Position bestätigen.
+  geo: { lat: 52.399, lng: 9.788 },
+
   // Öffnungszeiten für JSON-LD (optional anpassen)
   openingHours: "Mo–Fr 08:00–17:00",
 } as const;

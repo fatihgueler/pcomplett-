@@ -1,34 +1,20 @@
 import type { Metadata } from "next";
-import { Phone, Printer, Mail, MapPin, Clock, Car, TramFront } from "lucide-react";
+import { MapPin, Clock, Car, TramFront } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
 import { Reveal } from "@/components/Reveal";
 import { KontaktFormular } from "@/components/KontaktFormular";
+import { ContactMedia } from "@/components/ui/contact-media";
+import { MapLazy } from "@/components/ui/map-lazy";
 import { kontaktPage } from "@/lib/pages";
 import { contact } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Kontakt – Beratung anfragen",
+  title: "Kontakt – Anfrage & Rückruf",
   description:
-    "Kontaktieren Sie PComplett in Hannover: Telefon 0511 760 773 0, service@pcomplett.de. Beratung für IT, KI und PC-Service – persönlich und zeitnah.",
+    "Kontaktieren Sie PComplett in Hannover: Beschreiben Sie Ihr Anliegen über das Formular oder fordern Sie einen Rückruf an. Persönlich und zeitnah – für Unternehmen.",
   alternates: { canonical: "/kontakt" },
 };
-
-const details = [
-  {
-    icon: Phone,
-    label: "Telefon",
-    value: siteConfig.contact.phone,
-    href: `tel:${siteConfig.contact.phone.replace(/\s/g, "")}`,
-  },
-  { icon: Printer, label: "Fax", value: siteConfig.contact.fax },
-  {
-    icon: Mail,
-    label: "E-Mail",
-    value: siteConfig.contact.email,
-    href: `mailto:${siteConfig.contact.email}`,
-  },
-];
 
 const anfahrtIcons = [Car, TramFront];
 
@@ -44,42 +30,18 @@ export default function KontaktPage() {
 
       <section id="formular" className="section-y">
         <div className="container-page grid gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Kontaktdaten + Anfahrt */}
+          {/* Kontaktdaten (nur als Bild, nicht verlinkt) + Anfahrt */}
           <div className="flex flex-col gap-8">
             <ul className="flex flex-col gap-4">
-              {details.map((item) => {
-                const inner = (
-                  <>
-                    <span className="inline-flex size-11 items-center justify-center rounded-lg bg-brand-subtle text-brand">
-                      <item.icon className="size-5" aria-hidden />
-                    </span>
-                    <span className="flex flex-col">
-                      <span className="text-xs font-medium uppercase tracking-wide text-subtle-foreground">
-                        {item.label}
-                      </span>
-                      <span className="font-medium text-foreground transition-colors group-hover:text-brand">
-                        {item.value}
-                      </span>
-                    </span>
-                  </>
-                );
-                return (
-                  <li key={item.label}>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        className="group flex items-center gap-4 rounded-lg border border-border bg-card p-4 transition-colors hover:border-brand/40"
-                      >
-                        {inner}
-                      </a>
-                    ) : (
-                      <div className="flex items-center gap-4 rounded-lg border border-border bg-card p-4">
-                        {inner}
-                      </div>
-                    )}
-                  </li>
-                );
-              })}
+              {/* E-Mail: it-Adresse als Bild */}
+              <li className="flex items-center gap-4 rounded-lg border border-border bg-card p-4">
+                <ContactMedia kind="email-kontakt" label="E-Mail" />
+              </li>
+              {/* Telefon & Fax als Bild */}
+              <li className="flex flex-wrap items-center gap-6 rounded-lg border border-border bg-card p-4">
+                <ContactMedia kind="telefon" label="Telefon" />
+                <ContactMedia kind="fax" label="Fax" />
+              </li>
               <li className="flex items-start gap-4 rounded-lg border border-border bg-card p-4">
                 <span className="inline-flex size-11 items-center justify-center rounded-lg bg-brand-subtle text-brand">
                   <MapPin className="size-5" aria-hidden />
@@ -110,6 +72,11 @@ export default function KontaktPage() {
                 </span>
               </li>
             </ul>
+
+            {/* Karte: Leaflet + OpenStreetMap (kein Google Maps) */}
+            <div className="overflow-hidden rounded-2xl border border-border">
+              <MapLazy className="h-72 w-full" />
+            </div>
 
             {/* Anfahrt */}
             <div className="flex flex-col gap-4">

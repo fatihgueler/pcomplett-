@@ -35,27 +35,47 @@ class MockTicketAdapter implements TicketAdapter {
   }
 }
 
-// --- Vorlage für einen echten Adapter (aktivieren, sobald entschieden) -------
-// class ZammadTicketAdapter implements TicketAdapter {
-//   async createTicket(payload: TicketPayload): Promise<TicketResult> {
-//     const res = await fetch(`${process.env.ZAMMAD_URL}/api/v1/tickets`, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//         Authorization: `Token token=${process.env.ZAMMAD_TOKEN}`,
-//       },
-//       body: JSON.stringify({ /* ... Mapping payload -> Zammad ... */ }),
-//     });
-//     const data = await res.json();
-//     return { id: String(data.id) };
-//   }
-// }
-// -----------------------------------------------------------------------------
+/**
+ * Generischer HTTP-Adapter: übergibt das Anliegen per POST an eine konfigurierte
+ * Ticket-API. Zielsystem noch offen – daher bewusst generisch (URL + Key als
+ * Env-Vars). Sobald das konkrete System feststeht, ggf. das Payload-Mapping
+ * anpassen, ohne die aufrufende API-Route zu ändern.
+ *
+ *   TICKET_API_URL  = {{TICKET_API_URL}}
+ *   TICKET_API_KEY  = {{TICKET_API_KEY}}
+ */
+class HttpTicketAdapter implements TicketAdapter {
+  constructor(
+    private readonly url: string,
+    private readonly apiKey: string,
+  ) {}
+
+  async createTicket(payload: TicketPayload): Promise<TicketResult> {
+    const res = await fetch(this.url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${this.apiKey}`,
+      },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) {
+      throw new Error(`Ticket-API antwortete mit Status ${res.status}`);
+    }
+    const data = (await res.json().catch(() => ({}))) as { id?: string | number };
+    return { id: data.id != null ? String(data.id) : `ticket-${Date.now()}` };
+  }
+}
 
 /**
- * Wählt den aktiven Adapter. Später über eine ENV-Variable steuern, z.B.:
- *   if (process.env.TICKET_PROVIDER === "zammad") return new ZammadTicketAdapter();
+ * Wählt den aktiven Adapter. Sind TICKET_API_URL und TICKET_API_KEY gesetzt,
+ * wird die echte Ticket-API angebunden – sonst der Mock-Adapter.
  */
 export function getTicketAdapter(): TicketAdapter {
+  const url = process.env.TICKET_API_URL;
+  const apiKey = process.env.TICKET_API_KEY;
+  if (url && apiKey) {
+    return new HttpTicketAdapter(url, apiKey);
+  }
   return new MockTicketAdapter();
 }

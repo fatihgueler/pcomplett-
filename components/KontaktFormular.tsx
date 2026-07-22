@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Turnstile } from "@/components/ui/turnstile";
 import { contactSchema, type ContactFieldErrors } from "@/lib/contact-schema";
 import { contact } from "@/lib/content";
 import { cn } from "@/lib/utils";
@@ -27,6 +28,9 @@ export function KontaktFormular() {
   const [values, setValues] = React.useState(initialValues);
   const [errors, setErrors] = React.useState<ContactFieldErrors>({});
   const [status, setStatus] = React.useState<Status>("idle");
+  const [turnstileToken, setTurnstileToken] = React.useState("");
+  const onVerify = React.useCallback((token: string) => setTurnstileToken(token), []);
+  const onExpire = React.useCallback(() => setTurnstileToken(""), []);
 
   function update<K extends keyof typeof initialValues>(
     key: K,
@@ -52,14 +56,15 @@ export function KontaktFormular() {
 
     setStatus("submitting");
     try {
-      const res = await fetch("/api/kontakt", {
+      const res = await fetch("/api/ticket", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(parsed.data),
+        body: JSON.stringify({ ...parsed.data, turnstileToken }),
       });
       if (!res.ok) throw new Error("Request failed");
       setStatus("success");
       setValues(initialValues);
+      setTurnstileToken("");
     } catch {
       setStatus("error");
     }
@@ -240,10 +245,13 @@ export function KontaktFormular() {
         ) : null}
       </div>
 
+      {/* Captcha (Cloudflare Turnstile) */}
+      <Turnstile onVerify={onVerify} onExpire={onExpire} />
+
       {status === "error" ? (
         <p role="alert" className="rounded-md bg-brand-subtle px-4 py-3 text-sm text-brand">
           Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut
-          oder kontaktieren Sie uns direkt telefonisch.
+          oder fordern Sie einen Rückruf an.
         </p>
       ) : null}
 

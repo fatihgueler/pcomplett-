@@ -69,12 +69,13 @@ export default function DatenschutzPage() {
 
       <LegalSection heading="5. Kontaktformular und Kontaktaufnahme">
         <p>
-          Wenn Sie uns über das Kontaktformular oder per E-Mail kontaktieren,
-          verarbeiten wir die von Ihnen angegebenen Daten (Name, E-Mail-Adresse,
-          Nachricht) ausschließlich zur Bearbeitung Ihrer Anfrage.
-          Rechtsgrundlage ist Art. 6 Abs. 1 lit. b bzw. lit. f DSGVO. Die Daten
-          werden gelöscht, sobald sie nicht mehr erforderlich sind und keine
-          gesetzlichen Aufbewahrungspflichten entgegenstehen.
+          Wenn Sie uns über das Kontaktformular kontaktieren, verarbeiten wir die
+          von Ihnen angegebenen Daten (Name, E-Mail-Adresse, ggf. Telefonnummer,
+          gewähltes Anliegen und Nachricht) ausschließlich zur Bearbeitung Ihrer
+          Anfrage. Zur Weiterbearbeitung kann die Anfrage an unser Ticketsystem
+          übergeben werden. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b bzw. lit. f
+          DSGVO. Die Daten werden gelöscht, sobald sie nicht mehr erforderlich
+          sind und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
         </p>
       </LegalSection>
 
@@ -105,7 +106,31 @@ export default function DatenschutzPage() {
         </p>
       </LegalSection>
 
-      <LegalSection heading="8. Cookies">
+      <LegalSection heading="8. Kartendarstellung (OpenStreetMap)">
+        <p>
+          Auf der Kontaktseite binden wir eine Karte auf Basis von OpenStreetMap
+          ein. Beim Laden der Karte werden Kartenkacheln von den Servern der
+          OpenStreetMap Foundation abgerufen; dabei wird Ihre IP-Adresse
+          übermittelt. Die Karte wird bewusst erst geladen, wenn der
+          Kartenbereich in den sichtbaren Bereich gelangt. Rechtsgrundlage ist
+          unser berechtigtes Interesse an einer verständlichen Anfahrtsdarstellung
+          (Art. 6 Abs. 1 lit. f DSGVO). Es wird kein Google Maps eingesetzt.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="9. Spam-Schutz (Cloudflare Turnstile)">
+        <p>
+          Zum Schutz unserer Formulare vor automatisiertem Missbrauch setzen wir
+          Cloudflare Turnstile ein. Dabei werden technische Informationen an
+          Cloudflare übermittelt, um menschliche von automatisierten Zugriffen zu
+          unterscheiden. Turnstile verzichtet nach Angaben des Anbieters auf
+          nutzerübergreifendes Tracking. Rechtsgrundlage ist unser berechtigtes
+          Interesse an der Abwehr von Spam und Missbrauch (Art. 6 Abs. 1 lit. f
+          DSGVO). Es wird kein Google reCAPTCHA eingesetzt.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="10. Cookies">
         <p>
           Diese Website verwendet nur technisch notwendige Cookies bzw. keine
           Tracking-Cookies. Sollten künftig Analyse- oder Marketing-Dienste
@@ -114,7 +139,7 @@ export default function DatenschutzPage() {
         </p>
       </LegalSection>
 
-      <LegalSection heading="9. Ihre Rechte">
+      <LegalSection heading="11. Ihre Rechte">
         <p>
           Sie haben das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16),
           Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18),
@@ -123,14 +148,14 @@ export default function DatenschutzPage() {
         </p>
       </LegalSection>
 
-      <LegalSection heading="10. Zuständige Aufsichtsbehörde">
+      <LegalSection heading="12. Zuständige Aufsichtsbehörde">
         <p>
           Die Landesbeauftragte für den Datenschutz Niedersachsen (LfD
           Niedersachsen), Hannover.
         </p>
       </LegalSection>
 
-      <LegalSection heading="11. Aktualität">
+      <LegalSection heading="13. Aktualität">
         <p>Stand dieser Datenschutzerklärung: Juli 2026.</p>
       </LegalSection>
     </LegalPage>
