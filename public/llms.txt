@@ -1,32 +1,33 @@
-# PComplett – IT- & KI-Systemhaus
+# PComplett – IT-Systemhaus für Unternehmen
 
-> PComplett ist ein IT- und KI-Systemhaus aus Hannover für Unternehmen und Privatkunden. Wir verbinden klassische IT-Betreuung mit praxiserprobter KI-Automatisierung – von der Infrastruktur bis zum schnellen PC-Service.
+> PComplett ist ein IT-Systemhaus aus Hannover für Geschäftskunden (B2B). Schwerpunkt ist die professionelle Betreuung der IT von Unternehmen – von Serviceverträgen über Serveraufbau, Netzwerke und Arbeitsplätze bis zu Telefonanlagen sowie Hardware und Software.
 
-## Zielgruppen
-- Unternehmen (B2B): Mittelstand, Handel, Handwerks- und Kleinbetriebe.
-- Privatkunden (B2C): Hilfe rund um PC, Technik und digitale Alltagsfragen.
+## Zielgruppe
+- Ausschließlich Unternehmen/Geschäftskunden (B2B): Mittelstand, Handel, Handwerks- und Kleinbetriebe.
 
-## Leistungen für Unternehmen
-- KI-Lösungen: Automatisierung von Auftragsbearbeitung, E-Mail-Verarbeitung und Sprach-zu-Text-Workflows. Praxiserprobt, da selbst im Einsatz.
-- IT-Lösungen: Planung, Modernisierung und Betreuung von Servern, Netzwerken und Cloud.
-- IT-Sicherheit: Firewalls, Backups und Schutz vor Angriffen.
-- Software & JTL-Module: Individuelle Software und maßgeschneiderte JTL-Erweiterungen.
-- Development: Web-Anwendungen und Schnittstellen, passend zu den Abläufen des Kunden.
+## Leistungen (Haupteinnahmequellen)
+- Serviceverträge / IT-Betreuung: feste Ansprechpartner, planbare Kosten, schnelle Reaktion.
+- Serveraufbau: Planung, Einrichtung und Betrieb von Servern, physisch oder virtualisiert.
+- Netzwerke: strukturierte Verkabelung, WLAN und sichere Netzwerktechnik.
+- Arbeitsplätze einrichten: PC-Arbeitsplätze komplett startklar (Hardware, Software, Anbindung).
+- Telefonanlagen: Planung, Einrichtung und Betreuung moderner Telefonie (u. a. Starface, Yeastar).
+- IT-Sicherheit & Hardware: Firewalls, Backups, geprüfte Hardware.
+- Hardware & Software: herstellerunabhängige Beschaffung und Auflistung.
 
-## KI in der Praxis
-- Automatisierte Auftragsbearbeitung: KI liest Auftragsdaten aus und legt sie strukturiert an.
-- KI-gestützte E-Mail-Bearbeitung: Kategorisierung, Priorisierung und Antwortvorschläge.
-- Sprach-zu-Text (Whisper): automatische, durchsuchbare Dokumentation.
+## Weitere Leistungen
+- Software & JTL-Module: individuelle Erweiterungen für Warenwirtschaft und Prozesse.
+- Development: Web-Anwendungen und Schnittstellen.
 
-## Service für Privatkunden
-- PC-Service & Aufrüstung
-- Reparatur & Datenrettung
-- Beratung & Einrichtung
+## KI in der Praxis (ergänzend, ein Anwendungsfall)
+- Sprache-zu-Text mit lokal laufender KI (Whisper): automatische, durchsuchbare Dokumentation ohne Cloud, datenschutzkonform.
 
 ## Kontakt
-- Telefon: 0511 760 773 0
-- E-Mail: service@pcomplett.de
+- Kontaktaufnahme über den Rückrufservice (mit Wunschtermin) oder das Kontaktformular auf der Website.
+- Kontaktdaten (Telefon/E-Mail) werden aus Spam-Schutz nur als Bild dargestellt und sind nicht als Link hinterlegt.
 - Website: https://www.pcomplett.de
+
+## Technologie-Partner
+- HP, Fujitsu, Starface, Yeastar, Jeester.
 
 ## Wichtige Seiten
 - Startseite: https://www.pcomplett.de/
@@ -34,7 +35,7 @@
 - KI in der Praxis: https://www.pcomplett.de/ki-in-der-praxis
 - Über uns: https://www.pcomplett.de/ueber-uns
 - Referenzen: https://www.pcomplett.de/referenzen
-- Aktuelles/Blog: https://www.pcomplett.de/blog
+- Aktuelles (Fachbeiträge & Aktionen): https://www.pcomplett.de/blog
 - Kontakt: https://www.pcomplett.de/kontakt
 - Impressum: https://www.pcomplett.de/impressum
 - Datenschutz: https://www.pcomplett.de/datenschutz

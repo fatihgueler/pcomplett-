@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * Spam-Schutz: Kontaktdaten (E-Mail/Telefon) werden ausschließlich als Bild
- * dargestellt – niemals als Text im DOM und niemals als mailto:/tel:-Link.
+ * dargestellt – niemals als Text im DOM und niemals als anklickbarer Link.
  * Die eigentliche Adresse steht nur in der verlinkten SVG-Datei unter
  * /public/kontakt/ und ist damit für einfache Harvester nicht auslesbar.
  * Das alt-Attribut bleibt bewusst neutral (enthält keine Adresse).

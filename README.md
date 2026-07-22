@@ -1,10 +1,10 @@
 # PComplett – Website (Relaunch)
 
 Moderne, vollständig responsive Landing Page mit Unterseiten für das
-**IT- & KI-Systemhaus PComplett** (künftig „… IT GmbH“). Positioniert PComplett
-als zeitgemäßen IT- und KI-Partner für **Unternehmen und Privatkunden**,
-generiert Leads und ist für Google **und** KI-Suchen (ChatGPT, Claude,
-Perplexity) optimiert.
+**IT-Systemhaus PComplett** (künftig „… IT GmbH“). Positioniert PComplett als
+professionellen IT-Partner **ausschließlich für Unternehmen (B2B)**, generiert
+Leads über Rückrufservice/Kontaktformular und ist für Google **und** KI-Suchen
+(ChatGPT, Claude, Perplexity) optimiert.
 
 ## Tech-Stack
 
@@ -35,25 +35,29 @@ app/
   globals.css           Design-Tokens + Effekt-Utilities
   sitemap.ts / robots.ts
   icon.tsx / opengraph-image.tsx   Favicon & OG-Bild (dynamisch generiert)
-  api/kontakt/route.ts  Kontakt → Ticket-Adapter (lib/tickets.ts)
-  api/newsletter/route.ts  Newsletter Double-Opt-in (Stub)
+  api/ticket/route.ts   Kontakt → Ticket-Adapter (Turnstile-Prüfung + lib/tickets.ts)
+  api/kontakt/route.ts  Legacy-Kontakt-Endpoint (Ticket-Adapter)
+  api/rueckruf/route.ts Rückrufservice (typisierter Payload, Backend-TODO)
   api/chat/route.ts     Chatbot → Claude API (Fallback ohne Key)
   impressum|datenschutz|agb/page.tsx  Rechtsseiten
 components/
   layout/               Header, Footer, Logo, LegalPage
-  sections/             Hero, EntryCards, Leistungen, KiPraxis, ServicePrivat,
-                        Vertrauen, CtaBand, Kontakt, Newsletter
+  sections/             Hero (Karussell), Leistungen, Erklaerung, Prozess,
+                        KiHome, Vertrauen, Rueckruf, Faq, CtaBand
   ui/                   Button, Card, Input, Textarea, Label, SectionHeading,
-                        MediaPlaceholder
+                        MediaPlaceholder, Carousel, ContactMedia, Turnstile,
+                        Leaflet-Karte (map-lazy / leaflet-map)
   seo/JsonLd.tsx        Schema.org LocalBusiness/ProfessionalService
   Reveal.tsx            Scroll-Reveal (IntersectionObserver)
-  KontaktFormular.tsx / NewsletterForm.tsx / Chatbot.tsx
+  KontaktFormular.tsx / RueckrufFormular.tsx / Chatbot.tsx
 lib/
   content.ts            ← ALLE Texte zentral (hier Inhalte ändern)
-  site.ts               Kontakt-/Metadaten-Konfiguration
-  contact-schema.ts / newsletter-schema.ts   Zod-Schemata (Client + Server)
-  tickets.ts            Ticket-Adapter (Interface + Mock-Adapter)
+  site.ts               Kontakt-/Metadaten-/Geo-Konfiguration
+  contact-schema.ts / rueckruf-schema.ts   Zod-Schemata (Client + Server)
+  tickets.ts            Ticket-Adapter (Interface, Mock- & HTTP-Adapter)
+  turnstile.ts          Serverseitige Turnstile-Verifikation
   chat-prompt.ts        System-Prompt des Chatbots aus den Leistungstexten
+  use-reduced-motion.ts prefers-reduced-motion-Hook (Hero-Karussell)
   utils.ts              cn()-Helper
 public/
   llms.txt              Maschinenlesbare Zusammenfassung für KI-Suchmaschinen
@@ -67,15 +71,21 @@ public/
 
 ## Funktionale Anbindungen
 
-- **Kontaktformular → Ticketsystem:** Adapter-Muster in `lib/tickets.ts`
-  (`TicketAdapter`-Interface + Mock-Adapter). Ein echter Adapter
-  (Zammad/Freshdesk/osTicket) wird ergänzt, ohne die API-Route zu ändern.
+- **Kontaktformular („Anliegen") → Ticketsystem:** `app/api/ticket/route.ts`
+  prüft das Turnstile-Captcha, validiert serverseitig und übergibt den
+  typisierten Payload über `lib/tickets.ts` (`TicketAdapter`-Interface, Mock-
+  und generischer HTTP-Adapter via `TICKET_API_URL`/`TICKET_API_KEY`).
+- **Rückrufservice:** `app/api/rueckruf/route.ts` validiert die Rückrufbitte
+  (Name, Firma, Telefon, Wunschtermin); die Zustellung ist als klarer
+  Backend-TODO vorbereitet.
+- **Captcha:** Cloudflare Turnstile (DSGVO-freundlich, kein reCAPTCHA) –
+  `NEXT_PUBLIC_TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET_KEY`.
+- **Karte:** Leaflet + OpenStreetMap (kein Google Maps), lazy geladen.
+- **Spam-Schutz:** E-Mail/Telefon erscheinen nirgends als Text/Link, sondern
+  nur als Bild (`public/kontakt/*.svg`, Komponente `ContactMedia`).
 - **Chatbot:** `app/api/chat/route.ts` ruft die Claude API serverseitig auf
-  (`ANTHROPIC_API_KEY`, Modell `claude-sonnet-4-6`, per ENV überschreibbar).
-  Ohne Key zeigt das Widget einen freundlichen Hinweis statt eines Fehlers.
-  Der System-Prompt wird aus den Leistungstexten generiert (`lib/chat-prompt.ts`).
-- **Newsletter:** `app/api/newsletter/route.ts` ist ein Double-Opt-in-Stub mit
-  TODO für Resend/Brevo.
+  (`ANTHROPIC_API_KEY`, per ENV überschreibbar). Ohne Key zeigt das Widget einen
+  Hinweis statt eines Fehlers.
 
 ## Neue Sektion hinzufügen
 

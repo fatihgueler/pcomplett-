@@ -297,7 +297,7 @@ export const kontaktPage = {
   eyebrow: "Kontakt",
   heading: "Sprechen wir über Ihr Vorhaben",
   intro:
-    "Ob IT-Betreuung, KI-Projekt oder schnelle Hilfe am PC: Erzählen Sie uns kurz von Ihrem Anliegen. Wir melden uns zeitnah mit einer konkreten Einschätzung – persönlich und ohne Fachchinesisch.",
+    "Ob Servicevertrag, Serveraufbau, Netzwerk oder Telefonanlage: Erzählen Sie uns kurz von Ihrem Anliegen. Wir melden uns zeitnah mit einer konkreten Einschätzung – persönlich und ohne Fachchinesisch.",
   anfahrtHeading: "So finden Sie uns",
   anfahrt: [
     {

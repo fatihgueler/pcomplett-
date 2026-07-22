@@ -1,27 +1,39 @@
 # Inhalte & offene Punkte
 
-Die Website ist mit den echten Daten von pcomplett.de befüllt. Es sind **keine
-sichtbaren `{{…}}`-Platzhalter** mehr auf den Seiten. Offen sind nur noch echte
-Assets (Logo, Foto) und ein optionaler Schlüssel für den KI-Chat.
+Die Website ist mit den echten Daten von pcomplett.de befüllt. Nach dem
+Relaunch-Overhaul gibt es bewusst einige `{{…}}`-Platzhalter für Inhalte, die
+der Kunde noch liefert (Werbeslogan, Bilder, it-Adresse, Aktionen, Keys) –
+vollständige Liste unten.
 
 ## Bereits eingesetzt (echte Daten)
 
 - **Kontakt:** Telefon 0511 760 773 0 · Fax 0511 760 773 49 · service@pcomplett.de · Hannover
 - **Firma:** PComplett, Inhaber Frank Bernhardt, Am Listholze 31A, 30177 Hannover · USt-IdNr. DE169516345
 - **Datenschutzbeauftragter:** Marc Schümann (Tel. 0511 760 773 12)
-- **Partner:** Starface, Jeester, HP, Fujitsu
+- **Partner:** Starface, Yeastar, Jeester, HP, Fujitsu
 - **Kennzahlen:** 30+ Jahre Erfahrung (gegründet 1994), 5+ namhafte Referenzen
 - **Referenzen:** ThyssenKrupp Stahlbau, TUI, Deutsche Messe AG, HIS GmbH, J+S Druckfarben
-- **Rechtsseiten:** /impressum, /datenschutz (inkl. Newsletter & KI-Chatbot), /agb — befüllt
+- **Rechtsseiten:** /impressum, /datenschutz (inkl. KI-Chatbot, OpenStreetMap & Turnstile), /agb — befüllt
 
-## Noch offen (echte Assets / Freigaben)
+## Noch offen (Platzhalter / echte Assets / Freigaben)
 
-| Punkt | Ort | Hinweis |
-|-------|-----|---------|
-| Logo | `components/layout/Logo.tsx`, `app/icon.tsx`, `app/opengraph-image.tsx` | Text-Wortmarke → echtes Logo, wenn vorhanden |
+Zielgruppe ist ausschließlich B2B; Kontaktdaten erscheinen nur als Bild.
+
+| Platzhalter / Punkt | Ort | Hinweis |
+|---------------------|-----|---------|
+| `{{WERBESLOGAN}}` | `lib/content.ts` (`hero.slogan`) | zentrale Hero-Aussage festlegen |
+| `{{HERO_BILD_1}}` … `{{HERO_BILD_4}}` | `public/hero/hero-1..4.svg` | 16:9-Platzhalter 1:1 durch echte Bilder ersetzen |
+| `{{BILD_BETREUUNG/SERVERRAUM/TELEFONIE/VOR_ORT}}` | Erklär-Karussell (`lib/content.ts`) | Fotos für die Erklär-Sektion |
+| `{{BILD_TEAM/BUERO/WERKSTATT}}` | `app/ueber-uns/page.tsx` | Team-/Büro-Fotos |
+| `{{KONTAKT_EMAIL}}` (it-Adresse) | `public/kontakt/email-kontakt.svg` | SVG-Bild mit echter it-Adresse ersetzen |
+| `{{KARTE_KOORDINATEN}}` | `lib/site.ts` (`geo`) | exakte Koordinaten der Firmenadresse bestätigen |
+| `{{TICKET_API_URL}}` / `{{TICKET_API_KEY}}` | `.env` | Ticketsystem-Anbindung (Kontakt) |
+| `{{RUECKRUF_WEBHOOK_URL}}` | `.env` / `app/api/rueckruf/route.ts` | Zustellung der Rückrufbitte |
+| `{{TURNSTILE_SITE_KEY}}` / `{{TURNSTILE_SECRET_KEY}}` | `.env` | Cloudflare Turnstile aktivieren |
+| `{{AKTION_TITEL/TEXT/ZEITRAUM_1..2}}` | `lib/blog.ts` (`aktionen`) | echte Werbeaktionen eintragen |
+| `{{LOGO_STARFACE/YEASTAR/JEESTER}}` | `components/ui/brand-logos.tsx` | echte Partner-Logos als SVG ergänzen |
+| Firmenlogo | `public/logo/*` (3 Entwürfe) | finale Variante wählen/freigeben |
 | Markenrot `{{BRAND_RED_HEX}}` | `app/globals.css` (`--brand`) | aktuell Fallback `#C1121F` |
-| Foto Privatkunden | `components/sections/ServicePrivat.tsx` | Platzhalter „Foto folgt" → echtes Foto via `next/image` |
-| Kundenzahl (optional) | `lib/content.ts` (`trust.stats`) | zweite Kachel ist „5+ Referenzen"; bei Bedarf echte Kundenzahl |
 
 ## KI-Chat aktivieren
 

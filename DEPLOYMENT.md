@@ -28,18 +28,22 @@ In Vercel unter **Settings → Environment Variables** setzen (Vorlage:
 | Variable | Zweck |
 |----------|-------|
 | `ANTHROPIC_API_KEY` | Aktiviert den KI-Chatbot (Claude API). Ohne Key zeigt das Widget einen Hinweis statt eines Fehlers. |
-| `CHATBOT_MODEL` | Optional; Chat-Modell überschreiben (Standard `claude-sonnet-4-6`). |
-| `TICKET_PROVIDER`, … | Ticketsystem für Kontaktanfragen (aktuell Mock-Adapter). |
-| `NEWSLETTER_PROVIDER`, … | Newsletter-Dienst für Double-Opt-in (aktuell Stub). |
+| `CHATBOT_MODEL` | Optional; Chat-Modell überschreiben. |
+| `TICKET_API_URL`, `TICKET_API_KEY` | Ticketsystem für Kontaktanfragen (sonst Mock-Adapter). |
+| `RUECKRUF_WEBHOOK_URL` | Zustellung der Rückrufbitten (Zielsystem offen). |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY` | Cloudflare Turnstile (Captcha). |
 | `RESEND_API_KEY`, `CONTACT_EMAIL` | Optionaler E-Mail-Versand des Kontaktformulars. |
 
 **Funktionale Stubs aktivieren:**
 
-- **Kontakt → Ticketsystem:** In `lib/tickets.ts` einen echten `TicketAdapter`
-  (Zammad/Freshdesk/osTicket) ergänzen und in `getTicketAdapter()` per
-  `TICKET_PROVIDER` auswählen. Die API-Route bleibt unverändert.
-- **Newsletter:** In `app/api/newsletter/route.ts` den `TODO`-Block umsetzen
-  (Kontakt speichern + Bestätigungs-Mail via Resend/Brevo).
+- **Kontakt → Ticketsystem:** `TICKET_API_URL`/`TICKET_API_KEY` setzen – der
+  generische HTTP-Adapter in `lib/tickets.ts` wird dann automatisch genutzt.
+  Für ein spezielles System ggf. das Payload-Mapping anpassen; die API-Route
+  (`app/api/ticket/route.ts`) bleibt unverändert.
+- **Rückrufservice:** In `app/api/rueckruf/route.ts` den `TODO`-Block umsetzen
+  (Zustellung an Ticketsystem oder interne Benachrichtigung).
+- **Captcha:** Turnstile-Keys setzen; ohne Secret bleibt das Formular nutzbar
+  (Soft-Pass), die Prüfung greift erst mit `TURNSTILE_SECRET_KEY`.
 - **Chatbot:** Nur `ANTHROPIC_API_KEY` setzen – die Route ist bereits fertig.
 
 ## 4. Eigene Domain verbinden
