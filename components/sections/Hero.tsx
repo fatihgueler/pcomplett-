@@ -59,12 +59,13 @@ export function Hero() {
         ))}
       </div>
 
-      {/* Lesbarkeits-Overlay: ruhiger Navy-Scrim */}
+      {/* Lesbarkeits-Overlay: links dunkel (Text lesbar), rechts transparent
+          (Karussell-Bild sichtbar) */}
       <div
         aria-hidden
-        className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/80 to-ink/60"
+        className="absolute inset-0 bg-gradient-to-r from-ink/95 from-30% via-ink/70 to-ink/20"
       />
-      <div aria-hidden className="absolute inset-0 bg-dot-grid opacity-[0.15]" />
+      <div aria-hidden className="absolute inset-0 bg-dot-grid opacity-[0.08]" />
 
       {/* Embla-Engine-Ebene: treibt Timing/Index/Loop, visuell unsichtbar */}
       <div
