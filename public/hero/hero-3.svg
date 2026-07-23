@@ -9,11 +9,12 @@
   </defs>
   <rect width="1280" height="720" fill="url(#g3)"/>
   <rect width="1280" height="720" fill="url(#d3)"/>
-  <g transform="translate(770 150) scale(1.9)" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <g transform="translate(770 260) scale(1.9)" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
     <rect x="8" y="10" width="128" height="86" rx="8"/><path d="M72 96 L72 120 M44 128 L100 128"/>
   </g>
+  <!-- Kleiner, unauffälliger Eck-Tag statt großem Text (verhindert Überlappung mit UI-Inhalten) -->
   <g font-family="'Segoe UI',Roboto,Arial,sans-serif">
-    <text x="80" y="600" font-size="60" font-weight="700" fill="#ffffff" fill-opacity="0.92">Arbeitsplätze einrichten</text>
-    <text x="82" y="646" font-size="24" fill="#ffffff" fill-opacity="0.55" letter-spacing="3">03 / 04 &#183; PLATZHALTER &#183; BILD FOLGT</text>
+    <text x="1200" y="668" text-anchor="end" font-size="15" font-weight="600" fill="#ffffff" fill-opacity="0.5" letter-spacing="1">Arbeitsplätze</text>
+    <text x="1200" y="690" text-anchor="end" font-size="12" fill="#ffffff" fill-opacity="0.35" letter-spacing="2">03/04 &#183; PLATZHALTER</text>
   </g>
 </svg>

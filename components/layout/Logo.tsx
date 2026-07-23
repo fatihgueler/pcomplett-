@@ -19,11 +19,11 @@ export function Logo({ className, onClick, showTagline = false }: Props) {
     >
       <LogoMark className="h-9 w-9 shrink-0 transition-transform duration-200 group-hover:-translate-y-0.5" />
       <span className="flex flex-col leading-tight">
-        <span className="font-display text-xl font-bold tracking-tight text-ink">
+        <span className="whitespace-nowrap font-display text-xl font-bold tracking-tight text-ink">
           PComplett<span className="text-brand">-IT</span>
         </span>
         {showTagline ? (
-          <span className="text-[0.62rem] font-medium uppercase tracking-[0.16em] text-subtle-foreground">
+          <span className="whitespace-nowrap text-xs font-medium uppercase tracking-[0.1em] text-subtle-foreground">
             IT &amp; KI-Lösungen · Hannover
           </span>
         ) : null}

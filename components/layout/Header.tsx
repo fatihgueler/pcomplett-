@@ -62,10 +62,10 @@ export function Header() {
       <div className="container-page flex h-16 items-center justify-between md:h-20">
         <Logo />
 
-        {/* Desktop-Navigation */}
+        {/* Desktop-Navigation (erst ab lg, damit im Tablet-Bereich kein Overflow) */}
         <nav
           aria-label="Hauptnavigation"
-          className="hidden items-center gap-7 md:flex"
+          className="hidden items-center gap-6 lg:flex"
         >
           {navLinks.map((link) => {
             const active = isActive(link.href);
@@ -140,7 +140,7 @@ export function Header() {
         {/* Mobile-Toggle */}
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-md text-ink transition-colors hover:bg-muted md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-md text-ink transition-colors hover:bg-muted lg:hidden"
           aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
@@ -154,7 +154,7 @@ export function Header() {
       <div
         id="mobile-menu"
         hidden={!isOpen}
-        className={cn("glass border-t border-white/40 md:hidden", isOpen ? "block" : "hidden")}
+        className={cn("glass border-t border-white/40 lg:hidden", isOpen ? "block" : "hidden")}
       >
         <nav
           aria-label="Mobile Navigation"

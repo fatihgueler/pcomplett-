@@ -9,11 +9,12 @@
   </defs>
   <rect width="1280" height="720" fill="url(#g2)"/>
   <rect width="1280" height="720" fill="url(#d2)"/>
-  <g transform="translate(770 150) scale(1.9)" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <g transform="translate(770 260) scale(1.9)" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="70" cy="20" r="14"/><circle cx="20" cy="110" r="14"/><circle cx="120" cy="110" r="14"/><path d="M70 34 L28 98 M70 34 L112 98 M34 110 L106 110"/>
   </g>
+  <!-- Kleiner, unauffälliger Eck-Tag statt großem Text (verhindert Überlappung mit UI-Inhalten) -->
   <g font-family="'Segoe UI',Roboto,Arial,sans-serif">
-    <text x="80" y="600" font-size="60" font-weight="700" fill="#ffffff" fill-opacity="0.92">Netzwerke und Verkabelung</text>
-    <text x="82" y="646" font-size="24" fill="#ffffff" fill-opacity="0.55" letter-spacing="3">02 / 04 &#183; PLATZHALTER &#183; BILD FOLGT</text>
+    <text x="1200" y="668" text-anchor="end" font-size="15" font-weight="600" fill="#ffffff" fill-opacity="0.5" letter-spacing="1">Netzwerke</text>
+    <text x="1200" y="690" text-anchor="end" font-size="12" fill="#ffffff" fill-opacity="0.35" letter-spacing="2">02/04 &#183; PLATZHALTER</text>
   </g>
 </svg>

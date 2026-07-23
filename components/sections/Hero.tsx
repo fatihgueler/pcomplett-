@@ -6,7 +6,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ArrowRight, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { TypingText } from "@/components/TypingText";
 import { hero } from "@/lib/content";
 import { usePrefersReducedMotion } from "@/lib/use-reduced-motion";
 import { cn } from "@/lib/utils";
@@ -82,9 +81,9 @@ export function Hero() {
 
       {/* Inhalt */}
       <div className="container-page relative flex min-h-[30rem] flex-col items-start justify-center gap-6 py-20 md:min-h-[36rem] md:py-28">
-        <span className="inline-flex items-center gap-2 rounded-sm border-l-2 border-brand bg-white/5 px-3 py-1.5 font-mono text-xs font-medium uppercase tracking-[0.18em] text-white/90">
-          <span aria-hidden className="size-1.5 rounded-full bg-brand" />
-          <TypingText text={hero.eyebrow} />
+        <span className="inline-flex w-max max-w-full items-center gap-2 whitespace-nowrap rounded-sm border-l-2 border-brand bg-white/5 px-3 py-1.5 font-mono text-xs font-medium uppercase tracking-[0.18em] text-white/90">
+          <span aria-hidden className="size-1.5 shrink-0 rounded-full bg-brand" />
+          {hero.eyebrow}
         </span>
 
         <h1

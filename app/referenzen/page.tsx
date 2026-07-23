@@ -115,7 +115,7 @@ export default function ReferenzenPage() {
                       <span className="font-display text-lg font-semibold text-ink">
                         {partner.name}
                       </span>
-                      <span className="text-[0.65rem] font-medium uppercase tracking-wide">
+                      <span className="text-xs font-medium uppercase tracking-wide">
                         Logo folgt
                       </span>
                     </div>

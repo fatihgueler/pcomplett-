@@ -9,11 +9,12 @@
   </defs>
   <rect width="1280" height="720" fill="url(#g4)"/>
   <rect width="1280" height="720" fill="url(#d4)"/>
-  <g transform="translate(770 150) scale(1.9)" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <g transform="translate(770 260) scale(1.9)" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M40 20 a90 90 0 0 0 80 80 l14 -22 a10 10 0 0 0 -6 -14 l-20 -6 a10 10 0 0 0 -11 4 l-6 8 a70 70 0 0 1 -24 -24 l8 -6 a10 10 0 0 0 4 -11 l-6 -20 a10 10 0 0 0 -14 -6 z"/>
   </g>
+  <!-- Kleiner, unauffälliger Eck-Tag statt großem Text (verhindert Überlappung mit UI-Inhalten) -->
   <g font-family="'Segoe UI',Roboto,Arial,sans-serif">
-    <text x="80" y="600" font-size="60" font-weight="700" fill="#ffffff" fill-opacity="0.92">Telefonanlagen</text>
-    <text x="82" y="646" font-size="24" fill="#ffffff" fill-opacity="0.55" letter-spacing="3">04 / 04 &#183; PLATZHALTER &#183; BILD FOLGT</text>
+    <text x="1200" y="668" text-anchor="end" font-size="15" font-weight="600" fill="#ffffff" fill-opacity="0.5" letter-spacing="1">Telefonanlagen</text>
+    <text x="1200" y="690" text-anchor="end" font-size="12" fill="#ffffff" fill-opacity="0.35" letter-spacing="2">04/04 &#183; PLATZHALTER</text>
   </g>
 </svg>
