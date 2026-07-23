@@ -359,6 +359,12 @@ body {
   .section-y {
     padding-block: 0;
   }
+  /* Scroll-Reveal-Inhalte sind ohne Scroll-Event (Druckvorschau) sonst
+     dauerhaft unsichtbar, da sie auf IntersectionObserver warten. */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* prefers-reduced-motion respektieren: alle Effekte abschalten */

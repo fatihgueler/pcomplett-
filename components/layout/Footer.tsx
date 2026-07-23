@@ -49,6 +49,12 @@ export function Footer() {
           >
             Karriere
           </Link>
+          <Link
+            href="/firmenprofil"
+            className="text-sm text-muted-foreground transition-colors hover:text-brand"
+          >
+            Firmenprofil (PDF)
+          </Link>
         </nav>
 
         {/* Kontakt – E-Mail/Telefon aus Spam-Schutz nur als Bild, nicht verlinkt */}

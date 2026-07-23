@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteConfig.url}/fernwartung`, lastModified, changeFrequency: "yearly", priority: 0.7 },
     { url: `${siteConfig.url}/karriere`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${siteConfig.url}/kontakt`, lastModified, changeFrequency: "yearly", priority: 0.8 },
+    { url: `${siteConfig.url}/firmenprofil`, lastModified, changeFrequency: "monthly", priority: 0.5 },
   ];
 
   const serviceRoutes: MetadataRoute.Sitemap = servicesDetail.map((s) => ({

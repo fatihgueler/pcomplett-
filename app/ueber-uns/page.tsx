@@ -134,6 +134,13 @@ export default function UeberUnsPage() {
               </Reveal>
             ))}
           </ul>
+
+          <p className="text-sm text-muted-foreground">
+            Für die Weiterleitung intern:{" "}
+            <Link href="/firmenprofil" className="font-medium text-brand hover:underline">
+              Firmenprofil als PDF herunterladen
+            </Link>
+          </p>
         </div>
       </section>
 
