@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>LinkedIn-Vorlage: Unternehmensseiten-Banner</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    width:1128px; height:191px; overflow:hidden;
+    font-family:'IBM Plex Sans', sans-serif;
+    background: linear-gradient(120deg, #0f172a 0%, #1e293b 100%);
+    position:relative;
+  }
+  .grid { position:absolute; inset:0; background-image:
+    linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size:36px 36px; }
+  .content { position:relative; height:100%; display:flex; align-items:center;
+    gap:22px; padding:0 56px; }
+  .brand { display:flex; align-items:center; gap:12px; }
+  .brand span { font-size:28px; font-weight:700; color:#fff; white-space:nowrap; }
+  .brand span b { color:#c1121f; }
+  .sep { width:1px; height:44px; background:rgba(255,255,255,.25); }
+  .tagline { font-size:18px; color:rgba(255,255,255,.8); line-height:1.4; max-width:520px; }
+  .tagline b { color:#fff; }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="content">
+    <div class="brand">
+      <svg viewBox="4 22 130 130" width="40" height="40" fill="none">
+        <path d="M 48 138 L 48 34 L 100 34 Q 122 34 122 62 Q 122 90 100 90 L 66 90" stroke="#c1121f" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 48 116 L 22 116" stroke="#c1121f" stroke-width="8" stroke-linecap="round"/>
+        <circle cx="48" cy="138" r="9" fill="#0f172a"/><circle cx="66" cy="90" r="9" fill="#0f172a"/><circle cx="16" cy="116" r="6" fill="#0f172a"/>
+      </svg>
+      <span>PComplett<b>-IT</b></span>
+    </div>
+    <div class="sep"></div>
+    <p class="tagline"><b>IT-Systemhaus für Unternehmen</b> in Hannover &ndash; Serviceverträge, Server, Netzwerke, Telefonanlagen.</p>
+  </div>
+</body>
+</html>

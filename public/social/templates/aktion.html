@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>LinkedIn-Vorlage: Aktion</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    width:1200px; height:627px; overflow:hidden;
+    font-family:'IBM Plex Sans', sans-serif;
+    background:#f8fafc;
+    position:relative;
+  }
+  .band { position:absolute; inset:0 0 auto 0; height:8px; background:#c1121f; }
+  .content { position:relative; height:100%; display:flex; flex-direction:column;
+    justify-content:center; padding:72px; gap:20px; }
+  .brand { display:flex; align-items:center; gap:12px; }
+  .brand span { font-size:22px; font-weight:700; color:#0f172a; }
+  .brand span b { color:#c1121f; }
+  .eyebrow { display:inline-flex; align-items:center; gap:8px; width:fit-content;
+    font-family:'IBM Plex Mono', monospace; font-size:13px; font-weight:500;
+    letter-spacing:.2em; text-transform:uppercase; color:#c1121f; }
+  .eyebrow .line { width:24px; height:1px; background:#c1121f; }
+  h1 { font-size:48px; font-weight:700; color:#0f172a; line-height:1.12; max-width:800px; }
+  p { font-size:20px; color:#475569; max-width:680px; line-height:1.5; }
+  .period { display:inline-flex; align-items:center; gap:8px; font-size:16px;
+    font-weight:600; color:#c1121f; margin-top:4px; }
+  .cta { display:inline-flex; align-items:center; gap:10px; width:fit-content;
+    background:#c1121f; color:#fff; font-weight:600; font-size:18px;
+    padding:12px 24px; border-radius:6px; margin-top:6px; }
+</style>
+</head>
+<body>
+  <div class="band"></div>
+  <div class="content">
+    <div class="brand">
+      <svg viewBox="4 22 130 130" width="30" height="30" fill="none">
+        <path d="M 48 138 L 48 34 L 100 34 Q 122 34 122 62 Q 122 90 100 90 L 66 90" stroke="#c1121f" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 48 116 L 22 116" stroke="#c1121f" stroke-width="8" stroke-linecap="round"/>
+        <circle cx="48" cy="138" r="9" fill="#0f172a"/><circle cx="66" cy="90" r="9" fill="#0f172a"/><circle cx="16" cy="116" r="6" fill="#0f172a"/>
+      </svg>
+      <span>PComplett<b>-IT</b></span>
+    </div>
+    <span class="eyebrow"><span class="line"></span>Aktion</span>
+    <h1>{{AKTION_TITEL}}</h1>
+    <p>{{AKTION_TEXT}}</p>
+    <span class="period">Gültig: {{AKTION_ZEITRAUM}}</span>
+    <span class="cta">Rückruf anfordern &rarr;</span>
+  </div>
+</body>
+</html>
