@@ -4,6 +4,10 @@ Interne Design-Richtung für den Relaunch. Leitbild: PComplett ist der ruhige,
 technische Maschinenraum im Hintergrund – Unternehmen laufen, weil wir laufen.
 Zielgruppe ausschließlich B2B. Muster: „Enterprise Gateway / Trust & Authority".
 
+> Kurzreferenz. Das vollständige, formale Brand-Guidelines-Dokument (Type
+> Scale, Logo-Regeln, Voice-Tabelle, verbotene Begriffe, Bildsprache) steht in
+> [`docs/brand-guidelines.md`](./docs/brand-guidelines.md).
+
 ## Farbsystem (ein Akzent schlägt drei)
 
 | Rolle | Wert | Token |
