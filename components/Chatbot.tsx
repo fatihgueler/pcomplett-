@@ -88,7 +88,7 @@ export function Chatbot() {
         aria-controls="chatbot-panel"
         aria-label={isOpen ? chatbot.closeLabel : chatbot.openLabel}
         className={cn(
-          "fixed bottom-5 right-5 z-50 inline-flex size-14 items-center justify-center rounded-full bg-brand text-brand-foreground shadow-lg transition-all duration-200 hover:bg-brand-hover hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--brand-ring)] focus-visible:ring-offset-2",
+          "no-print fixed bottom-5 right-5 z-50 inline-flex size-14 items-center justify-center rounded-full bg-brand text-brand-foreground shadow-lg transition-all duration-200 hover:bg-brand-hover hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--brand-ring)] focus-visible:ring-offset-2",
           isOpen && "scale-90 opacity-0",
         )}
       >
@@ -102,7 +102,7 @@ export function Chatbot() {
         aria-label={chatbot.title}
         hidden={!isOpen}
         className={cn(
-          "fixed bottom-5 right-5 z-50 flex w-[min(22rem,calc(100vw-2.5rem))] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-2xl",
+          "no-print fixed bottom-5 right-5 z-50 flex w-[min(22rem,calc(100vw-2.5rem))] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-2xl",
           isOpen ? "flex" : "hidden",
         )}
         style={{ maxHeight: "min(32rem, calc(100vh - 2.5rem))" }}

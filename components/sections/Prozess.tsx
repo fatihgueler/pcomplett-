@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/Reveal";
+import { ProcessTrack } from "@/components/ProcessTrack";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { prozess } from "@/lib/content";
 
@@ -16,7 +17,8 @@ export function Prozess() {
           intro={prozess.intro}
         />
 
-        <ol className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="relative mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <ProcessTrack />
           {prozess.steps.map((step, index) => (
             <Reveal
               as="li"

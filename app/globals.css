@@ -339,6 +339,28 @@ body {
   }
 }
 
+/* Druckansicht: Navigation, Footer, Chat-Widget und Dekor-Elemente ausblenden,
+   Inhalte in Schwarz auf Weiß mit sichtbaren Links – für Rechtsseiten und das
+   Firmenprofil (Einkaufsabteilungen drucken solche Seiten häufig aus). */
+@media print {
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+  .section-y {
+    padding-block: 0;
+  }
+}
+
 /* prefers-reduced-motion respektieren: alle Effekte abschalten */
 @media (prefers-reduced-motion: reduce) {
   html {
