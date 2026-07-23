@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import { Breadcrumbs } from "./breadcrumbs";
+import { BlueprintLines } from "@/components/BlueprintLines";
 import { siteConfig } from "@/lib/site";
 
 type Crumb = { label: string; href?: string };
@@ -41,6 +42,7 @@ export function PageHero({
   return (
     <section className="bg-aurora relative overflow-hidden border-b border-border">
       <div aria-hidden className="absolute inset-0 bg-dot-grid opacity-60" />
+      <BlueprintLines className="pointer-events-none absolute -right-8 top-1/2 hidden h-72 w-auto -translate-y-1/2 text-ink/[0.07] md:block" />
       <div className="container-page relative flex flex-col gap-6 py-14 md:py-20">
         {breadcrumbs ? (
           <>

@@ -6,7 +6,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ArrowRight, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { BlueprintLines } from "@/components/BlueprintLines";
 import { TypingText } from "@/components/TypingText";
 import { hero } from "@/lib/content";
 import { usePrefersReducedMotion } from "@/lib/use-reduced-motion";
@@ -66,9 +65,6 @@ export function Hero() {
         className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/80 to-ink/60"
       />
       <div aria-hidden className="absolute inset-0 bg-dot-grid opacity-[0.15]" />
-
-      {/* Dezente Blueprint-Linien, die sich beim Laden/Scrollen zeichnen */}
-      <BlueprintLines className="pointer-events-none absolute -right-6 top-1/2 hidden h-[34rem] w-auto -translate-y-1/2 text-white/30 md:block" />
 
       {/* Embla-Engine-Ebene: treibt Timing/Index/Loop, visuell unsichtbar */}
       <div
